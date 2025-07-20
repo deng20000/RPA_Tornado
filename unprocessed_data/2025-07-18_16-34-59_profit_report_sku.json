@@ -1,0 +1,23 @@
+{
+  "access_token": "eeef7211-b082-431b-b653-d7cafe86f0ab",
+  "query_data": {
+    "offset": 0,
+    "length": 1000,
+    "mids": 1,
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "currencyCode": "USD"
+  },
+  "response": {
+    "code": 400,
+    "message": "参数有误",
+    "data": null,
+    "error_details": [
+      "[length不能超过200]"
+    ],
+    "request_id": "fd7a19c8ffc64dcfbfbe37ac2761a1ec.269.17528277000071931",
+    "response_time": "2025-07-18 16:35:00",
+    "total": 0
+  },
+  "timestamp": "2025-07-18T16:34:59.994708"
+}

@@ -1,12 +1,16 @@
 # RPA_Tornado 项目说明
 
+---
+
 ## 一、项目结构
 
-- app/ecommerce_dashboard/handlers/stat_handler.py  # 电商数据看板主接口
-- app/ecommerce_dashboard/services/stat_service.py  # 电商数据看板主业务逻辑
-- app/ecommerce_dashboard/services/common.py        # 通用API请求工具
-- app/ecommerce_dashboard/routes.py                 # 路由注册
-- main.py                                          # 启动入口，统一管理所有接口
+- `app/ecommerce_dashboard/handlers/stat_handler.py`  电商数据看板主接口
+- `app/ecommerce_dashboard/services/stat_service.py`  电商数据看板主业务逻辑
+- `app/ecommerce_dashboard/services/common.py`        通用API请求工具
+- `app/ecommerce_dashboard/routes.py`                 路由注册
+- `main.py`                                          启动入口，统一管理所有接口
+
+---
 
 ## 二、依赖安装
 
@@ -16,12 +20,16 @@
 python -m venv .venv
 .venv\Scripts\activate  # Windows
 # source .venv/bin/activate  # Linux/Mac
-pip install -r requirements.txt  # 如有requirements.txt
+pip install -r requirements.txt
 ```
+
+---
 
 ## 三、环境配置
 
-请在 app/config.py 中配置 API HOST、APP_ID、APP_SECRET 等参数。
+请在 `app/config.py` 中配置 API HOST、APP_ID、APP_SECRET 等参数。
+
+---
 
 ## 四、项目启动
 
@@ -34,41 +42,503 @@ python RPA_Tornado/main.py
 启动后访问接口如：
 - POST http://127.0.0.1:8888/api/ecommerce/sale_stat
 
-## 五、接口说明
+---
 
-### 统一接口：/api/ecommerce/sale_stat
+## 五、主要接口一览（按功能分组）
 
-- **每日电商总销售额**
-  - 参数：
-    - result_type: 3
-    - date_unit: 4
-    - data_type: 6
-    - 其他可选参数
-- **热门SKU销量查看**
-  - 参数：
-    - result_type: 1
-    - date_unit: 4
-    - data_type: 6
-    - 其他可选参数
+### 多平台
+| 路径 | 方法 | 功能简介 | 原始路由 |
+|------|------|----------|----------|
+| /api/basicOpen/platformStatisticsV2/saleStat/pageList | POST | 查询销量统计列表v2 | /api/basicOpen/platformStatisticsV2/saleStat/pageList |
+| /api/basicOpen/platformStatisticsV2/saleStat/pageList/seller-list | POST | 查询多平台店铺基础信息 | /api/basicOpen/platformStatisticsV2/saleStat/pageList/seller-list |
+| /api/basicOpen/multiplatform/profit/report/msku | POST | 多平台结算利润（利润报表）-msku | /api/basicOpen/multiplatform/profit/report/msku |
+| /api/basicOpen/multiplatform/profit/report/sku | POST | 多平台结算利润（利润报表）-sku | /api/basicOpen/multiplatform/profit/report/sku |
 
-请求示例：
-```json
-{
-  "result_type": 3,
-  "date_unit": 4,
-  "data_type": 6
-}
-```
+### 统计
+| 路径 | 方法 | 功能简介 | 原始路由 |
+|------|------|----------|----------|
+| /api/basicOpen/finance/mreport/OrderProfit | POST | 订单利润MSKU查询 | /api/basicOpen/finance/mreport/OrderProfit |
+| /api/bd/profit/statistics/open/msku/list | POST | 订单利润MSKU查询（兼容老路由） | /api/bd/profit/statistics/open/msku/list |
+| /api/statistics/order-profit-msku | POST | 统计-订单利润MSKU | /api/statistics/order-profit-msku |
+| /api/statistics/sales-report-asin-daily-lists | POST | 统计-销量报表ASIN日列表 | /api/statistics/sales-report-asin-daily-lists |
+| /api/statistics/sales-report-asin-daily-lists-v2 | POST | 统计-销量报表ASIN日列表（新版） | /api/statistics/sales-report-asin-daily-lists-v2 |
 
-返回示例：
+### 基础数据
+| 路径 | 方法 | 功能简介 | 原始路由 |
+|------|------|----------|----------|
+| /api/erp/sc/routing/finance/currency/currencyMonth | POST | 查询汇率 | /api/erp/sc/routing/finance/currency/currencyMonth |
+| /api/erp/sc/data/seller/lists | GET | 查询亚马逊店铺列表 | /api/erp/sc/data/seller/lists |
+| /api/erp/sc/data/seller/allMarketplace | GET | 查询亚马逊市场列表 | /api/erp/sc/data/seller/allMarketplace |
+| /api/erp/sc/data/worldState/lists | POST | 查询世界州/省列表 | /api/erp/sc/data/worldState/lists |
+| /api/erp/sc/routing/common/file/download | POST | 下载产品附件 | /api/erp/sc/routing/common/file/download |
+| /api/erp/sc/routing/customized/file/download | POST | 定制化附件下载 | /api/erp/sc/routing/customized/file/download |
+| /api/erp/sc/data/account/lists | GET | 查询ERP用户信息列表 | /api/erp/sc/data/account/lists |
+
+---
+
+### 接口映射与限流说明
+
+| API Path（转发路由） | 原路由 | 请求协议 | 请求方式 | 令牌桶容量 | 简要说明 |
+|---------------------|--------|----------|----------|------------|----------|
+| /api/ecommerce/sale_stat | /basicOpen/platformStatisticsV2/saleStat/pageList | HTTPS | POST | 10 | 电商销售统计 |
+| /api/base-data/currency-exchange-rate | /erp/sc/routing/finance/currency/currencyMonth | HTTPS | POST | 10 | 查询汇率 |
+| /api/base-data/file-attachment-download | /erp/sc/routing/common/file/download | HTTPS | POST | 10 | 下载产品附件 |
+| /api/base-data/customized-file-download | /erp/sc/routing/customized/file/download | HTTPS | POST | 10 | 定制化附件下载 |
+| /api/base-data/batch-edit-seller-name | /erp/sc/data/seller/batchEditSellerName | HTTPS | POST | 10 | 批量修改店铺名称 |
+| /api/multi-platform/sale-statistics-v2 | /basicOpen/platformStatisticsV2/saleStat/pageList | HTTPS | POST | 10 | 多平台销量统计 |
+| /api/multi-platform/sales-report-asin-daily-lists | /basicOpen/platformStatisticsV2/saleStat/pageList | HTTPS | POST | 10 | 多平台ASIN日销量报表 |
+| /api/statistics/order-profit-msku | /bd/profit/statistics/open/msku/list | HTTPS | POST | 10 | 订单利润MSKU查询 |
+| /api/erp/sc/data/sales_report/asinDailyLists | /erp/sc/data/sales_report/asinDailyLists | HTTPS | POST | 5 | Asin/MSKU日销量报表（新版） |
+| ... | ... | ... | ... | ... | ... |
+
+> 说明：如需补充更多接口原路由或限流参数，请参考源码 service 层的 api_request/route_name 字段或联系后端开发。
+
+---
+
+## 六、接口参数与示例（按功能分组）
+
+### 多平台
+- 路径：`/api/basicOpen/platformStatisticsV2/saleStat/pageList`  
+- 方法：POST
+- 原始路由：`/basicOpen/platformStatisticsV2/saleStat/pageList`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
 ```json
 {
   "code": 0,
+  "message": "success",
   "data": { ... }
 }
 ```
 
-## 六、测试
+- 路径：`/api/basicOpen/platformStatisticsV2/saleStat/pageList/seller-list`  
+- 方法：POST
+- 原始路由：`/basicOpen/platformStatisticsV2/saleStat/pageList/seller-list`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/basicOpen/multiplatform/profit/report/msku`
+- 方法：POST
+- 原始路由：`/api/basicOpen/multiplatform/profit/report/msku`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/basicOpen/multiplatform/profit/report/sku`
+- 方法：POST
+- 原始路由：`/api/basicOpen/multiplatform/profit/report/sku`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 20 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 是 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+### 统计
+- 路径：`/api/basicOpen/finance/mreport/OrderProfit`
+- 方法：POST
+- 原始路由：`/basicOpen/finance/mreport/OrderProfit`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/bd/profit/statistics/open/msku/list`
+- 方法：POST
+- 原始路由：`/bd/profit/statistics/open/msku/list`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/statistics/order-profit-msku`
+- 方法：POST
+- 原始路由：`/statistics/order-profit-msku`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/statistics/sales-report-asin-daily-lists`
+- 方法：POST
+- 原始路由：`/statistics/sales-report-asin-daily-lists`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/statistics/sales-report-asin-daily-lists-v2`
+- 方法：POST
+- 原始路由：`/statistics/sales-report-asin-daily-lists-v2`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+### 基础数据
+- 路径：`/api/erp/sc/routing/finance/currency/currencyMonth`
+- 方法：POST
+- 原始路由：`/erp/sc/routing/finance/currency/currencyMonth`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | date | string | 否 | 汇率月份，格式YYYY-MM | 2023-08 |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/data/seller/lists`
+- 方法：GET
+- 原始路由：`/erp/sc/data/seller/lists`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/data/seller/allMarketplace`
+- 方法：GET
+- 原始路由：`/erp/sc/data/seller/allMarketplace`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/data/worldState/lists`
+- 方法：POST
+- 原始路由：`/erp/sc/data/worldState/lists`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/routing/common/file/download`
+- 方法：POST
+- 原始路由：`/erp/sc/routing/common/file/download`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/routing/customized/file/download`
+- 方法：POST
+- 原始路由：`/erp/sc/routing/customized/file/download`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 20 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 是 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+- 路径：`/api/erp/sc/data/account/lists`
+- 方法：GET
+- 原始路由：`/erp/sc/data/account/lists`
+- 主要参数：
+  | 参数名 | 类型 | 必填 | 说明 | 示例 |
+  |--------|------|------|------|------|
+  | offset | int | 是 | 分页偏移量，默认0 | 0 |
+  | length | int | 是 | 分页长度，默认1000 | 100 |
+  | platformCodeS | array | 否 | 平台id数组 | ["10024"] |
+  | mids | string | 否 | 国家id，多个用英文逗号分隔 | "NA,MX,BR,US,CA" |
+  | sids | string | 否 | 店铺id，多个用英文逗号分隔 | "110424575139430912" |
+  | currencyCode | string | 否 | 币种code | "USD" |
+  | startDate | string | 是 | 开始时间，Y-m-d | 2024-09-01 |
+  | endDate | string | 是 | 结束时间，Y-m-d | 2024-09-30 |
+  | searchField | string | 否 | 搜索值类型：msku,local_sku,platform_order_no | "local_sku" |
+  | searchValue | string | 否 | 搜索值 | "123" |
+  | developers | array | 否 | 开发人 | [128581] |
+  | cids | array | 否 | 分类 | [14] |
+  | bids | array | 否 | 品牌 | [2] |
+- 返回：
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": { ... }
+}
+```
+
+---
+
+## 七、测试
 
 运行测试用例：
 ```bash
@@ -76,4 +546,11 @@ pytest RPA_Tornado/tests/test_ecommerce_dashboard.py -s
 ```
 
 ---
-如有更多子项目或接口需求，建议仿照本结构扩展即可。 
+
+## 八、扩展说明
+
+如有更多子项目或接口需求，建议仿照本结构扩展即可。
+
+---
+
+> 文档自动生成自 swagger.yaml，详细参数和返回结构请参考 swagger 文件或源码注释。 

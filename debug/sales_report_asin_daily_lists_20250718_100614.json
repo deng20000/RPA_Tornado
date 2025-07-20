@@ -1,0 +1,42 @@
+{
+  "api_name": "sales_report_asin_daily_lists",
+  "request_params": {
+    "sid": 514841,
+    "event_date": "2025-07-17",
+    "asin_type": 2,
+    "type": 2,
+    "offset": 0,
+    "length": 1000
+  },
+  "response_data": {
+    "total": 150,
+    "data": [
+      {
+        "asin": null,
+        "msku": "TEST-MSKU-001",
+        "product_name": "测试产品1",
+        "sales_amount": null,
+        "sales_volume": 25,
+        "order_volume": null,
+        "currency": "USD",
+        "date": "2025-07-17"
+      },
+      {
+        "asin": null,
+        "msku": "TEST-MSKU-002",
+        "product_name": "测试产品2",
+        "sales_amount": null,
+        "sales_volume": 18,
+        "order_volume": null,
+        "currency": "USD",
+        "date": "2025-07-17"
+      }
+    ],
+    "pagination": {
+      "offset": 0,
+      "length": 1000,
+      "total": 150
+    }
+  },
+  "timestamp": "2025-07-18T10:06:14.685416"
+}

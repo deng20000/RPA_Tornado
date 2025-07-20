@@ -1,0 +1,1656 @@
+{
+  "request_data": {
+    "offset": 0,
+    "length": 100,
+    "sids": [
+      516504,
+      516505,
+      516506,
+      516507,
+      516498,
+      516499,
+      516500,
+      516501,
+      516502,
+      516503,
+      505881,
+      505818,
+      505819,
+      505820,
+      505821,
+      505822,
+      505823,
+      505824,
+      505825,
+      505826,
+      505827,
+      505828,
+      505829,
+      505830,
+      505831,
+      516495,
+      516508,
+      516509,
+      516510,
+      505901,
+      512231,
+      512232,
+      512233,
+      512234,
+      512225,
+      512226,
+      512227,
+      512228,
+      512229,
+      512230,
+      511633,
+      511634,
+      514841
+    ],
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "searchField": "seller_sku",
+    "searchValue": [
+      "GL-MT3000"
+    ],
+    "currencyCode": "USD"
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": [
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "0.00",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Travel Router, Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, with OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Cruise/RV/Airplane/Hotel",
+            "cate_title": "",
+            "local_name": "",
+            "sid": "505818",
+            "is_delete": "0",
+            "brand_title": "",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.com",
+            "parent_asin": "B0BPSHV3K8",
+            "seller_sku": "GL-MT3000-NewWIFI",
+            "asin": "B0BPSGJN7T",
+            "status": "0"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "",
+        "parent_asins": [
+          "B0BPSHV3K8"
+        ],
+        "local_infos": [],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505818"
+        ],
+        "item_name": "",
+        "categories": [],
+        "seller_store_countries": [
+          {
+            "country": "美国",
+            "name": "GL.iNet_NA-US"
+          }
+        ],
+        "principal_names": "",
+        "brands": [],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "0.00",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Routeur WiFi 6 pour La Maison et Les Voyages, Bi-Bande, Vitesse WiFi AX3000 (Jusqu’à 3 Gbit/s), Repeteur, VPN en Cascade, IPV6, WPA3, Port WAN 2,5G",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505831",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.be",
+            "parent_asin": "B0DBPMGM3J",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0DBPMGM3J"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.be/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505831"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Routeur WiFi 6 pour La Maison et Les Voyages, Bi-Bande, Vitesse WiFi AX3000 (Jusqu’à 3 Gbit/s), Repeteur, VPN en Cascade, IPV6, WPA3, Port WAN 2,5G",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "比利时",
+            "name": "GL.iNet_EU&UK-BE"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "-25.32",
+        "gross_margin": "-0.3005",
+        "avg_gross_profit": "-25.32",
+        "net_gross_margin": "-0.3005",
+        "volume": 1,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "84.26",
+        "net_amount": "84.26",
+        "avg_net_amount": "84.26",
+        "afn_amount": 84.26,
+        "mfn_amount": 0.0,
+        "tax_amount": "103.63",
+        "refund_quantity": "1.0",
+        "refund_amount": "-80.11",
+        "refund_amount_rate": "1.0000",
+        "shipping_cost": "2.03",
+        "promotion_discount": "-2.03",
+        "pm_discount": 0.0,
+        "sp_discount": -2.03,
+        "return_quantity": 1,
+        "return_rate": "1.0000",
+        "selling_fee": "-3.11",
+        "selling_fee_rate": "-0.0369",
+        "fulfillment_fee": "-1.17",
+        "fulfillment_fee_rate": "-0.0139",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-24.73",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-0.45",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-25.18",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Travel Router, Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, with OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Cruise/RV/Airplane/Hotel",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505830",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.pl",
+            "parent_asin": "B0DF4PH5MY",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0DF4PH5MY"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.pl/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505830"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Travel Router, Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, with OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Cruise/RV/Airplane/Hotel",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "波兰",
+            "name": "GL.iNet_EU&UK-PL"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 1,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "137.86",
+        "gross_margin": "0.5402",
+        "avg_gross_profit": "68.93",
+        "net_gross_margin": "0.6287",
+        "volume": 2,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "255.18",
+        "net_amount": "219.27",
+        "avg_net_amount": "109.63",
+        "afn_amount": 255.18,
+        "mfn_amount": 0.0,
+        "tax_amount": "292.04",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "-35.91",
+        "pm_discount": -35.91,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-20.44",
+        "selling_fee_rate": "-0.0801",
+        "fulfillment_fee": "-9.83",
+        "fulfillment_fee_rate": "-0.0385",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-0.78",
+        "total_stock_fee_rate": "-0.0030",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-49.46",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-0.91",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-50.37",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Piccolo Portatile Router WiFi 6 Gigabit Dual Band, AX3000Mbps, 802.11ax, Ripetitore, Access Point, Extender, WAN a 2.5 Gb, Cascata VPN, IPV6, WPA3",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505823",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.it",
+            "parent_asin": "B0BQ6Y4P4Z",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BQ6Y4P4Z"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.it/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505823"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Piccolo Portatile Router WiFi 6 Gigabit Dual Band, AX3000Mbps, 802.11ax, Ripetitore, Access Point, Extender, WAN a 2.5 Gb, Cascata VPN, IPV6, WPA3",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "意大利",
+            "name": "GL.iNet_EU&UK-IT"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 2,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "49.35",
+        "gross_margin": "0.1906",
+        "avg_gross_profit": "16.45",
+        "net_gross_margin": "0.1906",
+        "volume": 3,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "258.98",
+        "net_amount": "258.98",
+        "avg_net_amount": "86.33",
+        "afn_amount": 258.98,
+        "mfn_amount": 0.0,
+        "tax_amount": "258.98",
+        "refund_quantity": "1.0",
+        "refund_amount": "-70.63",
+        "refund_amount_rate": "0.3333",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-31.62",
+        "selling_fee_rate": "-0.1221",
+        "fulfillment_fee": "-30.11",
+        "fulfillment_fee_rate": "-0.1163",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-75.37",
+        "avg_purchase_costs": "25.12",
+        "logistics_costs": "-1.90",
+        "avg_logistics_costs": "0.63",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-77.27",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0002",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Enrutador Gigabit inalámbrico de Viaje de Bolsillo Wi-Fi 6 – OpenVPN, Wireguard, Connect Public & Hotel Wi-Fi, repetidor, Extensor, ciberseguridad, Atadura, RV",
+            "cate_title": "GL-MT3000-US",
+            "local_name": "GL-MT3000-US",
+            "sid": "505820",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.mx",
+            "parent_asin": "B0D8PWY1F1",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0D8PWY1F1"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0002",
+            "local_name": "GL-MT3000-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.mx/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505820"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Enrutador Gigabit inalámbrico de Viaje de Bolsillo Wi-Fi 6 – OpenVPN, Wireguard, Connect Public & Hotel Wi-Fi, repetidor, Extensor, ciberseguridad, Atadura, RV",
+        "categories": [
+          "GL-MT3000-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "墨西哥",
+            "name": "GL.iNet_NA-MX"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 3,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "33.74",
+        "gross_margin": "0.0673",
+        "avg_gross_profit": "8.44",
+        "net_gross_margin": "0.0939",
+        "volume": 4,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 1,
+        "ad_sales_amount": "490.04",
+        "ad_sales_amount_sp": 353.33,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 136.71,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 4,
+        "ad_volume_sp": 3,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 1,
+        "ad_volume_sbv": 0,
+        "amount": "501.24",
+        "net_amount": "359.38",
+        "avg_net_amount": "89.85",
+        "afn_amount": 501.24,
+        "mfn_amount": 0.0,
+        "tax_amount": "567.45",
+        "refund_quantity": "2.0",
+        "refund_amount": "-140.57",
+        "refund_amount_rate": "0.5000",
+        "shipping_cost": "6.85",
+        "promotion_discount": "-141.86",
+        "pm_discount": -141.86,
+        "sp_discount": 0.0,
+        "return_quantity": 2,
+        "return_rate": "0.5000",
+        "selling_fee": "-40.14",
+        "selling_fee_rate": "-0.0801",
+        "fulfillment_fee": "-16.14",
+        "fulfillment_fee_rate": "-0.0322",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-3.68",
+        "total_stock_fee_rate": "-0.0073",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-123.65",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-8.31",
+        "avg_logistics_costs": "1.66",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-131.96",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Small Portable Wifi 6 Router, Dual Band Gigabit Wireless Router for Home & Travel, Wifi Speed up to 3000 Mbps, VPN Cascading / IPV6/ WPA3, 2.5Gbps WAN Port, AdGuard Home",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505822",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.co.uk",
+            "parent_asin": "B0BQ6Z6WZV",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BQ6Z6WZV"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.co.uk/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505822"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Small Portable Wifi 6 Router, Dual Band Gigabit Wireless Router for Home & Travel, Wifi Speed up to 3000 Mbps, VPN Cascading / IPV6/ WPA3, 2.5Gbps WAN Port, AdGuard Home",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "英国",
+            "name": "GL.iNet_EU&UK-UK"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 4,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "285.36",
+        "gross_margin": "0.4551",
+        "avg_gross_profit": "57.07",
+        "net_gross_margin": "0.6368",
+        "volume": 5,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "627.08",
+        "net_amount": "448.08",
+        "avg_net_amount": "89.62",
+        "afn_amount": 627.08,
+        "mfn_amount": 0.0,
+        "tax_amount": "698.03",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "6.64",
+        "promotion_discount": "-180.94",
+        "pm_discount": -179.01,
+        "sp_discount": -1.93,
+        "return_quantity": 1,
+        "return_rate": "0.2000",
+        "selling_fee": "-38.83",
+        "selling_fee_rate": "-0.0619",
+        "fulfillment_fee": "-26.58",
+        "fulfillment_fee_rate": "-0.0424",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-1.28",
+        "total_stock_fee_rate": "-0.0020",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-98.92",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-1.81",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-100.73",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Enrutador WiFi 6 Portátil Para Casa y Viajes, Bi-Banda, Velocidad AX3000 (Hasta 3 Gbit/s), Repetidor, VPN en Cascada, IPV6, WPA3, Puerto WAN 2,5G",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505826",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.es",
+            "parent_asin": "B0BQ719SSF",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BQ719SSF"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.es/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505826"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Enrutador WiFi 6 Portátil Para Casa y Viajes, Bi-Banda, Velocidad AX3000 (Hasta 3 Gbit/s), Repetidor, VPN en Cascada, IPV6, WPA3, Puerto WAN 2,5G",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "西班牙",
+            "name": "GL.iNet_EU&UK-ES"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 5,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "263.18",
+        "gross_margin": "0.3990",
+        "avg_gross_profit": "52.64",
+        "net_gross_margin": "0.5699",
+        "volume": 5,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "659.56",
+        "net_amount": "461.81",
+        "avg_net_amount": "92.36",
+        "afn_amount": 659.56,
+        "mfn_amount": 0.0,
+        "tax_amount": "747.78",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "-197.76",
+        "pm_discount": -197.76,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-52.33",
+        "selling_fee_rate": "-0.0793",
+        "fulfillment_fee": "-20.39",
+        "fulfillment_fee_rate": "-0.0309",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-123.65",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-2.27",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-125.92",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Draagbare WLAN-router voor thuis en op reis, bi-band, AX3000 (tot 3 Gbit/s), repeater, VPN, waterval-VPN, IPV6, WPA3, 2,5 G WAN-poort",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505827",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.nl",
+            "parent_asin": "B0DGL8DMB5",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0DGL8DMB5"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.nl/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505827"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Draagbare WLAN-router voor thuis en op reis, bi-band, AX3000 (tot 3 Gbit/s), repeater, VPN, waterval-VPN, IPV6, WPA3, 2,5 G WAN-poort",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "荷兰",
+            "name": "GL.iNet_EU&UK-NL"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 5,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "325.53",
+        "gross_margin": "0.6227",
+        "avg_gross_profit": "65.11",
+        "net_gross_margin": "0.6227",
+        "volume": 5,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 2,
+        "ad_sales_amount": "209.10",
+        "ad_sales_amount_sp": 209.1,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 2,
+        "ad_volume_sp": 2,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "522.74",
+        "net_amount": "522.74",
+        "avg_net_amount": "104.55",
+        "afn_amount": 522.74,
+        "mfn_amount": 0.0,
+        "tax_amount": "533.74",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-41.23",
+        "selling_fee_rate": "-0.0789",
+        "fulfillment_fee": "-24.00",
+        "fulfillment_fee_rate": "-0.0459",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-0.85",
+        "total_stock_fee_rate": "-0.0016",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-176.19",
+        "avg_purchase_costs": "25.17",
+        "logistics_costs": "-12.69",
+        "avg_logistics_costs": "1.81",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-188.88",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "10605560",
+            "local_sku": "9042-0004",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, Connect Public & Hotel Wi-Fi, Captive Portal, Cybersecurity, Tethering, RV, Parental Control (AU Plug)",
+            "cate_title": "GL-MT3000-AU",
+            "local_name": "GL-MT3000-AU",
+            "sid": "505881",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51c4KptjqYL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.au",
+            "parent_asin": "B0BPSGJN7T",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51c4KptjqYL._SL75_.jpg",
+        "parent_asins": [
+          "B0BPSGJN7T"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0004",
+            "local_name": "GL-MT3000-AU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.au/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505881"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, Connect Public & Hotel Wi-Fi, Captive Portal, Cybersecurity, Tethering, RV, Parental Control (AU Plug)",
+        "categories": [
+          "GL-MT3000-AU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "澳洲",
+            "name": "GL.iNet_AU-AU"
+          }
+        ],
+        "principal_names": "施柏仰",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 5,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "248.37",
+        "gross_margin": "0.4769",
+        "avg_gross_profit": "41.39",
+        "net_gross_margin": "0.4814",
+        "volume": 6,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "176.83",
+        "ad_sales_amount_sp": 176.83,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 2,
+        "ad_volume_sp": 2,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "520.78",
+        "net_amount": "515.91",
+        "avg_net_amount": "85.99",
+        "afn_amount": 520.78,
+        "mfn_amount": 0.0,
+        "tax_amount": "573.84",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "-4.86",
+        "pm_discount": -4.86,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-58.36",
+        "selling_fee_rate": "-0.1121",
+        "fulfillment_fee": "-18.97",
+        "fulfillment_fee_rate": "-0.0364",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-1.91",
+        "total_stock_fee_rate": "-0.0037",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-147.02",
+        "avg_purchase_costs": "24.50",
+        "logistics_costs": "-25.73",
+        "avg_logistics_costs": "4.29",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-172.75",
+        "total_other_granted": -15.562949,
+        "price_list": [
+          {
+            "principal_uids": "10372028",
+            "local_sku": "9042-0005",
+            "item_name": "GL.iNet WiFi6 トラベル ルーター VPN 無線LANルーター 2.5Gbps WANポート ギガビット AdGuard Home |VPN Client |OpenVPN |Wireguard WPA3 IPv6対応 テザリング 旅行 出張 RV GL-MT3000 (Beryl AX)",
+            "cate_title": "GL-MT3000-JP",
+            "local_name": "GL-MT3000-JP",
+            "sid": "505901",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.co.jp",
+            "parent_asin": "B0BQ1YRH9F",
+            "seller_sku": "GL-MT3000-JP",
+            "asin": "B0BQ1YRH9F",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BQ1YRH9F"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0005",
+            "local_name": "GL-MT3000-JP"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.co.jp/dp/B0BQ1YRH9F",
+            "asin": "B0BQ1YRH9F"
+          }
+        ],
+        "sids": [
+          "505901"
+        ],
+        "item_name": "GL.iNet WiFi6 トラベル ルーター VPN 無線LANルーター 2.5Gbps WANポート ギガビット AdGuard Home |VPN Client |OpenVPN |Wireguard WPA3 IPv6対応 テザリング 旅行 出張 RV GL-MT3000 (Beryl AX)",
+        "categories": [
+          "GL-MT3000-JP"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "日本",
+            "name": "GL.iNet_JP-JP"
+          }
+        ],
+        "principal_names": "Penny罗颜",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BQ1YRH9F"
+        ],
+        "afn_volume": 6,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "630.10",
+        "gross_margin": "0.5576",
+        "avg_gross_profit": "45.01",
+        "net_gross_margin": "0.5576",
+        "volume": 14,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "256.05",
+        "ad_sales_amount_sp": 256.05,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 3,
+        "ad_volume_sp": 3,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "1130.08",
+        "net_amount": "1130.08",
+        "avg_net_amount": "80.72",
+        "afn_amount": 1130.08,
+        "mfn_amount": 0.0,
+        "tax_amount": "1266.60",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "4.70",
+        "promotion_discount": "-4.70",
+        "pm_discount": 0.0,
+        "sp_discount": -4.7,
+        "return_quantity": 2,
+        "return_rate": "0.1429",
+        "selling_fee": "-93.81",
+        "selling_fee_rate": "-0.0830",
+        "fulfillment_fee": "-77.88",
+        "fulfillment_fee_rate": "-0.0689",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-0.92",
+        "total_stock_fee_rate": "-0.0008",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-321.48",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-5.89",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-327.37",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Routeur WiFi 6 pour La Maison et Les Voyages, Bi-Bande, Vitesse WiFi AX3000 (Jusqu’à 3 Gbit/s), Repeteur, VPN en Cascade, IPV6, WPA3, Port WAN 2,5G",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505825",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.fr",
+            "parent_asin": "B0BQ6ZN22X",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BQ6ZN22X"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.fr/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505825"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Routeur WiFi 6 pour La Maison et Les Voyages, Bi-Bande, Vitesse WiFi AX3000 (Jusqu’à 3 Gbit/s), Repeteur, VPN en Cascade, IPV6, WPA3, Port WAN 2,5G",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "法国",
+            "name": "GL.iNet_EU&UK-FR"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 14,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "228.02",
+        "gross_margin": "0.1546",
+        "avg_gross_profit": "15.20",
+        "net_gross_margin": "0.1725",
+        "volume": 15,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "1033.88",
+        "ad_sales_amount_sp": 1033.88,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 9,
+        "ad_volume_sp": 9,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "1474.72",
+        "net_amount": "1322.09",
+        "avg_net_amount": "88.14",
+        "afn_amount": 1474.72,
+        "mfn_amount": 0.0,
+        "tax_amount": "1717.83",
+        "refund_quantity": "7.0",
+        "refund_amount": "-536.83",
+        "refund_amount_rate": "0.4667",
+        "shipping_cost": "5.88",
+        "promotion_discount": "-152.63",
+        "pm_discount": -152.63,
+        "sp_discount": 0.0,
+        "return_quantity": 4,
+        "return_rate": "0.2667",
+        "selling_fee": "-116.24",
+        "selling_fee_rate": "-0.0788",
+        "fulfillment_fee": "-55.86",
+        "fulfillment_fee_rate": "-0.0379",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-38.46",
+        "total_stock_fee_rate": "-0.0261",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-346.21",
+        "avg_purchase_costs": "24.73",
+        "logistics_costs": "-6.34",
+        "avg_logistics_costs": "0.45",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-352.55",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0003",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Klein Gigabit WiFi 6 Router für Zuhause & Reisen, Dual Band, Repeater, Extender, Geschwindigkeit bis zu 3000 Mbit/s, Kaskadierte VPN / IPV6 / WPA3, 2.5G WAN Port",
+            "cate_title": "GL-MT3000-EU",
+            "local_name": "GL-MT3000-EU",
+            "sid": "505824",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/31cQhCMxTqL._SL75_.jpg",
+            "site_url": "https://www.amazon.de",
+            "parent_asin": "B0BPSK25J4",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/31cQhCMxTqL._SL75_.jpg",
+        "parent_asins": [
+          "B0BPSK25J4"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0003",
+            "local_name": "GL-MT3000-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.de/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505824"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Klein Gigabit WiFi 6 Router für Zuhause & Reisen, Dual Band, Repeater, Extender, Geschwindigkeit bis zu 3000 Mbit/s, Kaskadierte VPN / IPV6 / WPA3, 2.5G WAN Port",
+        "categories": [
+          "GL-MT3000-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "德国",
+            "name": "GL.iNet_EU&UK-DE"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 15,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "945.61",
+        "gross_margin": "0.5754",
+        "avg_gross_profit": "52.53",
+        "net_gross_margin": "0.5790",
+        "volume": 18,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "766.67",
+        "ad_sales_amount_sp": 572.16,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 102.68,
+        "ad_sales_amount_sbv": 91.83,
+        "ad_volume": 9,
+        "ad_volume_sp": 7,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 1,
+        "ad_volume_sbv": 1,
+        "amount": "1643.43",
+        "net_amount": "1633.16",
+        "avg_net_amount": "90.73",
+        "afn_amount": 1643.43,
+        "mfn_amount": 0.0,
+        "tax_amount": "1851.88",
+        "refund_quantity": "2.0",
+        "refund_amount": "-165.60",
+        "refund_amount_rate": "0.1111",
+        "shipping_cost": "15.41",
+        "promotion_discount": "-15.41",
+        "pm_discount": -10.27,
+        "sp_discount": -5.14,
+        "return_quantity": 4,
+        "return_rate": "0.2222",
+        "selling_fee": "-132.25",
+        "selling_fee_rate": "-0.0805",
+        "fulfillment_fee": "-95.62",
+        "fulfillment_fee_rate": "-0.0582",
+        "other_order_fee": "-1.32",
+        "total_stock_fee": "-2.86",
+        "total_stock_fee_rate": "-0.0017",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-401.97",
+        "avg_purchase_costs": "25.12",
+        "logistics_costs": "-23.06",
+        "avg_logistics_costs": "1.44",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-425.03",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0002",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router | WiFi Router | OpenVPN, Wireguard, Connect to Public & Hotel Wi-Fi login Page, RV",
+            "cate_title": "GL-MT3000-US",
+            "local_name": "GL-MT3000-US",
+            "sid": "505819",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.ca",
+            "parent_asin": "B0BPSGJN7T",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BPSGJN7T"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0002",
+            "local_name": "GL-MT3000-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.ca/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505819"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router | WiFi Router | OpenVPN, Wireguard, Connect to Public & Hotel Wi-Fi login Page, RV",
+        "categories": [
+          "GL-MT3000-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "加拿大",
+            "name": "GL.iNet_NA-CA"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 18,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "3680.52",
+        "gross_margin": "0.3983",
+        "avg_gross_profit": "34.40",
+        "net_gross_margin": "0.3983",
+        "volume": 107,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 3,
+        "ad_sales_amount": "3747.03",
+        "ad_sales_amount_sp": 2027.69,
+        "ad_sales_amount_sd": 1138.64,
+        "ad_sales_amount_sb": 217.11,
+        "ad_sales_amount_sbv": 363.59,
+        "ad_volume": 43,
+        "ad_volume_sp": 23,
+        "ad_volume_sd": 12,
+        "ad_volume_sb": 3,
+        "ad_volume_sbv": 5,
+        "amount": "9241.39",
+        "net_amount": "9241.39",
+        "avg_net_amount": "86.37",
+        "afn_amount": 9241.39,
+        "mfn_amount": 0.0,
+        "tax_amount": "9946.61",
+        "refund_quantity": "23.0",
+        "refund_amount": "-1736.29",
+        "refund_amount_rate": "0.2150",
+        "shipping_cost": "139.21",
+        "promotion_discount": "-139.21",
+        "pm_discount": 0.0,
+        "sp_discount": -139.21,
+        "return_quantity": 12,
+        "return_rate": "0.1121",
+        "selling_fee": "-741.94",
+        "selling_fee_rate": "-0.0803",
+        "fulfillment_fee": "-533.93",
+        "fulfillment_fee_rate": "-0.0578",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-19.36",
+        "total_stock_fee_rate": "-0.0021",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-2612.79",
+        "avg_purchase_costs": "25.12",
+        "logistics_costs": "-65.76",
+        "avg_logistics_costs": "0.63",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-2678.55",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9042-0002",
+            "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Travel Router, Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, with OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Cruise/RV/Airplane/Hotel",
+            "cate_title": "GL-MT3000-US",
+            "local_name": "GL-MT3000-US",
+            "sid": "505818",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+            "site_url": "https://www.amazon.com",
+            "parent_asin": "B0BPSHV3K8",
+            "seller_sku": "GL-MT3000",
+            "asin": "B0BPSGJN7T",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/41IiLQJghoL._SL75_.jpg",
+        "parent_asins": [
+          "B0BPSHV3K8"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9042-0002",
+            "local_name": "GL-MT3000-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com/dp/B0BPSGJN7T",
+            "asin": "B0BPSGJN7T"
+          }
+        ],
+        "sids": [
+          "505818"
+        ],
+        "item_name": "GL.iNet GL-MT3000 (Beryl AX) Portable Travel Router, Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router, with OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Cruise/RV/Airplane/Hotel",
+        "categories": [
+          "GL-MT3000-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "美国",
+            "name": "GL.iNet_NA-US"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0BPSGJN7T"
+        ],
+        "afn_volume": 107,
+        "mfn_volume": 0
+      }
+    ],
+    "error_details": [],
+    "request_id": "96e9c30e7ccc43bd958afa5e10f231c1.194.17528352843692429",
+    "response_time": "2025-07-18 18:41:25",
+    "total": 14
+  },
+  "timestamp": "2025-07-18T18:41:25.082006"
+}

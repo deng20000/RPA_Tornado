@@ -1,0 +1,8 @@
+{
+  "access_token": "d7ef057f-43a6-4704-a6b6-460f308d138c",
+  "query_data": {
+    "file_id": 1209
+  },
+  "error": "API Error: code=500, msg=内部错误",
+  "timestamp": "2025-07-18T11:25:57.689486"
+}

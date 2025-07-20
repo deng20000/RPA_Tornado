@@ -1,0 +1,278 @@
+{
+  "access_token": "c6446c77-24f8-4836-b4fb-ef4561125e9a",
+  "query_data": {
+    "date": "2025-07"
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": [
+      {
+        "date": "2025-07",
+        "code": "CNY",
+        "icon": "￥",
+        "name": "人民币",
+        "my_rate": "1.0000000000",
+        "update_time": "",
+        "rate_org": "1.0000"
+      },
+      {
+        "date": "2025-07",
+        "code": "USD",
+        "icon": "$",
+        "name": "美元",
+        "my_rate": "7.1534000000",
+        "update_time": "2025-07-01 12:01:12",
+        "rate_org": "7.1461"
+      },
+      {
+        "date": "2025-07",
+        "code": "TRY",
+        "icon": "₺",
+        "name": "土耳其里拉",
+        "my_rate": "0.1796000000",
+        "update_time": "2025-07-01 12:01:21",
+        "rate_org": "0.1779"
+      },
+      {
+        "date": "2025-07",
+        "code": "THB",
+        "icon": "฿",
+        "name": "泰铢",
+        "my_rate": "0.2206000000",
+        "update_time": "2025-07-01 12:01:30",
+        "rate_org": "0.2206"
+      },
+      {
+        "date": "2025-07",
+        "code": "SEK",
+        "icon": "kr",
+        "name": "瑞典克朗",
+        "my_rate": "0.7561000000",
+        "update_time": "2025-07-01 12:01:50",
+        "rate_org": "0.7358"
+      },
+      {
+        "date": "2025-07",
+        "code": "SAR",
+        "icon": "﷼",
+        "name": "沙特里亚尔",
+        "my_rate": "1.8943000000",
+        "update_time": "",
+        "rate_org": "1.9082"
+      },
+      {
+        "date": "2025-07",
+        "code": "RUB",
+        "icon": "₽",
+        "name": "俄罗斯卢布",
+        "my_rate": "0.0865000000",
+        "update_time": "",
+        "rate_org": "0.0917"
+      },
+      {
+        "date": "2025-07",
+        "code": "PLN",
+        "icon": "zł",
+        "name": "波兰兹罗提",
+        "my_rate": "1.9870000000",
+        "update_time": "2025-07-01 12:02:03",
+        "rate_org": "1.9566"
+      },
+      {
+        "date": "2025-07",
+        "code": "PHP",
+        "icon": "₱",
+        "name": "菲律宾比索",
+        "my_rate": "0.1275000000",
+        "update_time": "2025-07-01 12:02:14",
+        "rate_org": "0.1260"
+      },
+      {
+        "date": "2025-07",
+        "code": "NZD",
+        "icon": "$",
+        "name": "新西兰元",
+        "my_rate": "4.2721000000",
+        "update_time": "",
+        "rate_org": "4.2525"
+      },
+      {
+        "date": "2025-07",
+        "code": "MYR",
+        "icon": "RM",
+        "name": "马来西亚林吉特",
+        "my_rate": "1.7028000000",
+        "update_time": "2025-07-01 12:12:14",
+        "rate_org": "1.6859"
+      },
+      {
+        "date": "2025-07",
+        "code": "MXN",
+        "icon": "Mex$",
+        "name": "墨西哥比索",
+        "my_rate": "0.3814000000",
+        "update_time": "2025-07-01 12:12:23",
+        "rate_org": "0.3820"
+      },
+      {
+        "date": "2025-07",
+        "code": "KRW",
+        "icon": "₩",
+        "name": "韩元",
+        "my_rate": "0.0050000000",
+        "update_time": "",
+        "rate_org": "0.0052"
+      },
+      {
+        "date": "2025-07",
+        "code": "JPY",
+        "icon": "JP¥",
+        "name": "日元",
+        "my_rate": "0.0497000000",
+        "update_time": "2025-07-01 12:12:31",
+        "rate_org": "0.0484"
+      },
+      {
+        "date": "2025-07",
+        "code": "INR",
+        "icon": "₹",
+        "name": "印度卢比",
+        "my_rate": "0.0865000000",
+        "update_time": "",
+        "rate_org": "0.0836"
+      },
+      {
+        "date": "2025-07",
+        "code": "ILS",
+        "icon": "₪",
+        "name": "以色列谢克尔",
+        "my_rate": "1.9452000000",
+        "update_time": "",
+        "rate_org": "2.1407"
+      },
+      {
+        "date": "2025-07",
+        "code": "HUF",
+        "icon": "Ft",
+        "name": "匈牙利福林",
+        "my_rate": "0.0205000000",
+        "update_time": "",
+        "rate_org": "0.0209"
+      },
+      {
+        "date": "2025-07",
+        "code": "HKD",
+        "icon": "HK$",
+        "name": "港币",
+        "my_rate": "0.9113000000",
+        "update_time": "2025-07-01 12:12:42",
+        "rate_org": "0.9104"
+      },
+      {
+        "date": "2025-07",
+        "code": "GBP",
+        "icon": "￡",
+        "name": "英镑",
+        "my_rate": "9.8197000000",
+        "update_time": "2025-07-01 12:12:52",
+        "rate_org": "9.5953"
+      },
+      {
+        "date": "2025-07",
+        "code": "EUR",
+        "icon": "€",
+        "name": "欧元",
+        "my_rate": "8.4305000000",
+        "update_time": "2025-07-01 12:13:02",
+        "rate_org": "8.3207"
+      },
+      {
+        "date": "2025-07",
+        "code": "EGP",
+        "icon": "E£",
+        "name": "埃及镑",
+        "my_rate": "0.1429000000",
+        "update_time": "",
+        "rate_org": "0.1452"
+      },
+      {
+        "date": "2025-07",
+        "code": "CLP",
+        "icon": "$",
+        "name": "智利比索",
+        "my_rate": "0.0078000000",
+        "update_time": "",
+        "rate_org": "0.0074"
+      },
+      {
+        "date": "2025-07",
+        "code": "CHF",
+        "icon": "CHF",
+        "name": "瑞士法郎",
+        "my_rate": "9.0181000000",
+        "update_time": "2025-07-01 12:13:11",
+        "rate_org": "8.9314"
+      },
+      {
+        "date": "2025-07",
+        "code": "CAD",
+        "icon": "CA$",
+        "name": "加元",
+        "my_rate": "5.2557000000",
+        "update_time": "2025-07-01 12:13:21",
+        "rate_org": "5.2274"
+      },
+      {
+        "date": "2025-07",
+        "code": "BRL",
+        "icon": "R$",
+        "name": "巴西雷亚尔",
+        "my_rate": "1.3189000000",
+        "update_time": "2025-07-01 12:13:28",
+        "rate_org": "1.2898"
+      },
+      {
+        "date": "2025-07",
+        "code": "BGN",
+        "icon": "лв",
+        "name": "保加利亚列弗",
+        "my_rate": "4.1164000000",
+        "update_time": "",
+        "rate_org": "0.4258"
+      },
+      {
+        "date": "2025-07",
+        "code": "AUD",
+        "icon": "A$",
+        "name": "澳元",
+        "my_rate": "4.7036000000",
+        "update_time": "2025-07-01 12:13:38",
+        "rate_org": "4.6658"
+      },
+      {
+        "date": "2025-07",
+        "code": "AED",
+        "icon": "د",
+        "name": "迪拉姆",
+        "my_rate": "1.9437000000",
+        "update_time": "",
+        "rate_org": "1.9484"
+      },
+      {
+        "date": "2025-07",
+        "code": "SGD",
+        "icon": "S$",
+        "name": "新加坡元",
+        "my_rate": "5.6287000000",
+        "update_time": "2025-07-01 12:01:42",
+        "rate_org": "5.5802"
+      }
+    ],
+    "error_details": [],
+    "request_id": "5800C918-140A-A4B7-2161-3F3EB8596CE0",
+    "response_time": "2025-07-17 17:48:24",
+    "total": 29
+  },
+  "timestamp": "2025-07-17T17:48:24.033979"
+}

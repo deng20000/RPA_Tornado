@@ -1,0 +1,3029 @@
+{
+  "access_token": "eeef7211-b082-431b-b653-d7cafe86f0ab",
+  "query_data": {
+    "start_date": "2022-10-03",
+    "end_date": "2022-12-23",
+    "result_type": "2",
+    "date_unit": "4",
+    "data_type": "4",
+    "page": 1,
+    "length": 20
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": [
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41cbb5DMUhL._SL75_.jpg",
+        "sku": [
+          "9041-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AXT1800-4PX-US",
+          "GL-AXT1800-US",
+          "GL-AXT1800"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AXT1800-US[$]9041-0001"
+        ],
+        "sid": [
+          "110282223730336768",
+          "505819",
+          "505820",
+          "505818",
+          "110281641666737664",
+          "110282222378148864",
+          "110281641666737664"
+        ],
+        "product_name": [
+          "GL-AXT1800-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002",
+          "10006"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify",
+          "Shopee"
+        ],
+        "attribute": [
+          "US",
+          "GL-AXT1800 Wifi 6 เราเตอร์",
+          "",
+          "GL-AXT1800 Wifi 6 Router"
+        ],
+        "parentAsin": [
+          "B0D97TSNXY",
+          "6732664766558",
+          "6681238569054",
+          "B0B2J7WSDK",
+          "19529062258",
+          "19629060038"
+        ],
+        "site_code": [
+          "10001-CA",
+          "",
+          "10001-MX",
+          "10006-TH",
+          "10006-PH",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Shopee].泰国",
+          "[Shopee].菲律宾",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL Tech TH",
+          "GL.iNet APAC",
+          "GL Tech PH",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "5",
+          "2022-11-01": "44",
+          "2022-12-12": "3",
+          "2022-12-11": "1",
+          "2022-10-30": "6",
+          "2022-12-10": "1",
+          "2022-10-31": "1",
+          "2022-12-06": "57",
+          "2022-10-25": "1",
+          "2022-12-05": "3",
+          "2022-10-26": "9",
+          "2022-12-04": "1",
+          "2022-10-23": "3",
+          "2022-12-03": "1",
+          "2022-10-24": "2",
+          "2022-10-29": "10",
+          "2022-12-09": "1",
+          "2022-12-08": "2",
+          "2022-10-27": "5",
+          "2022-12-07": "2",
+          "2022-10-28": "1",
+          "2022-11-30": "2",
+          "2022-10-21": "1",
+          "2022-12-02": "1",
+          "2022-12-01": "2",
+          "2022-10-22": "1",
+          "2022-10-20": "1",
+          "2022-11-26": "2",
+          "2022-10-14": "1",
+          "2022-11-27": "1",
+          "2022-10-15": "2",
+          "2022-11-24": "4",
+          "2022-10-12": "1",
+          "2022-11-25": "1",
+          "2022-10-13": "2",
+          "2022-10-18": "1",
+          "2022-10-19": "3",
+          "2022-11-28": "1",
+          "2022-10-16": "3",
+          "2022-11-29": "4",
+          "2022-10-17": "1",
+          "2022-11-22": "5",
+          "2022-10-10": "4",
+          "2022-11-23": "8",
+          "2022-10-11": "11",
+          "2022-11-20": "9",
+          "2022-11-21": "3",
+          "2022-10-03": "1",
+          "2022-11-15": "4",
+          "2022-11-16": "6",
+          "2022-10-04": "1",
+          "2022-11-13": "5",
+          "2022-11-14": "6",
+          "2022-11-19": "7",
+          "2022-10-08": "1",
+          "2022-11-17": "8",
+          "2022-10-05": "2",
+          "2022-11-18": "4",
+          "2022-10-06": "2",
+          "2022-10-09": "6",
+          "2022-12-20": "2",
+          "2022-11-11": "7",
+          "2022-12-23": "50",
+          "2022-11-12": "54",
+          "2022-12-22": "27",
+          "2022-12-21": "2",
+          "2022-11-10": "3",
+          "2022-12-17": "4",
+          "2022-11-04": "42",
+          "2022-12-16": "3",
+          "2022-11-05": "44",
+          "2022-12-15": "9",
+          "2022-11-02": "1",
+          "2022-12-14": "6",
+          "2022-11-03": "1",
+          "2022-11-08": "5",
+          "2022-11-09": "10",
+          "2022-12-19": "2",
+          "2022-11-06": "41",
+          "2022-12-18": "1",
+          "2022-11-07": "3"
+        },
+        "volumeTotal": "604",
+        "platform_product_id": [
+          "6732664766558",
+          "19529062258",
+          "6681238569054",
+          "B0B2J7WSDK",
+          "19629060038"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AXT1800(Slate AX) Portable Gigabit Travel Router, Pocket-Sized, Wi-Fi 6, Extender/Repeater for Hotel&Public Network Storage, VPN Client&Server, OpenWrt, Adguard Home, USB3.0, TF Card Slot",
+          "Slate AX (GL-AXT1800) Wi-Fi 6 Travel Router - US",
+          "FREE US Local Delivery | Slate AX (GL-AXT1800) with US adapter",
+          "GL.iNet GL-AXT1800 (Slate AX) | Portable WiFi Router | Pocket-Sized Wi-Fi 6 Gigabit Travel Router, Extender/Repeater for Hotel&Public Network Storage, VPN Client&Server, OpenWrt, Adguard Home",
+          "GL.iNet GL-AXT1800 (Slate AX) Enrutador portátil de Viaje Gigabit, tamaño de Bolsillo, Wi-Fi 6, Extensor/repetidor para Almacenamiento en Redes públicas y hoteleras, Cliente VPN y Servidor, OpenWrt,",
+          "Gl.inet GL-AXT1800 (Slate AX) Wi-Fi 6 Gigabit Travel Router, Repeater สําหรับโรงแรมและเครือข่ายสาธารณะ, VPN Client&Server, OpenWrt, Adguard, ช่อง USB 3.0, การ์ด TF, ช่อง",
+          "GL.iNet GL-AXT1800 (Slate AX) Pocket-Sized Wi-Fi 6 Gigabit Travel Router, Repeater for Hotel&Public Network Storage, VPN Client&Server, OpenWrt, Adguard Home, USB 3.0, TF Card Slot"
+        ]
+      },
+      {
+        "pic_url": "https://cdn.shopify.com/s/files/1/2462/2517/files/1-shopify_mt300n-v2_main.jpg?v=1718692474",
+        "sku": [
+          "9011-0002"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-MT300N-V2",
+          "GL-MT300N-V2-4PX-US",
+          "GL-MT300N-V2-4PX-EU"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-MT300N-V2-EU[$]9011-0002"
+        ],
+        "sid": [
+          "110281641666737664",
+          "505827",
+          "505829",
+          "505822",
+          "505826",
+          "505824",
+          "110281641666737664",
+          "110281641666737664",
+          "505830",
+          "505831",
+          "505823",
+          "505825"
+        ],
+        "product_name": [
+          "GL-MT300N-V2-EU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "6626330411102",
+          "B073TSK26W",
+          "210868502555",
+          "B078JZ9Q6L",
+          "B078JPMZXK",
+          "6556322463838"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-TR",
+          "10001-FR",
+          "10001-PL",
+          "10001-BE",
+          "10001-NL",
+          "10001-IT"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].土耳其",
+          "[Amazon].法国",
+          "[Amazon].波兰",
+          "[Amazon].比利时",
+          "[Amazon].荷兰",
+          "[Amazon].意大利"
+        ],
+        "store_name": [
+          "GL.iNet_EU&UK-PL",
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-NL",
+          "GL.iNet_EU&UK-UK",
+          "GL.iNet_EU&UK-TR"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "38",
+          "2022-11-01": "3",
+          "2022-12-12": "3",
+          "2022-12-11": "1",
+          "2022-10-30": "1",
+          "2022-12-10": "21",
+          "2022-10-31": "1",
+          "2022-12-06": "28",
+          "2022-10-25": "2",
+          "2022-12-05": "3",
+          "2022-10-26": "1",
+          "2022-12-04": "33",
+          "2022-10-23": "1",
+          "2022-12-03": "1",
+          "2022-10-24": "3",
+          "2022-10-29": "2",
+          "2022-12-09": "2",
+          "2022-12-08": "1",
+          "2022-10-27": "4",
+          "2022-12-07": "2",
+          "2022-10-28": "2",
+          "2022-11-30": "3",
+          "2022-10-21": "2",
+          "2022-12-02": "41",
+          "2022-12-01": "2",
+          "2022-10-22": "2",
+          "2022-10-20": "1",
+          "2022-11-26": "1",
+          "2022-10-14": "1",
+          "2022-11-27": "1",
+          "2022-11-24": "1",
+          "2022-10-12": "1",
+          "2022-11-25": "114",
+          "2022-10-13": "1",
+          "2022-10-18": "3",
+          "2022-11-28": "81",
+          "2022-10-16": "1",
+          "2022-11-29": "3",
+          "2022-11-22": "1",
+          "2022-10-10": "1",
+          "2022-11-23": "3",
+          "2022-10-11": "2",
+          "2022-11-20": "3",
+          "2022-11-21": "1",
+          "2022-10-03": "2",
+          "2022-11-15": "28",
+          "2022-11-16": "40",
+          "2022-11-13": "1",
+          "2022-11-14": "1",
+          "2022-11-19": "62",
+          "2022-10-07": "1",
+          "2022-10-08": "2",
+          "2022-11-17": "1",
+          "2022-10-05": "2",
+          "2022-11-18": "104",
+          "2022-10-06": "1",
+          "2022-10-09": "1",
+          "2022-12-20": "41",
+          "2022-11-11": "2",
+          "2022-12-23": "36",
+          "2022-11-12": "1",
+          "2022-12-22": "35",
+          "2022-12-21": "1",
+          "2022-11-10": "3",
+          "2022-12-17": "1",
+          "2022-11-04": "4",
+          "2022-12-16": "2",
+          "2022-11-05": "3",
+          "2022-12-15": "1",
+          "2022-11-02": "3",
+          "2022-12-14": "2",
+          "2022-11-03": "5",
+          "2022-11-08": "7",
+          "2022-11-09": "1",
+          "2022-12-19": "1",
+          "2022-11-06": "6",
+          "2022-12-18": "27",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "852",
+        "platform_product_id": [
+          "6556322463838",
+          "B073TSK26W",
+          "210868502555",
+          "6626330411102"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-MT300N-V2 (Mango) Wireless Mini Portable VPN Travel Router, Mobile Hotspot in Pocket, WiFi Repeater Bridge, Range Extender, OpenVPN Client, 300Mbps High Performance, 128MB RAM",
+          "FREE SHIPPING | US Local Delivery | Mango (GL-MT300N-V2)",
+          "GL.iNet GL-MT300N-V2(Mango) Mini enrutador WiFi VPN de Bolsillo inalámbrico portátil de Viaje - Punto de Acceso/Extensor/Wds | OpenWrt | 2 Puertos Ethernet | VPN Abierta/Wireguard | USB 2.0",
+          "GL.iNet GL-MT300N-V2(Mango) Mini routeur WiFi VPN de Poche sans Fil Portable de Voyage - Point d'accès/Extender/WDS | OuvrirWrt | 2 Ports Ethernet | VPN OpenVPN/Wireguard | USB 2.0 | 128 Mo de RAM",
+          "Mango (GL-MT300N-V2) Wireless Mini Router",
+          "GL.iNet GL-MT300N-V2(Mango) Taşınabilir Mini Seyahat Kablosuz Cep VPN WiFi Yönlendirici - Erişim Noktası/Genişletici/WDS | OpenWrt | 2 x Ethernet Bağlantı Noktası | OpenVPN/Wireguard VPN | USB 2.0",
+          "GL.iNet GL-MT300N-V2(Mango) Mini router WiFi VPN tascabile wireless portatile da viaggio - Punto di accesso/Extender/WDS | OpenWrt | 2 porte Ethernet | OpenVPN/WireguardVPN | USB 2.0 | 128 MB di RAM",
+          "GL.iNet GL-MT300N-V2(Mango) Mini Travel Bærbar trådløs lomme WiFi VPN-ruter - Hotspot/Extender/WDS | OpenWrt | 2 Ethernet-porter | OpenVPN/Wireguard VPN | USB2.0 | 128 MB RAM",
+          "GL.iNet GL-MT300N-V2(Mango) Przeno?ny, kieszonkowy, bezprzewodowy router WiFi VPN — punkt dost?pu/przed?u?acz/WDS | OpenWrt | 2 x porty Ethernet | OpenVPN/Wireguard VPN | USB 2.0 | 128 MB pami?ci RAM",
+          "GL.iNet GL-MT300N-V2 (Mango) Tragbarer Mini-Reise-Wireless-Pocket-VPN-WLAN-Router – Access Point/Extender/WDS | OpenWrt | 2 x Ethernet-Ports | OpenVPN/Wireguard VPN | USB 2.0 | 128 MB RAM",
+          "GL.iNet GL-MT300N-V2(Mango) Mini routeur WiFi VPN de poche sans fil portable de voyage - Point d'accès/Extender/WDS | OuvrirWrt | 2 ports Ethernet | VPN OpenVPN/Wireguard | USB 2.0 | 128 Mo de RAM",
+          "EU Local Delivery | Mango (GL-MT300N-V2)"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41MXeeI78JL._SL75_.jpg",
+        "sku": [
+          "9011-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-MT300N-V2p"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-MT300N-V2-US[$]9011-0001"
+        ],
+        "sid": [
+          "505818",
+          "505819"
+        ],
+        "product_name": [
+          "GL-MT300N-V2-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B073TSK26W"
+        ],
+        "site_code": [
+          "10001-CA",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "44",
+          "2022-11-01": "42",
+          "2022-12-12": "55",
+          "2022-12-11": "42",
+          "2022-10-30": "11",
+          "2022-12-10": "29",
+          "2022-10-31": "21",
+          "2022-12-06": "43",
+          "2022-10-25": "7",
+          "2022-12-05": "45",
+          "2022-10-26": "5",
+          "2022-12-04": "41",
+          "2022-10-23": "3",
+          "2022-12-03": "51",
+          "2022-10-24": "2",
+          "2022-10-29": "3",
+          "2022-12-09": "42",
+          "2022-12-08": "42",
+          "2022-10-27": "6",
+          "2022-12-07": "53",
+          "2022-10-28": "11",
+          "2022-11-30": "52",
+          "2022-10-21": "4",
+          "2022-12-02": "54",
+          "2022-12-01": "38",
+          "2022-10-22": "4",
+          "2022-10-20": "3",
+          "2022-11-26": "57",
+          "2022-10-14": "1",
+          "2022-11-27": "60",
+          "2022-10-15": "2",
+          "2022-11-24": "67",
+          "2022-10-12": "5",
+          "2022-11-25": "123",
+          "2022-10-13": "2",
+          "2022-10-18": "5",
+          "2022-10-19": "3",
+          "2022-11-28": "118",
+          "2022-10-16": "5",
+          "2022-11-29": "71",
+          "2022-10-17": "5",
+          "2022-11-22": "64",
+          "2022-10-10": "2",
+          "2022-11-23": "48",
+          "2022-10-11": "9",
+          "2022-11-20": "35",
+          "2022-11-21": "55",
+          "2022-10-03": "1",
+          "2022-11-15": "46",
+          "2022-11-16": "38",
+          "2022-10-04": "2",
+          "2022-11-13": "36",
+          "2022-11-14": "45",
+          "2022-11-19": "33",
+          "2022-11-17": "46",
+          "2022-10-05": "1",
+          "2022-11-18": "43",
+          "2022-10-06": "2",
+          "2022-10-09": "5",
+          "2022-12-20": "47",
+          "2022-11-11": "39",
+          "2022-12-23": "35",
+          "2022-11-12": "56",
+          "2022-12-22": "28",
+          "2022-12-21": "56",
+          "2022-11-10": "45",
+          "2022-12-17": "46",
+          "2022-11-04": "43",
+          "2022-12-16": "41",
+          "2022-11-05": "41",
+          "2022-12-15": "47",
+          "2022-11-02": "41",
+          "2022-12-14": "39",
+          "2022-11-03": "41",
+          "2022-11-08": "34",
+          "2022-11-09": "41",
+          "2022-12-19": "51",
+          "2022-11-06": "43",
+          "2022-12-18": "46",
+          "2022-11-07": "37"
+        },
+        "volumeTotal": "2685",
+        "platform_product_id": [
+          "B073TSK26W"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-MT300N-V2 (Mango) Portable Mini Travel Wireless Pocket VPN WiFi Router - 2X Ethernet Ports | USB 2.0 | OpenWrt | OpenVPN/Wireguard for Public & Hotel Wi-Fi | Easy to Set up via Admin Panel",
+          "GL.iNet GL-MT300N-V2(Mango) Portable Mini Travel Wireless Pocket VPN WiFi Router - Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN | USB 2.0 | 128MB RAM"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41yDlYxsHAL._SL75_.jpg",
+        "sku": [
+          "9036-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-SFT1200",
+          "GL-SFT1200-US-4PX-US",
+          "GL-SFT1200-US"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-SFT1200-US[$]9036-0001"
+        ],
+        "sid": [
+          "110281641666737664",
+          "505819",
+          "505818",
+          "110281641666737664",
+          "505820"
+        ],
+        "product_name": [
+          "GL-SFT1200-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "US",
+          ""
+        ],
+        "parentAsin": [
+          "6627971432542",
+          "B0DBQG35KT",
+          "B09N72FMH5",
+          "6636275236958",
+          "B09N745FRH"
+        ],
+        "site_code": [
+          "10001-CA",
+          "",
+          "10001-MX",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet APAC",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "1",
+          "2022-11-01": "28",
+          "2022-12-12": "54",
+          "2022-12-11": "1",
+          "2022-10-30": "14",
+          "2022-12-10": "37",
+          "2022-10-31": "2",
+          "2022-12-06": "49",
+          "2022-10-25": "3",
+          "2022-12-05": "50",
+          "2022-10-26": "3",
+          "2022-12-04": "1",
+          "2022-10-23": "3",
+          "2022-12-03": "40",
+          "2022-10-24": "1",
+          "2022-10-29": "4",
+          "2022-12-09": "58",
+          "2022-12-08": "1",
+          "2022-10-27": "6",
+          "2022-12-07": "1",
+          "2022-10-28": "5",
+          "2022-11-30": "45",
+          "2022-10-21": "1",
+          "2022-12-02": "38",
+          "2022-12-01": "25",
+          "2022-10-22": "1",
+          "2022-10-20": "1",
+          "2022-11-26": "45",
+          "2022-10-14": "4",
+          "2022-11-27": "53",
+          "2022-10-15": "2",
+          "2022-11-24": "1",
+          "2022-10-12": "4",
+          "2022-11-25": "1",
+          "2022-10-13": "1",
+          "2022-10-18": "9",
+          "2022-10-19": "3",
+          "2022-11-28": "69",
+          "2022-10-16": "1",
+          "2022-11-29": "47",
+          "2022-10-17": "5",
+          "2022-11-22": "1",
+          "2022-10-10": "3",
+          "2022-11-23": "41",
+          "2022-10-11": "3",
+          "2022-11-20": "1",
+          "2022-11-21": "53",
+          "2022-10-03": "1",
+          "2022-11-15": "49",
+          "2022-11-16": "1",
+          "2022-10-04": "3",
+          "2022-11-13": "40",
+          "2022-11-14": "35",
+          "2022-11-19": "39",
+          "2022-10-07": "1",
+          "2022-11-17": "40",
+          "2022-10-05": "1",
+          "2022-11-18": "38",
+          "2022-10-06": "4",
+          "2022-12-20": "1",
+          "2022-11-11": "33",
+          "2022-12-23": "33",
+          "2022-11-12": "1",
+          "2022-12-22": "33",
+          "2022-12-21": "43",
+          "2022-11-10": "33",
+          "2022-12-17": "54",
+          "2022-11-04": "28",
+          "2022-12-16": "54",
+          "2022-11-05": "27",
+          "2022-12-15": "69",
+          "2022-11-02": "28",
+          "2022-12-14": "52",
+          "2022-11-03": "42",
+          "2022-11-08": "31",
+          "2022-11-09": "1",
+          "2022-12-19": "48",
+          "2022-11-06": "29",
+          "2022-12-18": "40",
+          "2022-11-07": "39"
+        },
+        "volumeTotal": "1791",
+        "platform_product_id": [
+          "6627971432542",
+          "6636275236958",
+          "B09N72FMH5"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi Router – AC1200 Dual Band Gigabit Ethernet Wireless Internet | IPv6 USB 2.0 MU-MIMO DDR3 |128MB Ram Repeater Bridge Access Point Mode",
+          "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi Router, AC1200 Dual Band Gigabit Ethernet Wireless Network, IPv6 USB 2.0, Repeater Bridge Access Point Mode, Router for Public Use, Easy Setup with Guide",
+          "Opal (GL-SFT1200) Wireless Travel Router - US",
+          "GL.iNet GL-SFT1200 (Opal) Enrutador WiFi de viaje seguro, red inalámbrica Gigabit Ethernet AC1200 de doble banda, IPv6 USB 2.0, modo de punto de acceso de puente repetidor, enrutador para uso público,",
+          "FREE SHIPPING | US Local Delivery | Opal  (GL-SFT1200) | US plug"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/51hcKvLGSEL._SL75_.jpg",
+        "sku": [
+          "9028-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-MT1300",
+          "GL-MT1300-US-4PX-US",
+          "GL-MT1300-US"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-MT1300-US[$]9028-0001"
+        ],
+        "sid": [
+          "505818",
+          "505820",
+          "110281641666737664",
+          "110281641666737664",
+          "505819"
+        ],
+        "product_name": [
+          "GL-MT1300-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "US plug",
+          ""
+        ],
+        "parentAsin": [
+          "B08MKZXGBY",
+          "6641708433502",
+          "4786073567326"
+        ],
+        "site_code": [
+          "10001-CA",
+          "",
+          "10001-MX",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet APAC",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "49",
+          "2022-11-01": "21",
+          "2022-12-12": "1",
+          "2022-12-11": "2",
+          "2022-10-30": "12",
+          "2022-12-10": "51",
+          "2022-10-31": "2",
+          "2022-12-06": "59",
+          "2022-10-25": "1",
+          "2022-12-05": "46",
+          "2022-10-26": "2",
+          "2022-12-04": "1",
+          "2022-10-23": "4",
+          "2022-12-03": "1",
+          "2022-10-24": "4",
+          "2022-10-29": "5",
+          "2022-12-09": "45",
+          "2022-12-08": "1",
+          "2022-10-27": "6",
+          "2022-12-07": "1",
+          "2022-10-28": "3",
+          "2022-11-30": "18",
+          "2022-10-21": "3",
+          "2022-12-02": "26",
+          "2022-12-01": "21",
+          "2022-10-22": "5",
+          "2022-10-20": "5",
+          "2022-11-26": "72",
+          "2022-10-14": "5",
+          "2022-11-27": "57",
+          "2022-10-15": "2",
+          "2022-11-24": "1",
+          "2022-10-12": "13",
+          "2022-11-25": "1",
+          "2022-10-13": "3",
+          "2022-10-18": "3",
+          "2022-10-19": "4",
+          "2022-11-28": "1",
+          "2022-10-16": "1",
+          "2022-11-29": "1",
+          "2022-10-17": "5",
+          "2022-11-22": "46",
+          "2022-10-10": "1",
+          "2022-11-23": "1",
+          "2022-10-11": "1",
+          "2022-11-20": "20",
+          "2022-11-21": "28",
+          "2022-11-15": "1",
+          "2022-11-16": "37",
+          "2022-10-04": "1",
+          "2022-11-13": "3",
+          "2022-11-14": "1",
+          "2022-11-19": "3",
+          "2022-10-07": "1",
+          "2022-10-08": "2",
+          "2022-11-17": "34",
+          "2022-10-05": "1",
+          "2022-11-18": "29",
+          "2022-10-06": "2",
+          "2022-10-09": "3",
+          "2022-12-20": "49",
+          "2022-11-11": "34",
+          "2022-12-23": "26",
+          "2022-11-12": "26",
+          "2022-12-22": "23",
+          "2022-12-21": "1",
+          "2022-11-10": "35",
+          "2022-12-17": "1",
+          "2022-11-04": "33",
+          "2022-12-16": "1",
+          "2022-11-05": "1",
+          "2022-12-15": "1",
+          "2022-11-02": "35",
+          "2022-12-14": "57",
+          "2022-11-03": "31",
+          "2022-11-08": "31",
+          "2022-11-09": "3",
+          "2022-12-19": "1",
+          "2022-11-06": "25",
+          "2022-12-18": "1",
+          "2022-11-07": "40"
+        },
+        "volumeTotal": "1234",
+        "platform_product_id": [
+          "B08MKZXGBY",
+          "6641708433502",
+          "4786073567326"
+        ],
+        "platform_product_title": [
+          "Refurbished | Beryl Dual-band Wi-Fi | Pocket-Sized | OpenWrt | IPv6 | VPN (GL-MT1300) - US plug",
+          "GL.iNet GL-MT1300 (Beryl) VPN - Enrutador inalámbrico de viaje pequeño – Conéctate a WiFi del hotel y portal cautivo, USB 3.0, 3 puertos Gigabit, Extensor de alcance, punto de evaluación, tamaño de",
+          "GL.iNet GL-MT1300 (Beryl) VPN Wireless Little Travel Router – Connect to Hotel WiFi & Captive Portal, USB 3.0, 3 Gigabit Ports, Range Extender, Assess Point, Pocket-Sized, MicroSD Slot, Easy to Setup",
+          "FREE SHIPPING | US Local Delivery | Beryl (GL-MT1300)",
+          "GL.iNet GL-MT1300 (Beryl) VPN Wireless Mini Travel Router – Connect to Hotel WiFi & Captive Portal, USB 3.0, 3 Gigabit Ports, Range Extender, Access Point, Pocket-Sized, MicroSD Slot, Easy to Setup"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41m8wb9eOIL._SL75_.jpg",
+        "sku": [
+          "9030-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-A1300",
+          "GL-A1300-US"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-A1300-US[$]9030-0001"
+        ],
+        "sid": [
+          "110282220626081280",
+          "505818",
+          "110282222378148864",
+          "505820",
+          "110281641666737664"
+        ],
+        "product_name": [
+          "GL-A1300-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10006",
+          "10001",
+          "10005",
+          "10002"
+        ],
+        "platform_name": [
+          "Shopee",
+          "Amazon",
+          "AliExpress",
+          "Shopify"
+        ],
+        "attribute": [
+          "US",
+          "CHINA/Bundle2",
+          "A1300 (Slate Plus)"
+        ],
+        "parentAsin": [
+          "6718245404766",
+          "1005004786389355",
+          "18155794209",
+          "B0DBQB3BTB",
+          "B0B4Z54RD4"
+        ],
+        "site_code": [
+          "",
+          "10001-MX",
+          "10006-PH",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].墨西哥",
+          "[Shopee].菲律宾",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet APAC",
+          "GL Tech AliExpress",
+          "GL Tech PH",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "35",
+          "2022-11-01": "1",
+          "2022-12-12": "39",
+          "2022-12-11": "1",
+          "2022-10-30": "13",
+          "2022-12-10": "1",
+          "2022-10-31": "10",
+          "2022-12-06": "2",
+          "2022-10-25": "1",
+          "2022-12-05": "28",
+          "2022-10-26": "1",
+          "2022-12-04": "35",
+          "2022-10-23": "1",
+          "2022-12-03": "16",
+          "2022-10-24": "2",
+          "2022-10-29": "6",
+          "2022-12-09": "27",
+          "2022-12-08": "29",
+          "2022-10-27": "3",
+          "2022-12-07": "28",
+          "2022-10-28": "1",
+          "2022-11-30": "8",
+          "2022-10-21": "1",
+          "2022-12-02": "21",
+          "2022-12-01": "15",
+          "2022-10-22": "2",
+          "2022-10-20": "1",
+          "2022-11-26": "17",
+          "2022-11-27": "1",
+          "2022-11-24": "36",
+          "2022-10-12": "1",
+          "2022-11-25": "57",
+          "2022-10-18": "3",
+          "2022-10-19": "1",
+          "2022-11-28": "63",
+          "2022-10-16": "1",
+          "2022-11-29": "18",
+          "2022-10-17": "1",
+          "2022-11-22": "25",
+          "2022-11-23": "20",
+          "2022-10-11": "1",
+          "2022-11-20": "12",
+          "2022-11-21": "1",
+          "2022-11-15": "14",
+          "2022-11-16": "15",
+          "2022-11-13": "22",
+          "2022-11-14": "21",
+          "2022-11-19": "27",
+          "2022-10-07": "1",
+          "2022-11-17": "14",
+          "2022-11-18": "15",
+          "2022-12-20": "1",
+          "2022-11-11": "15",
+          "2022-12-23": "19",
+          "2022-11-12": "23",
+          "2022-12-22": "1",
+          "2022-12-21": "22",
+          "2022-11-10": "18",
+          "2022-12-17": "26",
+          "2022-11-04": "23",
+          "2022-12-16": "1",
+          "2022-11-05": "23",
+          "2022-12-15": "1",
+          "2022-11-02": "1",
+          "2022-12-14": "40",
+          "2022-11-03": "1",
+          "2022-11-08": "28",
+          "2022-11-09": "15",
+          "2022-12-19": "23",
+          "2022-11-06": "14",
+          "2022-12-18": "27",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "1038",
+        "platform_product_id": [
+          "6718245404766",
+          "1005004786389355",
+          "B0B4ZSR2PX",
+          "18155794209"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-A1300 - Enrutador de viaje VPN de bolsillo - Enrutador Wi-Fi portátil para viajes, fácil de configurar, conectarse a la página de inicio de sesión Wi-Fi público y hotelero",
+          "GL.iNet GL-A1300 Pocket VPN Travel Router - Portable Wi-Fi Router for Travel, Easy to Set up, Connect to Public & Hotel Wi-Fi login Page",
+          "GL.iNet Slate Plus (GL-A1300)Wireless VPN Encrypted Travel Router– Easy to Setup, Connect to Hotel WiFi & Captive Portal",
+          "Slate Plus (GL-A1300) Ultra Efficient VPN Encrypted Gigabit Travel Router - US",
+          "GL.iNet GL-A1300 (Slate Plus) Wireless VPN Encrypted Travel Router, Internet Security, Open Source, Pocket-Sized, NAS"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41gQQAA8ozL._SL75_.jpg",
+        "sku": [
+          "9010-0019"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR300M16-Ext"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR300M16-Ext-US[$]9010-0019"
+        ],
+        "sid": [
+          "505818",
+          "505819",
+          "505820"
+        ],
+        "product_name": [
+          "GL-AR300M16-Ext-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B07794JRC5"
+        ],
+        "site_code": [
+          "10001-CA",
+          "10001-MX",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "24",
+          "2022-11-01": "26",
+          "2022-12-12": "22",
+          "2022-12-11": "20",
+          "2022-10-30": "5",
+          "2022-12-10": "18",
+          "2022-10-31": "11",
+          "2022-12-06": "25",
+          "2022-10-25": "1",
+          "2022-12-05": "21",
+          "2022-12-04": "19",
+          "2022-10-23": "1",
+          "2022-12-03": "28",
+          "2022-10-24": "2",
+          "2022-10-29": "2",
+          "2022-12-09": "35",
+          "2022-12-08": "27",
+          "2022-10-27": "5",
+          "2022-12-07": "28",
+          "2022-10-28": "1",
+          "2022-11-30": "18",
+          "2022-10-21": "5",
+          "2022-12-02": "23",
+          "2022-12-01": "28",
+          "2022-10-22": "1",
+          "2022-10-20": "4",
+          "2022-11-26": "38",
+          "2022-10-14": "1",
+          "2022-11-27": "38",
+          "2022-10-15": "1",
+          "2022-11-24": "19",
+          "2022-10-12": "3",
+          "2022-11-25": "51",
+          "2022-10-13": "1",
+          "2022-10-18": "2",
+          "2022-10-19": "1",
+          "2022-11-28": "59",
+          "2022-10-16": "1",
+          "2022-11-29": "20",
+          "2022-10-17": "1",
+          "2022-11-22": "26",
+          "2022-10-10": "3",
+          "2022-11-23": "14",
+          "2022-10-11": "3",
+          "2022-11-20": "14",
+          "2022-11-21": "27",
+          "2022-10-03": "1",
+          "2022-11-15": "19",
+          "2022-11-16": "24",
+          "2022-10-04": "1",
+          "2022-11-13": "16",
+          "2022-11-14": "26",
+          "2022-11-19": "16",
+          "2022-10-07": "1",
+          "2022-10-08": "2",
+          "2022-11-17": "18",
+          "2022-10-05": "1",
+          "2022-11-18": "16",
+          "2022-10-09": "2",
+          "2022-12-20": "28",
+          "2022-11-11": "17",
+          "2022-12-23": "14",
+          "2022-11-12": "22",
+          "2022-12-22": "25",
+          "2022-12-21": "18",
+          "2022-11-10": "25",
+          "2022-12-17": "11",
+          "2022-11-04": "31",
+          "2022-12-16": "23",
+          "2022-11-05": "14",
+          "2022-12-15": "23",
+          "2022-11-02": "26",
+          "2022-12-14": "32",
+          "2022-11-03": "29",
+          "2022-11-08": "23",
+          "2022-11-09": "19",
+          "2022-12-19": "16",
+          "2022-11-06": "23",
+          "2022-12-18": "18",
+          "2022-11-07": "20"
+        },
+        "volumeTotal": "1323",
+        "platform_product_id": [
+          "B07794JRC5"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR300M16-Ext Portable Mini Travel Wireless Pocket Router - WiFi Router | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN for Public & Hotel Wi-Fi | USB 2.0 Port | 2 x External Antennas",
+          "GL.iNet GL-AR300M16-Ext Mini Travel Router, OpenWrt Pre-installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor flash, 128MB RAM, OpenVPN, Tor Compatible, Programmable IoT Gateway",
+          "GL.iNet GL-AR300M16-Ext Portable Mini Travel Wireless Pocket Router - WiFi Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN | USB 2.0 Port"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/31csNZxKe7L._SL75_.jpg",
+        "sku": [
+          "9010-0018"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR300M16"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR300M16-US[$]9010-0018"
+        ],
+        "sid": [
+          "505818",
+          "505820",
+          "505819"
+        ],
+        "product_name": [
+          "GL-AR300M16-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B0777L5YN6",
+          "B0DBM72WSZ"
+        ],
+        "site_code": [
+          "10001-MX",
+          "10001-CA",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].墨西哥",
+          "[Amazon].加拿大",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-CA",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "20",
+          "2022-11-01": "24",
+          "2022-12-12": "27",
+          "2022-12-11": "17",
+          "2022-10-30": "5",
+          "2022-12-10": "16",
+          "2022-10-31": "15",
+          "2022-12-06": "19",
+          "2022-10-25": "2",
+          "2022-12-05": "20",
+          "2022-10-26": "1",
+          "2022-12-04": "20",
+          "2022-12-03": "14",
+          "2022-10-29": "2",
+          "2022-12-09": "18",
+          "2022-12-08": "21",
+          "2022-10-27": "4",
+          "2022-12-07": "19",
+          "2022-10-28": "1",
+          "2022-11-30": "18",
+          "2022-10-21": "1",
+          "2022-12-02": "14",
+          "2022-12-01": "15",
+          "2022-10-22": "1",
+          "2022-11-26": "19",
+          "2022-10-14": "1",
+          "2022-11-27": "25",
+          "2022-10-15": "1",
+          "2022-11-24": "20",
+          "2022-11-25": "43",
+          "2022-10-13": "2",
+          "2022-10-18": "1",
+          "2022-10-19": "2",
+          "2022-11-28": "48",
+          "2022-10-16": "1",
+          "2022-11-29": "17",
+          "2022-10-17": "2",
+          "2022-11-22": "11",
+          "2022-10-10": "2",
+          "2022-11-23": "16",
+          "2022-10-11": "3",
+          "2022-11-20": "13",
+          "2022-11-21": "20",
+          "2022-11-15": "18",
+          "2022-11-16": "19",
+          "2022-11-13": "15",
+          "2022-11-14": "15",
+          "2022-11-19": "16",
+          "2022-10-07": "1",
+          "2022-11-17": "27",
+          "2022-10-05": "2",
+          "2022-11-18": "14",
+          "2022-10-06": "1",
+          "2022-12-20": "24",
+          "2022-11-11": "11",
+          "2022-12-23": "11",
+          "2022-11-12": "13",
+          "2022-12-22": "16",
+          "2022-12-21": "12",
+          "2022-11-10": "6",
+          "2022-12-17": "10",
+          "2022-11-04": "16",
+          "2022-12-16": "17",
+          "2022-11-05": "15",
+          "2022-12-15": "18",
+          "2022-11-02": "19",
+          "2022-12-14": "29",
+          "2022-11-03": "13",
+          "2022-11-08": "12",
+          "2022-11-09": "16",
+          "2022-12-19": "24",
+          "2022-11-06": "11",
+          "2022-12-18": "17",
+          "2022-11-07": "9"
+        },
+        "volumeTotal": "1008",
+        "platform_product_id": [
+          "B0777L5YN6"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR300M16 Portable Mini Travel Wireless Pocket Router - WiFi Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN | USB 2.0 Port",
+          "GL.iNet GL-AR300M16 Mini Router, Wi-Fi Converter, OpenWrt Pre-installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor flash, 128MB RAM, OpenVPN, Tor Compatible, Programmable IoT Gateway"
+        ]
+      },
+      {
+        "pic_url": "https://cdn.shopify.com/s/files/1/2462/2517/files/2-shopify_ar300m-ext_main.jpg?v=1718692245",
+        "sku": [
+          "9010-0021"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR300M16-EXT",
+          "GL-AR300M16-Ext-G",
+          "GL-AR300M16-Ext"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR300M16-Ext-EU[$]9010-0021"
+        ],
+        "sid": [
+          "505823",
+          "505827",
+          "505830",
+          "505829",
+          "505826",
+          "505824",
+          "110281641666737664",
+          "505823",
+          "505825",
+          "505825",
+          "505824",
+          "505822",
+          "505826",
+          "505831",
+          "505827"
+        ],
+        "product_name": [
+          "GL-AR300M16-Ext-EU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "External Antennas (Grey case)"
+        ],
+        "parentAsin": [
+          "B07794JRC5",
+          "B09V23N53V",
+          "B09V23G69W",
+          "B09V1C9YJF",
+          "220301066267",
+          "B09V24KC1J",
+          "B09V2LZVKT"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-TR",
+          "10001-FR",
+          "10001-PL",
+          "10001-BE",
+          "10001-NL",
+          "10001-IT"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].土耳其",
+          "[Amazon].法国",
+          "[Amazon].波兰",
+          "[Amazon].比利时",
+          "[Amazon].荷兰",
+          "[Amazon].意大利"
+        ],
+        "store_name": [
+          "GL.iNet_EU&UK-PL",
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-NL",
+          "GL.iNet_EU&UK-UK",
+          "GL.iNet_EU&UK-TR"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "2",
+          "2022-11-01": "1",
+          "2022-12-12": "25",
+          "2022-12-11": "19",
+          "2022-10-30": "1",
+          "2022-12-10": "12",
+          "2022-10-31": "1",
+          "2022-12-06": "24",
+          "2022-10-25": "2",
+          "2022-12-05": "18",
+          "2022-10-26": "2",
+          "2022-12-04": "11",
+          "2022-10-23": "2",
+          "2022-12-03": "5",
+          "2022-10-24": "1",
+          "2022-10-29": "2",
+          "2022-12-09": "13",
+          "2022-12-08": "18",
+          "2022-12-07": "12",
+          "2022-11-30": "14",
+          "2022-10-21": "1",
+          "2022-12-02": "20",
+          "2022-12-01": "10",
+          "2022-10-22": "1",
+          "2022-11-26": "8",
+          "2022-10-14": "1",
+          "2022-11-27": "19",
+          "2022-11-24": "2",
+          "2022-11-25": "21",
+          "2022-10-13": "2",
+          "2022-10-19": "1",
+          "2022-11-28": "13",
+          "2022-11-29": "2",
+          "2022-10-17": "3",
+          "2022-11-22": "16",
+          "2022-11-23": "24",
+          "2022-10-11": "1",
+          "2022-11-20": "16",
+          "2022-11-21": "22",
+          "2022-11-15": "16",
+          "2022-11-16": "16",
+          "2022-11-13": "15",
+          "2022-11-14": "9",
+          "2022-11-19": "18",
+          "2022-11-17": "15",
+          "2022-10-05": "1",
+          "2022-11-18": "1",
+          "2022-10-09": "1",
+          "2022-12-20": "19",
+          "2022-11-11": "15",
+          "2022-12-23": "8",
+          "2022-11-12": "11",
+          "2022-12-22": "7",
+          "2022-12-21": "11",
+          "2022-11-10": "2",
+          "2022-12-17": "16",
+          "2022-11-04": "2",
+          "2022-12-16": "15",
+          "2022-11-05": "2",
+          "2022-12-15": "1",
+          "2022-11-02": "1",
+          "2022-12-14": "18",
+          "2022-11-03": "2",
+          "2022-11-08": "1",
+          "2022-11-09": "6",
+          "2022-12-19": "7",
+          "2022-12-18": "9",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "614",
+        "platform_product_id": [
+          "B07794JRC5",
+          "B09V1C9YJF",
+          "220301066267"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR300M16-Ext Mini Travel Router with 2dbi External Antenna, USB, OpenWrt Pre-Installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor Flash, 128MB RAM, OpenVPN",
+          "GL.iNet GL-AR300M16-Ext draagbare mini-draadloze zakrouter voor reizen - WiFi-router/toegangspunt/extender/WDS | OpenWrt | 2 x Ethernet-poorten | OpenVPN/Wireguard VPN | USB 2.0-poort",
+          "GL.iNet GL-AR300M16-Ext Mini enrutador con Antena Externa de 2dBi, convertidor Wi-Fi, OpenWrt preinstalado, Puente repetidor, Alto Rendimiento de 300 Mbps, 128 MB de RAM, OpenVPN (Grey)",
+          "GL.iNet GL-AR300M16-Ext minirouter z anten? zewn?trzn? 2 dBi, konwerter Wi-Fi, wst?pnie zainstalowany OpenWrt, Most Repeater Bridge, 300 Mbps High Performance, 128 MB RAM, OpenVPN",
+          "GL.iNet GL-AR300M16-Ext Portable Mini Travel Wireless Pocket Router - WiFi Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN",
+          "GL.iNet GL-AR300M16-Ext Mini routeur de poche portable sans fil – Routeur WiFi | OpenWrt | 2 x ports Ethernet | OpenVPN/Wireguard VPN pour Wi-Fi public et hôtel | Port USB 2.0 | 2 antennes externes",
+          "GL.iNet GL-AR300M16-Ext Mini Travel Router with 2dbi External Antenna, OpenWrt Pre-Installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor Flash, 128MB RAM, OpenVPN",
+          "GL.iNet GL-AR300M16-Ext draagbare mini draadloze reis-pocketrouter - WiFi-router/toegangspunt/extender/WDS | OpenWrt | 2 x Ethernet-poorten | OpenVPN/Wireguard-VPN | USB 2.0-poort",
+          "GL.iNet GL-AR300M16-Ext Tragbarer Mini-Reise-WLAN-Taschenrouter – WLAN-Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet-Anschlüsse | OpenVPN/Wireguard-VPN | USB 2.0-Anschluss",
+          "GL.iNet GL-AR300M16-Ext Mini routeur de Poche sans Fil de Voyage Portable - Routeur WiFi/Point d'accès/Extender/WDS | OpenWrt | 2 Ports Ethernet | VPN OpenVPN/Wireguard | Port USB 2.0",
+          "GL.iNet GL-AR300M16-Ext Tragbarer Mini-Reise-Wireless-Taschenrouter – WLAN-Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet-Ports | OpenVPN/Wireguard VPN | USB 2.0-Anschluss",
+          "GL.iNet GL-AR300M16-Ext Mini router tascabile wireless portatile da viaggio - Router Wi-Fi/Access Point/Extender/WDS | OpenWrt | 2 porte Ethernet | OpenVPN/Wireguard VPN | Porta USB 2.0",
+          "GL.iNet GL-AR300M16-Ext Portable Mini Travel Wireless Pocket Router - WiFi Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN | USB 2.0 Port",
+          "GL.iNet GL-AR300M16-Ext Mini Travel Router Inalámbrico with 2dbi External Antenna, OpenWrt Pre-Installed, Repeater Bridge, 300Mbps, 128MB RAM, OpenVPN, Programmable IoT Gateway",
+          "Shadow (GL-AR300M16) Wireless Mini Router (Grey) - External Antennas (Grey case)"
+        ]
+      },
+      {
+        "pic_url": "https://cdn.shopify.com/s/files/1/2462/2517/files/1-shopify_ax1800_main_5ba58307-fcb0-452b-82c7-264d0c1f9f98.jpg?v=1718696923",
+        "sku": [
+          "9031-0002"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AX1800-V2",
+          "GL-AX1800-US",
+          "GL-AX1800-4PX-US"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AX1800-US[$]9031-0002"
+        ],
+        "sid": [
+          "110281641666737664",
+          "505818",
+          "505820",
+          "505819",
+          "110281641666737664"
+        ],
+        "product_name": [
+          "GL-AX1800-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "US",
+          ""
+        ],
+        "parentAsin": [
+          "6733522436190",
+          "B0D97V64PN",
+          "6601273344094",
+          "B09HBT9KWJ",
+          "B09HBW45ZJ"
+        ],
+        "site_code": [
+          "10001-CA",
+          "",
+          "10001-MX",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet APAC",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "14",
+          "2022-11-01": "16",
+          "2022-12-12": "15",
+          "2022-12-11": "7",
+          "2022-10-30": "3",
+          "2022-12-10": "6",
+          "2022-10-31": "1",
+          "2022-12-06": "1",
+          "2022-12-05": "15",
+          "2022-10-26": "1",
+          "2022-12-04": "13",
+          "2022-10-23": "1",
+          "2022-12-03": "7",
+          "2022-10-24": "1",
+          "2022-12-09": "6",
+          "2022-12-08": "1",
+          "2022-10-27": "5",
+          "2022-12-07": "16",
+          "2022-10-28": "2",
+          "2022-11-30": "8",
+          "2022-10-21": "1",
+          "2022-12-02": "12",
+          "2022-12-01": "12",
+          "2022-10-22": "1",
+          "2022-10-20": "2",
+          "2022-11-26": "19",
+          "2022-11-27": "17",
+          "2022-10-15": "2",
+          "2022-11-24": "1",
+          "2022-10-12": "7",
+          "2022-11-25": "30",
+          "2022-10-13": "2",
+          "2022-10-18": "2",
+          "2022-10-19": "2",
+          "2022-11-28": "28",
+          "2022-11-29": "1",
+          "2022-11-22": "13",
+          "2022-10-10": "3",
+          "2022-11-23": "12",
+          "2022-10-11": "2",
+          "2022-11-20": "2",
+          "2022-11-21": "16",
+          "2022-10-03": "1",
+          "2022-11-15": "1",
+          "2022-11-16": "10",
+          "2022-11-13": "1",
+          "2022-11-14": "1",
+          "2022-11-19": "7",
+          "2022-10-08": "1",
+          "2022-11-17": "1",
+          "2022-11-18": "2",
+          "2022-10-06": "1",
+          "2022-10-09": "1",
+          "2022-12-20": "2",
+          "2022-11-11": "2",
+          "2022-12-23": "7",
+          "2022-11-12": "4",
+          "2022-12-22": "6",
+          "2022-12-21": "8",
+          "2022-11-10": "3",
+          "2022-12-17": "1",
+          "2022-11-04": "11",
+          "2022-12-16": "11",
+          "2022-11-05": "8",
+          "2022-12-15": "20",
+          "2022-11-02": "14",
+          "2022-12-14": "13",
+          "2022-11-03": "8",
+          "2022-11-08": "1",
+          "2022-11-09": "2",
+          "2022-12-19": "23",
+          "2022-11-06": "13",
+          "2022-12-18": "1",
+          "2022-11-07": "9"
+        },
+        "volumeTotal": "520",
+        "platform_product_id": [
+          "B09HBW45ZJ",
+          "6601273344094",
+          "6733522436190"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AX1800(Flint) WiFi 6 Router - Dual Band Gigabit Wireless Internet Router | 5 x 1G Ethernet Port | Up to 120 Devices | Amazing OpenVpn&WireGuard Speed | WPA3 Security | MU-MIMO | 802.11ax",
+          "Flint (GL-AX1800) Wi-Fi 6 Home Secure Router - US",
+          "GL.iNet GL-AX1800 (Flint) WiFi 6 Router - Enrutador de Internet inalámbrico Gigabit de doble banda | 5 puertos Ethernet de 1G | Hasta 120 dispositivos | OpenVpn&WireGuard",
+          "FREE SHIPPING | US Local Delivery | Flint (GL-AX1800) US plug",
+          "GL.iNet GL-AX1800(Flint) WiFi 6 Router -Dual Band Gigabit Wireless Internet Router | 5 x 1G Ethernet Ports | Up to 120 Devices | OpenVpn&WireGuard"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41yDlYxsHAL._SL75_.jpg",
+        "sku": [
+          "9036-0002"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-SFT1200",
+          "GL-SFT1200-4PX-EU",
+          "GL-SFT1200-EU"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-SFT1200-EU[$]9036-0002"
+        ],
+        "sid": [
+          "505826",
+          "505831",
+          "505824",
+          "110281641666737664",
+          "505829",
+          "505822",
+          "505830",
+          "110281641666737664",
+          "505827",
+          "505823",
+          "110282224042370048",
+          "505825"
+        ],
+        "product_name": [
+          "GL-SFT1200-EU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002",
+          "10006"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify",
+          "Shopee"
+        ],
+        "attribute": [
+          "EU+UK",
+          "",
+          "GL-SFT1200 (Opal)"
+        ],
+        "parentAsin": [
+          "6627971432542",
+          "B09N91FTXP",
+          "B09N8RNMW1",
+          "B09N8WLNJP",
+          "15218439980",
+          "B09N94FTZD",
+          "B09T31NHC2",
+          "B09N8RV2NW",
+          "6698430890078",
+          "B09N72FMH5"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-TR",
+          "10001-FR",
+          "10001-PL",
+          "10001-BE",
+          "10006-MY",
+          "10001-IT",
+          "10001-NL"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].土耳其",
+          "[Amazon].法国",
+          "[Amazon].波兰",
+          "[Amazon].比利时",
+          "[Shopee].马来西亚",
+          "[Amazon].意大利",
+          "[Amazon].荷兰"
+        ],
+        "store_name": [
+          "GL.iNet_EU&UK-PL",
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-NL",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet_EU&UK-UK",
+          "GL.iNet_EU&UK-TR",
+          "GL Tech MY"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "1",
+          "2022-11-01": "1",
+          "2022-12-12": "18",
+          "2022-12-11": "1",
+          "2022-12-10": "11",
+          "2022-12-06": "15",
+          "2022-10-25": "1",
+          "2022-12-05": "2",
+          "2022-10-26": "1",
+          "2022-12-04": "15",
+          "2022-10-23": "1",
+          "2022-12-03": "13",
+          "2022-10-24": "1",
+          "2022-10-29": "1",
+          "2022-12-09": "20",
+          "2022-12-08": "1",
+          "2022-12-07": "19",
+          "2022-10-28": "2",
+          "2022-11-30": "1",
+          "2022-10-21": "2",
+          "2022-12-02": "16",
+          "2022-12-01": "13",
+          "2022-10-20": "3",
+          "2022-11-26": "12",
+          "2022-10-14": "1",
+          "2022-11-27": "2",
+          "2022-10-15": "2",
+          "2022-11-24": "17",
+          "2022-10-12": "1",
+          "2022-11-25": "1",
+          "2022-10-13": "1",
+          "2022-10-18": "1",
+          "2022-10-19": "1",
+          "2022-11-28": "32",
+          "2022-11-29": "1",
+          "2022-10-17": "2",
+          "2022-11-22": "1",
+          "2022-10-10": "1",
+          "2022-11-23": "1",
+          "2022-10-11": "1",
+          "2022-11-20": "5",
+          "2022-11-21": "3",
+          "2022-11-15": "1",
+          "2022-11-16": "2",
+          "2022-11-13": "7",
+          "2022-11-14": "1",
+          "2022-11-19": "17",
+          "2022-10-07": "1",
+          "2022-11-17": "20",
+          "2022-11-18": "33",
+          "2022-10-06": "1",
+          "2022-12-20": "1",
+          "2022-11-11": "1",
+          "2022-12-23": "6",
+          "2022-11-12": "2",
+          "2022-12-22": "13",
+          "2022-12-21": "18",
+          "2022-11-10": "1",
+          "2022-12-17": "13",
+          "2022-11-04": "1",
+          "2022-12-16": "20",
+          "2022-12-15": "2",
+          "2022-12-14": "21",
+          "2022-11-03": "1",
+          "2022-11-08": "2",
+          "2022-11-09": "2",
+          "2022-12-19": "2",
+          "2022-11-06": "1",
+          "2022-12-18": "14",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "450",
+        "platform_product_id": [
+          "6627971432542",
+          "15218439980",
+          "6698430890078",
+          "B09N72FMH5"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-SFT1200 (Opal) Routeur WiFi de Voyage sécurisé - Internet sans Fil Gigabit Ethernet Double Bande AC1200 | IPv6 | USB 2.0 | MU-MIMO | 128 Mo de RAM | Pont répéteur | Mode Point d'accès",
+          "GL.iNet GL-SFT1200 (Opale) Router WiFi da viaggio sicuro – Internet wireless Gigabit dual band AC1200 | IPv6 | USB 2.0 | MU-MIMO | DDR3 |128 MB Ram | Ponte Ripetitore | Modalità punto di accesso",
+          "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi-router – AC1200 dual-band gigabit Ethernet draadloze internetrouter | IPv6 | USB 2.0 | MU-MIMO | DDR3 |128MB werkgeheugen | Repeaterbrug | Toegangspuntmodus (GL-SFT1200)",
+          "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi Router – AC1200 Dual Band Gigabit Ethernet Wireless Internet Router | IPv6 | USB 2.0 | MU-MIMO | DDR3 |128MB Ram | Repeater Bridge | Access Point Mode",
+          "GL-SFT1200 (Opal) Sicherer WLAN-Router für unterwegs – AC1200 Dualband-Gigabit-Wireless-Internet-Router | IPv6 | USB-2.0 | MU-MIMO | 128 MB Arbeitsspeicher | Repeater-Brücke | Access Point-Modus",
+          "Opal (GL-SFT1200) Wireless Travel Router - EU+UK",
+          "GL.iNet GL-SFT1200 (Opal) Bezpieczny podró?ny router WiFi — Dwuzakresowy bezprzewodowy router internetowy Gigabit Ethernet AC1200 | IPv6 | USB 2.0 | MU-MIMO | DDR3 | Wzmacniacz mostkowy |",
+          "GL.iNet GL-SFT1200 (Opal) VPN Secure Travel Gigabit Wireless Router, AC1200 300Mbps (2.4GHz) + 867Mbps (5GHz) Wi-Fi, Gigabit Ports, MicroSD Slot, USB2.0 for Wi-Fi Repeater",
+          "EU Local Delivery | Opal (GL-SFT1200) | EU adapter",
+          "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi Router - AC1200 Dual Band Gigabit Ethernet Wireless Internet Router | IPv6 | USB2.0 | MU-MIMO | 128MB of RAM | Repeater Bridge | Access Point Mode"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/21lO76dEODL._SL75_.jpg",
+        "sku": [
+          "9010-0020"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR300M16-G",
+          "GL-AR300M16-4PX-US",
+          "GL-AR300M16",
+          "GL-AR300M16-4PX-EU"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR300M16-EU[$]9010-0020"
+        ],
+        "sid": [
+          "505824",
+          "505823",
+          "505831",
+          "505829",
+          "505826",
+          "110281641666737664",
+          "505822",
+          "505823",
+          "505825",
+          "505827",
+          "110281641666737664",
+          "110281641666737664",
+          "505830",
+          "505824",
+          "505829",
+          "505822",
+          "505826"
+        ],
+        "product_name": [
+          "GL-AR300M16-EU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "Internal Antenna (Grey case)",
+          ""
+        ],
+        "parentAsin": [
+          "B09V24F4LP",
+          "B07FFC4J4V",
+          "",
+          "B0777L5YN6",
+          "6698437345374",
+          "B09V23997Q",
+          "B09V23WDP7",
+          "B09V19YK5G",
+          "B0B2ZW38XH",
+          "220301066267"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-TR",
+          "10001-FR",
+          "10001-PL",
+          "10001-BE",
+          "10001-NL",
+          "10001-IT"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].土耳其",
+          "[Amazon].法国",
+          "[Amazon].波兰",
+          "[Amazon].比利时",
+          "[Amazon].荷兰",
+          "[Amazon].意大利"
+        ],
+        "store_name": [
+          "GL.iNet_EU&UK-PL",
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-NL",
+          "GL.iNet_EU&UK-UK",
+          "GL.iNet_EU&UK-TR"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "19",
+          "2022-11-01": "1",
+          "2022-12-12": "11",
+          "2022-12-11": "11",
+          "2022-10-30": "1",
+          "2022-12-10": "9",
+          "2022-10-31": "1",
+          "2022-12-06": "1",
+          "2022-10-25": "1",
+          "2022-12-05": "12",
+          "2022-10-26": "2",
+          "2022-12-04": "8",
+          "2022-10-23": "1",
+          "2022-12-03": "1",
+          "2022-10-24": "1",
+          "2022-12-09": "1",
+          "2022-12-08": "8",
+          "2022-10-27": "1",
+          "2022-12-07": "7",
+          "2022-11-30": "7",
+          "2022-12-02": "1",
+          "2022-12-01": "5",
+          "2022-10-22": "2",
+          "2022-10-20": "1",
+          "2022-11-26": "12",
+          "2022-11-27": "1",
+          "2022-11-24": "3",
+          "2022-10-12": "1",
+          "2022-11-25": "11",
+          "2022-10-13": "1",
+          "2022-10-18": "2",
+          "2022-10-19": "1",
+          "2022-11-28": "1",
+          "2022-11-29": "2",
+          "2022-10-17": "1",
+          "2022-11-22": "4",
+          "2022-10-10": "1",
+          "2022-11-23": "1",
+          "2022-10-11": "1",
+          "2022-11-20": "7",
+          "2022-11-21": "4",
+          "2022-11-15": "1",
+          "2022-11-16": "1",
+          "2022-11-13": "8",
+          "2022-11-14": "8",
+          "2022-11-19": "5",
+          "2022-10-07": "1",
+          "2022-11-17": "1",
+          "2022-10-05": "1",
+          "2022-11-18": "1",
+          "2022-10-06": "1",
+          "2022-12-20": "2",
+          "2022-11-11": "1",
+          "2022-12-23": "5",
+          "2022-11-12": "7",
+          "2022-12-22": "11",
+          "2022-12-21": "1",
+          "2022-11-10": "2",
+          "2022-12-17": "7",
+          "2022-12-16": "10",
+          "2022-12-15": "2",
+          "2022-11-02": "2",
+          "2022-12-14": "11",
+          "2022-11-03": "1",
+          "2022-11-08": "1",
+          "2022-11-09": "1",
+          "2022-12-19": "8",
+          "2022-11-06": "1",
+          "2022-12-18": "11",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "280",
+        "platform_product_id": [
+          "B09V19YK5G",
+          "",
+          "B0777L5YN6",
+          "220301066267",
+          "6698437345374"
+        ],
+        "platform_product_title": [
+          "GL-AR300M16 Mini enrutador de Bolsillo inalámbrico portátil para Viajes - Enrutador WiFi/Punto de Acceso/Extensor/Wds | OpenWrt | 2 Puertos Ethernet | OpenVPN/Wireguard VPN | Puerto USB 2.0 (Grey)",
+          "FREE SHIPPING | US Local Delivery | Shadow (GL-AR300M16) | Grey case",
+          "GL.iNet GL-AR300M16 mini yönlendirici tascabile kablosuz portatile da viaggio - Router WiFi/Erişim Noktası / Extender/WDS | OpenWrt | 2 portlu ethernet | OpenVPN/Wireguard VPN | Porta USB 2.0 (gri) (gri)",
+          "GL.iNet GL-AR300M16 Portable Mini Travel Pocket WiFi Router - Extender/Repeater for Hotel&Public Network | VPN Client&Server | Connector between WiFi&Ethernet | OpenWrt | USB Port | Internet Security",
+          "GL.iNet GL-AR300M16 Mini Router, Wi-FI Converter, OpenWrt Pre-Installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor Flash, 128MB RAM, OpenVPN, Programmable IoT Gateway …",
+          "GL.iNet GL-AR300M16 Mini Yönlendirici, Wi-Fi Dönüştürücü, OpenWrt Pre-Montaj, Tekrarlayıcı Bridge, 300Mbps Yüksek Performans, 16MB Nor Flash, 128MB RAM, OpenVPN, Programlanabilir IoT Gateway",
+          "GL.iNet GL-AR300M16 Portable Mini Travel Wireless Pocket Router - WiFi Router/Access Point/Extender/WDS | OpenWrt | 2 x Ethernet Ports | OpenVPN/Wireguard VPN | USB 2.0 Port",
+          "GL.iNet GL-AR300M16 Mini-Router tascabile Wireless portatile da viaggio - Router WiFi/Access Point/Extender/WDS | OpenWrt | 2-Port-Ethernet | OpenVPN/Wireguard VPN | Porta USB 2.0 (Grau) (Grey)",
+          "GL.iNet GL-AR300M16 Mini Router, Wi-Fi Converter, OpenWrt Pre-Installed, Repeater Bridge, 300Mbps High Performance, 16MB Nor Flash, 128MB RAM, OpenVPN, Programmable IoT Gateway",
+          "EU Local Delivery | Shadow (GL-AR300M16) | Grey case",
+          "GL.iNet GL-AR300M16 Mini router tascabile wireless portatile da viaggio - Router WiFi/Access Point/Extender/WDS | OpenWrt | 2 porte Ethernet | OpenVPN/Wireguard VPN | Porta USB 2.0 (Grey)",
+          "Shadow (GL-AR300M16) Wireless Mini Router (Grey) - Internal Antenna (Grey case)",
+          "GL.iNet GL-AR300M16 mini-router, Wi-Fi-converter, OpenWRT vooraf geïnstalleerd, Repeater Bridge, 300 Mbps hoge prestaties, 16 MB Nor Flash, 128 MB RAM, OpenVPN, programmeerbare IoT-gateway"
+        ]
+      },
+      {
+        "pic_url": "https://cdn.shopify.com/s/files/1/2462/2517/files/1-shopify_a1300_main.jpg?v=1718692765",
+        "sku": [
+          "9030-0002"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-A1300",
+          "GL-A1300-EU"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-A1300-EU[$]9030-0002"
+        ],
+        "sid": [
+          "505825",
+          "505831",
+          "110282220626081280",
+          "505824",
+          "505822",
+          "505823",
+          "110281641666737664",
+          "505826"
+        ],
+        "product_name": [
+          "GL-A1300-EU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002",
+          "10005"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify",
+          "AliExpress"
+        ],
+        "attribute": [
+          "EU+UK",
+          "CHINA/Bundle1"
+        ],
+        "parentAsin": [
+          "B0B4ZXB615",
+          "B0B4ZXZD9L",
+          "6718245404766",
+          "1005004786389355",
+          "B0B4ZXQ75L",
+          "B0BM4FBCPH",
+          "B0B4ZYZ1RT",
+          "B0B4ZYD579"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-BE",
+          "10001-IT",
+          "10001-FR"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].比利时",
+          "[Amazon].意大利",
+          "[Amazon].法国"
+        ],
+        "store_name": [
+          "GL Tech AliExpress",
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-UK"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "10",
+          "2022-11-22": "8",
+          "2022-12-12": "7",
+          "2022-11-23": "32",
+          "2022-12-11": "7",
+          "2022-11-20": "15",
+          "2022-12-10": "9",
+          "2022-11-21": "1",
+          "2022-12-06": "8",
+          "2022-11-15": "3",
+          "2022-11-16": "1",
+          "2022-12-05": "16",
+          "2022-12-04": "7",
+          "2022-12-03": "9",
+          "2022-11-14": "1",
+          "2022-11-19": "7",
+          "2022-12-09": "10",
+          "2022-12-08": "11",
+          "2022-11-17": "1",
+          "2022-11-18": "8",
+          "2022-12-07": "1",
+          "2022-12-20": "1",
+          "2022-11-30": "2",
+          "2022-12-02": "1",
+          "2022-12-01": "1",
+          "2022-12-23": "5",
+          "2022-11-12": "1",
+          "2022-12-22": "10",
+          "2022-12-21": "10",
+          "2022-12-17": "7",
+          "2022-11-26": "1",
+          "2022-11-04": "2",
+          "2022-12-16": "12",
+          "2022-11-27": "1",
+          "2022-11-05": "1",
+          "2022-12-15": "1",
+          "2022-11-24": "1",
+          "2022-12-14": "8",
+          "2022-11-25": "1",
+          "2022-11-03": "1",
+          "2022-10-19": "2",
+          "2022-12-19": "10",
+          "2022-11-28": "7",
+          "2022-10-16": "1",
+          "2022-12-18": "9",
+          "2022-11-29": "1",
+          "2022-11-07": "2",
+          "2022-10-17": "2"
+        },
+        "volumeTotal": "273",
+        "platform_product_id": [
+          "6718245404766",
+          "1005004786389355",
+          "B0B4ZSR2PX"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-A1300 (Slate Plus) Enrutador de Viaje VPN inalámbrico: Wi-Fi de Hotel y Portal cautivo, conexión telefónica, Extensor, Punto de evaluación, tamaño de Bolsillo, código Abierto, NAS",
+          "GL.iNet GL-A1300 (Slate Plus) Router da viaggio VPN wireless, Wi-Fi per hotel e Captive Portal, Tethering telefonico, Extender, Punto di valutazione, Tascabile, Open Source, NAS",
+          "GL.iNet GL-A1300 (Slate Plus) Wireless VPN Travel Router– Easy to Setup, Connect to Hotel WiFi & Captive Portal, Phone Tethering, Range Extender, Assess Point, Pocket-Sized, Open Source, NAS",
+          "GL.iNet GL-A1300 (Slate Plus) Wireless VPN Encrypted Travel Router– Easy to Setup, Connect to Hotel WiFi & Captive Portal, Phone Tethering, Range Extender, Assess Point, Pocket-Sized, Open Source, NAS",
+          "Slate Plus (GL-A1300) Ultra Efficient VPN Encrypted Gigabit Travel Router - EU+UK",
+          "GL.iNet GL-A1300 (Slate Plus) Routeur de voyage VPN sans fil – Facile à configurer, connexion au port WiFi et captif, connexion au portail de téléphone, étendeur de ligne, point d'assistance, taille",
+          "GL.iNet GL-A1300 (Slate Plus) Routeur de Voyage VPN sans Fil - Portail Wi-FI et captif de l'hôtel, Connexion téléphonique, prolongateur, Point d'évaluation, Format de Poche, Open Source, NAS",
+          "GL.iNet Slate Plus (GL-A1300)Wireless VPN Encrypted Travel Router– Easy to Setup, Connect to Hotel WiFi & Captive Portal"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/51977at-g3L._SL75_.jpg",
+        "sku": [
+          "9009-0001"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR750-SV",
+          "GL-AR750"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR750-US[$]9009-0001"
+        ],
+        "sid": [
+          "505818",
+          "505820",
+          "505818",
+          "505819"
+        ],
+        "product_name": [
+          "GL-AR750-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B07712LKJM"
+        ],
+        "site_code": [
+          "10001-CA",
+          "10001-MX",
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].加拿大",
+          "[Amazon].墨西哥",
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-CA",
+          "GL.iNet_NA-MX",
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "7",
+          "2022-11-01": "4",
+          "2022-12-12": "6",
+          "2022-12-11": "9",
+          "2022-10-30": "1",
+          "2022-12-10": "3",
+          "2022-10-31": "4",
+          "2022-12-06": "5",
+          "2022-10-25": "1",
+          "2022-12-05": "9",
+          "2022-12-04": "6",
+          "2022-10-23": "1",
+          "2022-12-03": "8",
+          "2022-10-24": "3",
+          "2022-10-29": "1",
+          "2022-12-09": "3",
+          "2022-12-08": "7",
+          "2022-10-27": "2",
+          "2022-12-07": "7",
+          "2022-10-28": "1",
+          "2022-11-30": "7",
+          "2022-10-21": "1",
+          "2022-12-02": "7",
+          "2022-12-01": "2",
+          "2022-11-26": "5",
+          "2022-10-14": "1",
+          "2022-11-27": "8",
+          "2022-11-24": "6",
+          "2022-10-12": "1",
+          "2022-11-25": "13",
+          "2022-10-13": "1",
+          "2022-11-28": "20",
+          "2022-10-16": "2",
+          "2022-11-29": "6",
+          "2022-10-17": "2",
+          "2022-11-22": "8",
+          "2022-11-23": "8",
+          "2022-11-20": "10",
+          "2022-11-21": "9",
+          "2022-11-15": "5",
+          "2022-11-16": "6",
+          "2022-11-13": "7",
+          "2022-11-14": "12",
+          "2022-11-19": "4",
+          "2022-10-07": "1",
+          "2022-11-17": "4",
+          "2022-11-18": "12",
+          "2022-10-09": "1",
+          "2022-12-20": "6",
+          "2022-11-11": "7",
+          "2022-12-23": "4",
+          "2022-11-12": "4",
+          "2022-12-22": "6",
+          "2022-12-21": "4",
+          "2022-11-10": "5",
+          "2022-12-17": "1",
+          "2022-11-04": "4",
+          "2022-12-16": "11",
+          "2022-11-05": "3",
+          "2022-12-15": "8",
+          "2022-11-02": "9",
+          "2022-12-14": "8",
+          "2022-11-03": "5",
+          "2022-11-08": "7",
+          "2022-11-09": "12",
+          "2022-12-19": "7",
+          "2022-11-06": "6",
+          "2022-12-18": "3",
+          "2022-11-07": "7"
+        },
+        "volumeTotal": "384",
+        "platform_product_id": [
+          "B07712LKJM"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR750 (Creta) Travel AC VPN Router, 300Mbps(2.4G)+433Mbps(5G) Wi-Fi, 128MB RAM, Soporte de Almacenamiento MicroSD, Puente Repetidor, OpenWrt/LEDE preinstalado",
+          "GL.iNet GL-AR750 Travel AC Router, 300Mbps(2.4G)+433Mbps(5G) Wi-Fi, 128MB RAM, MicroSD Storage Support, OpenWrt/LEDE pre-Installed, Power Adapter and Cables Included",
+          "GL.iNet GL-AR750 (Creta) Travel AC VPN Router, 300Mbps(2.4GHz)+433Mbps(5GHz) Wi-Fi, 128MB RAM, MicroSD Storage Support, Repeater Bridge, OpenWrt/LEDE pre-Installed, Power Adapter and Cables Included"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/51xLdMMpUjL._SL75_.jpg",
+        "sku": [
+          "9033-0009"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-XE300C6E",
+          "XE300-EP06-E",
+          "GL-XE300-C6E-4PX-EU"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-XE300C6-E[$]9033-0009"
+        ],
+        "sid": [
+          "110281641666737664",
+          "505827",
+          "505831",
+          "505823",
+          "505822",
+          "505826",
+          "505824",
+          "505825",
+          "110281641666737664"
+        ],
+        "product_name": [
+          "GL-XE300C6-E"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001",
+          "10002"
+        ],
+        "platform_name": [
+          "Amazon",
+          "Shopify"
+        ],
+        "attribute": [
+          "EP06-E 4G EMEA/APAC/BR / EU+UK plug / 5000mAH Built-in Battery (+$10)",
+          ""
+        ],
+        "parentAsin": [
+          "4802492334174",
+          "6732671451230",
+          "B0DT9HWHCH",
+          "B0DR2HD17Q",
+          "B0DR2M5ZTQ",
+          "B0DT9H6KT2",
+          "B0DQXRQQSC",
+          "B0DT8HNCGF",
+          "B0DR8DB9BC"
+        ],
+        "site_code": [
+          "10001-DE",
+          "10001-ES",
+          "",
+          "10001-UK",
+          "10001-NL",
+          "10001-BE",
+          "10001-IT",
+          "10001-FR"
+        ],
+        "site_name": [
+          "[Amazon].德国",
+          "[Amazon].西班牙",
+          "[Amazon].英国",
+          "[Amazon].荷兰",
+          "[Amazon].比利时",
+          "[Amazon].意大利",
+          "[Amazon].法国"
+        ],
+        "store_name": [
+          "GL.iNet_EU&UK-BE",
+          "GL.iNet_EU&UK-NL",
+          "GL.iNet APAC",
+          "GL.iNet_EU&UK-IT",
+          "GL.iNet_EU&UK-DE",
+          "GL.iNet_EU&UK-ES",
+          "GL.iNet_EU&UK-FR",
+          "GL.iNet_EU&UK-UK"
+        ],
+        "currency_code": "GBP",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "5",
+          "2022-11-01": "1",
+          "2022-12-12": "2",
+          "2022-12-11": "3",
+          "2022-12-10": "2",
+          "2022-12-06": "3",
+          "2022-12-05": "1",
+          "2022-10-26": "2",
+          "2022-12-04": "1",
+          "2022-10-24": "1",
+          "2022-12-09": "1",
+          "2022-12-08": "2",
+          "2022-10-27": "1",
+          "2022-10-28": "1",
+          "2022-11-30": "1",
+          "2022-12-02": "1",
+          "2022-12-01": "1",
+          "2022-11-26": "1",
+          "2022-11-27": "3",
+          "2022-11-25": "1",
+          "2022-10-13": "1",
+          "2022-10-18": "1",
+          "2022-11-28": "2",
+          "2022-11-29": "1",
+          "2022-10-17": "1",
+          "2022-11-22": "4",
+          "2022-11-23": "5",
+          "2022-11-20": "2",
+          "2022-11-21": "1",
+          "2022-11-15": "3",
+          "2022-11-16": "5",
+          "2022-11-14": "1",
+          "2022-10-08": "1",
+          "2022-11-17": "3",
+          "2022-11-18": "1",
+          "2022-10-06": "1",
+          "2022-12-20": "2",
+          "2022-11-11": "1",
+          "2022-12-23": "4",
+          "2022-11-12": "1",
+          "2022-12-22": "1",
+          "2022-12-21": "1",
+          "2022-11-04": "1",
+          "2022-12-15": "1",
+          "2022-12-14": "4",
+          "2022-11-03": "1",
+          "2022-11-09": "1",
+          "2022-12-19": "5",
+          "2022-11-06": "1",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "92",
+        "platform_product_id": [
+          "4802492334174",
+          "B08R7H7D8S",
+          "6732671451230"
+        ],
+        "platform_product_title": [
+          "GL.iNetGL-XE300 (Puli) 4GLTE Mobile Smart VPN Router | Portable WiFi Wireless Travel Hotspot, Router, Access Point, Extender, WDS Mode, OpenWrt, 5000mAh Battery,OpenVPN Client (GL-XE300C6E)",
+          "EU Local Delivery | Puli (GL-XE300) EP06-E Version",
+          "XE300(Puli) 4GLTE Mobile Smart VPN Router, Portable WiFi Wireless Travel Hotspot, EMEA (EP06-E Module Geïnstalleerd), Router, Access Point, Extender, WDSMode, OpenWrt, 5000mAh batterij, OpenVPN Client",
+          "Puli (GL-XE300) 4G LTE Wireless Security Gateway - EP06-E 4G EMEA/APAC/BR / EU+UK plug / 5000mAH Built-in Battery (+$10)",
+          "XE300(Puli) 4GLTE Mobile Smart VPN Router, Portable WiFi Wireless Travel Hotspot, EMEA(EP06-E Module installed), Router/AccessPoint/Extender/WDSMode, OpenWrt, 5000mAhBattery, OpenVPNClient",
+          "XE300(Puli) 4GLTE Mobile Smart VPN Router, Portable WiFi Wireless Travel Hotspot, EMEA(EP06-E Module Installed), Router/AccessPoint/Extender/WDSMode, OpenWrt, 5000mAhBattery, OpenVPNClient"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/415QcQf9hZL._SL75_.jpg",
+        "sku": [
+          "9010-0024"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR300M16G"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR300M16-JP[$]9010-0024"
+        ],
+        "sid": [
+          "505901"
+        ],
+        "product_name": [
+          "GL-AR300M16-JP"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B0D93MNCZJ"
+        ],
+        "site_code": [
+          "10001-JP"
+        ],
+        "site_name": [
+          "[Amazon].日本"
+        ],
+        "store_name": [
+          "GL.iNet_JP-JP"
+        ],
+        "currency_code": "JPY",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "2",
+          "2022-11-22": "3",
+          "2022-11-01": "1",
+          "2022-12-12": "3",
+          "2022-11-23": "4",
+          "2022-12-11": "1",
+          "2022-11-20": "2",
+          "2022-12-10": "1",
+          "2022-11-21": "5",
+          "2022-12-06": "3",
+          "2022-12-04": "2",
+          "2022-12-03": "1",
+          "2022-11-14": "2",
+          "2022-12-08": "1",
+          "2022-11-18": "1",
+          "2022-12-07": "1",
+          "2022-11-11": "1",
+          "2022-12-02": "2",
+          "2022-12-01": "4",
+          "2022-12-23": "3",
+          "2022-11-12": "1",
+          "2022-12-22": "1",
+          "2022-11-10": "3",
+          "2022-11-26": "3",
+          "2022-12-16": "4",
+          "2022-12-15": "2",
+          "2022-11-02": "1",
+          "2022-11-24": "1",
+          "2022-12-14": "1",
+          "2022-11-25": "1",
+          "2022-11-08": "1",
+          "2022-12-19": "2",
+          "2022-11-06": "1",
+          "2022-11-28": "3",
+          "2022-12-18": "2"
+        },
+        "volumeTotal": "70",
+        "platform_product_id": [
+          "B09YTWSW91"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR300M16 Wi-FiルーターOpenWrt対応 有線 無線LAN 中継 300Mbps 16MB Nor Flash/128MB RAM OpenVPN WireGuard クライアント サーバー IoTゲートウェイ 日本語設定画面 (内蔵アンテナ)"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/41MXeeI78JL._SL75_.jpg",
+        "sku": [
+          "9011-0005"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-MT300N-V2"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-MT300N-V2-JP[$]9011-0005"
+        ],
+        "sid": [
+          "505901"
+        ],
+        "product_name": [
+          "GL-MT300N-V2-JP"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B073TSK26W"
+        ],
+        "site_code": [
+          "10001-JP"
+        ],
+        "site_name": [
+          "[Amazon].日本"
+        ],
+        "store_name": [
+          "GL.iNet_JP-JP"
+        ],
+        "currency_code": "JPY",
+        "icon": "",
+        "date_collect": {
+          "2022-11-01": "8",
+          "2022-12-12": "3",
+          "2022-12-11": "5",
+          "2022-10-30": "2",
+          "2022-12-10": "8",
+          "2022-10-31": "2",
+          "2022-12-06": "5",
+          "2022-12-05": "1",
+          "2022-10-26": "1",
+          "2022-12-04": "2",
+          "2022-12-03": "1",
+          "2022-10-29": "1",
+          "2022-12-09": "6",
+          "2022-12-08": "6",
+          "2022-12-07": "2",
+          "2022-11-30": "17",
+          "2022-12-01": "26",
+          "2022-11-26": "18",
+          "2022-10-14": "1",
+          "2022-11-27": "11",
+          "2022-10-12": "1",
+          "2022-11-25": "26",
+          "2022-10-18": "1",
+          "2022-11-28": "9",
+          "2022-11-29": "10",
+          "2022-11-22": "2",
+          "2022-11-23": "4",
+          "2022-11-20": "3",
+          "2022-11-21": "3",
+          "2022-11-15": "6",
+          "2022-11-16": "8",
+          "2022-10-04": "1",
+          "2022-11-13": "4",
+          "2022-11-14": "6",
+          "2022-11-19": "1",
+          "2022-10-07": "1",
+          "2022-11-17": "2",
+          "2022-11-18": "4",
+          "2022-12-20": "1",
+          "2022-11-11": "2",
+          "2022-12-23": "3",
+          "2022-12-22": "2",
+          "2022-12-21": "4",
+          "2022-11-10": "3",
+          "2022-12-17": "2",
+          "2022-12-16": "3",
+          "2022-12-15": "3",
+          "2022-11-02": "6",
+          "2022-12-14": "3",
+          "2022-11-03": "3",
+          "2022-11-08": "4",
+          "2022-11-09": "6",
+          "2022-12-19": "2",
+          "2022-11-06": "3",
+          "2022-12-18": "3",
+          "2022-11-07": "9"
+        },
+        "volumeTotal": "280",
+        "platform_product_id": [
+          "B073TSK26W"
+        ],
+        "platform_product_title": [
+          "GL.iNet USB GL-MT300N-V2 (Mango) 無線LAN VPNトラベルルーター 中継器ブリッジ 11n/g/b 高性能300Mbps 128MB RAM コンパクト ホテル用 Openwrtインストール OpenVPN/WireGuardクライアントとサーバーインストール 日本語設定画面"
+        ]
+      },
+      {
+        "pic_url": null,
+        "sku": [
+          "9014-0004"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-AR750S-Ext"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-AR750S-Ext-AU[$]9014-0004"
+        ],
+        "sid": [
+          "505881"
+        ],
+        "product_name": [
+          "GL-AR750S-Ext-AU"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B07GBXMBQF"
+        ],
+        "site_code": [
+          "10001-AU"
+        ],
+        "site_name": [
+          "[Amazon].澳洲"
+        ],
+        "store_name": [
+          "GL.iNet_AU-AU"
+        ],
+        "currency_code": "AUD",
+        "icon": "",
+        "date_collect": {
+          "2022-11-22": "1",
+          "2022-12-12": "1",
+          "2022-11-23": "1",
+          "2022-12-11": "1",
+          "2022-11-20": "1",
+          "2022-11-21": "6",
+          "2022-11-15": "1",
+          "2022-11-16": "2",
+          "2022-12-05": "1",
+          "2022-12-04": "2",
+          "2022-11-13": "1",
+          "2022-11-19": "1",
+          "2022-12-08": "1",
+          "2022-11-17": "1",
+          "2022-11-30": "1",
+          "2022-11-11": "1",
+          "2022-12-02": "1",
+          "2022-12-23": "3",
+          "2022-12-21": "1",
+          "2022-11-10": "1",
+          "2022-11-04": "1",
+          "2022-11-26": "2",
+          "2022-12-16": "1",
+          "2022-11-27": "3",
+          "2022-12-15": "1",
+          "2022-11-24": "1",
+          "2022-12-14": "1",
+          "2022-11-25": "5",
+          "2022-11-09": "1",
+          "2022-12-19": "1",
+          "2022-12-18": "2",
+          "2022-11-29": "1"
+        },
+        "volumeTotal": "49",
+        "platform_product_id": [
+          "B07GBXMBQF"
+        ],
+        "platform_product_title": [
+          "GL.iNet GL-AR750S-Ext (Slate) Gigabit Travel AC VPN Router, 300Mbps(2.4G)+433Mbps(5G) Wi-Fi, 128MB RAM, MicroSD Support, Repeater Bridge, OpenWrt/LEDE pre-Installed, Cloudflare DNS, Power Adapter and Cables Included"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/81EwJBDAiuL._SL75_.jpg",
+        "sku": [
+          "9025-1050"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-Bag-Grey"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-PB-GREY-US[$]9025-1050"
+        ],
+        "sid": [
+          "505818"
+        ],
+        "product_name": [
+          "GL-PB-GREY-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B0B2JBPCG1"
+        ],
+        "site_code": [
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "12",
+          "2022-11-01": "1",
+          "2022-12-12": "5",
+          "2022-12-11": "8",
+          "2022-10-30": "1",
+          "2022-12-10": "11",
+          "2022-10-31": "5",
+          "2022-12-06": "5",
+          "2022-10-25": "1",
+          "2022-12-05": "4",
+          "2022-12-04": "2",
+          "2022-12-03": "1",
+          "2022-10-24": "1",
+          "2022-10-29": "2",
+          "2022-12-09": "5",
+          "2022-12-08": "7",
+          "2022-10-27": "1",
+          "2022-12-07": "6",
+          "2022-10-28": "1",
+          "2022-11-30": "8",
+          "2022-12-02": "4",
+          "2022-12-01": "9",
+          "2022-11-26": "4",
+          "2022-11-27": "5",
+          "2022-11-24": "12",
+          "2022-10-12": "1",
+          "2022-11-25": "6",
+          "2022-10-19": "1",
+          "2022-11-28": "9",
+          "2022-11-29": "1",
+          "2022-11-22": "1",
+          "2022-11-23": "2",
+          "2022-10-11": "1",
+          "2022-11-20": "1",
+          "2022-11-21": "2",
+          "2022-11-15": "2",
+          "2022-11-16": "3",
+          "2022-11-13": "2",
+          "2022-11-14": "3",
+          "2022-11-19": "3",
+          "2022-11-17": "2",
+          "2022-11-18": "3",
+          "2022-12-20": "1",
+          "2022-11-11": "3",
+          "2022-12-23": "3",
+          "2022-11-12": "6",
+          "2022-12-21": "6",
+          "2022-11-10": "1",
+          "2022-12-17": "4",
+          "2022-11-04": "2",
+          "2022-12-16": "7",
+          "2022-12-15": "7",
+          "2022-11-02": "1",
+          "2022-12-14": "4",
+          "2022-11-03": "1",
+          "2022-11-08": "2",
+          "2022-11-09": "1",
+          "2022-12-19": "3",
+          "2022-11-06": "1",
+          "2022-12-18": "6",
+          "2022-11-07": "3"
+        },
+        "volumeTotal": "226",
+        "platform_product_id": [
+          "B0B2JN7YFR"
+        ],
+        "platform_product_title": [
+          "GL.iNet Gadget Organizer Case for Travel Routers GL-AXT1800/ MT3000/ SFT1200/ E750/ A1300, Chargers, Cables, and Accessories, Durable Pouch, Hand-Carry EVA Bag, Anti-Shock, Water Resistant (Grey)"
+        ]
+      },
+      {
+        "pic_url": "https://m.media-amazon.com/images/I/813SRKj2DNL._SL75_.jpg",
+        "sku": [
+          "9025-1051"
+        ],
+        "spu": [],
+        "spu_name": [],
+        "msku": [
+          "GL-Bag-Blue"
+        ],
+        "mskuId": [
+          "-"
+        ],
+        "skuAndProductName": [
+          "GL-PB-BLUE-US[$]9025-1051"
+        ],
+        "sid": [
+          "505818"
+        ],
+        "product_name": [
+          "GL-PB-BLUE-US"
+        ],
+        "develop_name": [
+          ""
+        ],
+        "platform_code": [
+          "10001"
+        ],
+        "platform_name": [
+          "Amazon"
+        ],
+        "attribute": [],
+        "parentAsin": [
+          "B0B2JBPCG1"
+        ],
+        "site_code": [
+          "10001-US"
+        ],
+        "site_name": [
+          "[Amazon].美国"
+        ],
+        "store_name": [
+          "GL.iNet_NA-US"
+        ],
+        "currency_code": "USD",
+        "icon": "",
+        "date_collect": {
+          "2022-12-13": "3",
+          "2022-11-01": "4",
+          "2022-12-12": "3",
+          "2022-12-11": "3",
+          "2022-10-30": "1",
+          "2022-12-10": "5",
+          "2022-10-31": "4",
+          "2022-12-06": "3",
+          "2022-12-05": "3",
+          "2022-10-26": "2",
+          "2022-12-04": "3",
+          "2022-10-23": "1",
+          "2022-12-09": "2",
+          "2022-12-08": "1",
+          "2022-12-07": "4",
+          "2022-12-02": "3",
+          "2022-12-01": "4",
+          "2022-11-26": "2",
+          "2022-10-14": "1",
+          "2022-11-27": "2",
+          "2022-11-24": "9",
+          "2022-11-25": "9",
+          "2022-11-28": "7",
+          "2022-11-29": "5",
+          "2022-11-23": "3",
+          "2022-11-21": "6",
+          "2022-11-15": "2",
+          "2022-11-16": "3",
+          "2022-11-13": "3",
+          "2022-11-14": "5",
+          "2022-11-18": "2",
+          "2022-12-20": "1",
+          "2022-11-11": "3",
+          "2022-12-23": "3",
+          "2022-11-12": "2",
+          "2022-12-22": "3",
+          "2022-12-21": "1",
+          "2022-11-10": "1",
+          "2022-11-04": "2",
+          "2022-12-16": "1",
+          "2022-11-05": "2",
+          "2022-12-15": "3",
+          "2022-11-02": "7",
+          "2022-12-14": "1",
+          "2022-11-03": "2",
+          "2022-11-08": "4",
+          "2022-11-09": "4",
+          "2022-12-19": "1",
+          "2022-11-06": "3",
+          "2022-12-18": "1",
+          "2022-11-07": "1"
+        },
+        "volumeTotal": "154",
+        "platform_product_id": [
+          "B0B2J7BG1B"
+        ],
+        "platform_product_title": [
+          "GL.iNet Gadget Organizer Case for Travel Routers GL-AXT1800/ MT3000/ SFT1200/ E750/ A1300, Chargers, Cables, and Accessories, Durable Pouch, Hand-carry EVA bag, Anti-shock, Water Resistant (Blue)"
+        ]
+      }
+    ],
+    "error_details": [],
+    "request_id": "6566dd7f300046f48b5af3c96ff7d752.189.17528272164364569",
+    "response_time": "2025-07-18 16:26:57",
+    "total": 116
+  },
+  "timestamp": "2025-07-18T16:26:57.102770"
+}

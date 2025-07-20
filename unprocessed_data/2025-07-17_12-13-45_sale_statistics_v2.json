@@ -1,0 +1,27 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "start_date": "2025-07-21",
+    "end_date": "2026-04-11",
+    "result_type": "1",
+    "date_unit": "3",
+    "data_type": "2",
+    "page": 92,
+    "length": 49,
+    "sids": [
+      "64"
+    ]
+  },
+  "response": {
+    "code": 400,
+    "message": "参数有误",
+    "data": null,
+    "error_details": [
+      "[start end 时间间隔最长不得超过90天]"
+    ],
+    "request_id": "78239c0d9273422b84c0872ed60920a5.260.17527256249893133",
+    "response_time": "2025-07-17 12:13:45",
+    "total": 0
+  },
+  "timestamp": "2025-07-17T12:13:45.069592"
+}

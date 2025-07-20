@@ -1,0 +1,26 @@
+{
+  "request_data": {
+    "offset": 0,
+    "length": 100,
+    "sids": [
+      511633
+    ],
+    "startDate": "2024-07-17",
+    "endDate": "2025-07-17",
+    "searchField": "seller_sku",
+    "searchValue": [
+      "GL-BE3600"
+    ],
+    "currencyCode": null
+  },
+  "response": {
+    "code": 2001006,
+    "message": " api sign not correct",
+    "data": null,
+    "error_details": null,
+    "request_id": "",
+    "response_time": null,
+    "total": null
+  },
+  "timestamp": "2025-07-18T12:26:04.684744"
+}

@@ -1,0 +1,13 @@
+{
+  "access_token": "eeef7211-b082-431b-b653-d7cafe86f0ab",
+  "query_data": {
+    "offset": 0,
+    "length": 1000,
+    "mids": "1",
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "currencyCode": "USD"
+  },
+  "error": "API Error: code=400, msg=参数有误",
+  "timestamp": "2025-07-18T16:34:47.161877"
+}

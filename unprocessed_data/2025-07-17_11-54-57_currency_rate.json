@@ -1,0 +1,16 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "date": ""
+  },
+  "response": {
+    "code": 500,
+    "message": "内部错误",
+    "data": [],
+    "error_details": "date参数错误 [请求码:2EDB00]",
+    "request_id": "E8339BBC-B611-73E9-812A-20F389226956",
+    "response_time": "2025-07-17 11:54:57",
+    "total": 0
+  },
+  "timestamp": "2025-07-17T11:54:57.237232"
+}

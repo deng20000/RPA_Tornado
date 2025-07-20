@@ -1,0 +1,26 @@
+{
+  "access_token": "60d43c01-1867-490b-96bb-c5c5a4e4f6b5",
+  "query_data": {
+    "offset": 0,
+    "length": 200,
+    "platform_code": [
+      10001,
+      1011
+    ],
+    "is_sync": 0,
+    "status": 0
+  },
+  "response": {
+    "code": 0,
+    "message": "操作成功",
+    "data": {
+      "total": "0",
+      "list": []
+    },
+    "error_details": null,
+    "request_id": "2c85249a4221402a94a0cda4677c2f68.235.17527383318520287",
+    "response_time": "2025-07-17 15:45:31",
+    "total": null
+  },
+  "timestamp": "2025-07-17T15:45:31.854241"
+}

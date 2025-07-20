@@ -1,0 +1,22 @@
+{
+  "request_data": {
+    "offset": 0,
+    "length": 20,
+    "sids": null,
+    "startDate": "2024-07-17",
+    "endDate": "2025-07-17",
+    "searchField": null,
+    "searchValue": null,
+    "currencyCode": null
+  },
+  "response": {
+    "code": 2001006,
+    "message": " api sign not correct",
+    "data": null,
+    "error_details": null,
+    "request_id": "",
+    "response_time": null,
+    "total": null
+  },
+  "timestamp": "2025-07-18T12:25:52.561510"
+}

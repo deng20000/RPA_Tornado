@@ -1,0 +1,27 @@
+{
+  "access_token": "eeef7211-b082-431b-b653-d7cafe86f0ab",
+  "query_data": {
+    "offset": 0,
+    "length": 1000,
+    "mids": "US",
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "currencyCode": "USD",
+    "searchField": "local_sku",
+    "searchValue": [
+      "GL-BE3600"
+    ]
+  },
+  "response": {
+    "code": 400,
+    "message": "参数有误",
+    "data": null,
+    "error_details": [
+      "参数有误"
+    ],
+    "request_id": "f7f46ef1d20e4d069d05a9f8584ec98a.189.17528270474179803",
+    "response_time": "2025-07-18 16:24:07",
+    "total": 0
+  },
+  "timestamp": "2025-07-18T16:24:07.414547"
+}

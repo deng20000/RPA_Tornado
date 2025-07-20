@@ -1,0 +1,26 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "start_date": "2022-10-03",
+    "end_date": "2022-12-23",
+    "result_type": "2",
+    "date_unit": "4",
+    "data_type": "4",
+    "page": 1,
+    "length": 20,
+    "sids": [
+      "123",
+      "35"
+    ]
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": null,
+    "error_details": [],
+    "request_id": "617351afc92348a1a78ede14659bb178.217.17527256462915459",
+    "response_time": "2025-07-17 12:14:06",
+    "total": 0
+  },
+  "timestamp": "2025-07-17T12:14:06.558744"
+}

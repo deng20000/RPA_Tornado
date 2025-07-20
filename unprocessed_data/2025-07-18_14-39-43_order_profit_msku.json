@@ -1,0 +1,1551 @@
+{
+  "request_data": {
+    "offset": 0,
+    "length": 100,
+    "sids": [
+      516507,
+      516498,
+      516499,
+      516500,
+      516501,
+      516502,
+      516503,
+      516504,
+      516505,
+      516506,
+      505881,
+      505818,
+      505819,
+      505820,
+      505821,
+      505825,
+      505826,
+      505827,
+      505828,
+      505829,
+      505830,
+      505831,
+      516495,
+      505822,
+      505823,
+      505824,
+      516508,
+      516509,
+      516510,
+      505901,
+      512233,
+      512234,
+      512225,
+      512226,
+      512227,
+      512228,
+      512229,
+      512230,
+      512231,
+      512232,
+      511634,
+      514841,
+      511633
+    ],
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "searchField": "seller_sku",
+    "searchValue": [
+      "GL-BE3600"
+    ],
+    "currencyCode": "USD"
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": [
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "0.00",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0001",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) - Enrutador portátil de viaje de doble banda Wi-Fi 7 viajes 2.5 Gigabit Router, OpenVPN y Wireguard para público, uso Wi-Fi de hotel, adecuado para negocios, cruceros, RV",
+            "cate_title": "GL-BE3600-US",
+            "local_name": "GL-BE3600-US",
+            "sid": "505820",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.mx",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0001",
+            "local_name": "GL-BE3600-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.mx/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505820"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) - Enrutador portátil de viaje de doble banda Wi-Fi 7 viajes 2.5 Gigabit Router, OpenVPN y Wireguard para público, uso Wi-Fi de hotel, adecuado para negocios, cruceros, RV",
+        "categories": [
+          "GL-BE3600-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "墨西哥",
+            "name": "GL.iNet_NA-MX"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "-165.35",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "1.0",
+        "refund_amount": "-164.59",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-0.75",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Routeur de Voyage Portable, Routeur Gigabit Wi-FI 7 Double Bande de Poche, OpenVPN et Wireguard pour Wi-FI publique et hôtelière, Entreprises/Aux Croisières/RV/Aux Avions",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505825",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/31Oak2z5XFL._SL75_.jpg",
+            "site_url": "https://www.amazon.fr",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/31Oak2z5XFL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.fr/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505825"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Routeur de Voyage Portable, Routeur Gigabit Wi-FI 7 Double Bande de Poche, OpenVPN et Wireguard pour Wi-FI publique et hôtelière, Entreprises/Aux Croisières/RV/Aux Avions",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "法国",
+            "name": "GL.iNet_EU&UK-FR"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "-1.96",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-1.96",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Routers de Viaje Portátil, Gigabit Wi-Fi 7 Bolsillo de Doble banda, Compatible con OpenVPN y Wireguard para en Redes Públicas y Hoteles, Apta para Begocios/Crucero/RV/Avión",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505826",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.es",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.es/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505826"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Routers de Viaje Portátil, Gigabit Wi-Fi 7 Bolsillo de Doble banda, Compatible con OpenVPN y Wireguard para en Redes Públicas y Hoteles, Apta para Begocios/Crucero/RV/Avión",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "西班牙",
+            "name": "GL.iNet_EU&UK-ES"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "0.00",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Przeno?ny Router Podró?ny, Kieszonkowy Dwupasmowy Router Wi-Fi 7 Gigabit, OpenVPN & Wireguard do Publicznego & Hotelowego Wi-Fi, do u?ytku Biznesowego/Rejsowego/RV/Samolotu",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505830",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.pl",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.pl/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505830"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Przeno?ny Router Podró?ny, Kieszonkowy Dwupasmowy Router Wi-Fi 7 Gigabit, OpenVPN & Wireguard do Publicznego & Hotelowego Wi-Fi, do u?ytku Biznesowego/Rejsowego/RV/Samolotu",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "波兰",
+            "name": "GL.iNet_EU&UK-PL"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "0.00",
+        "gross_margin": "0.0000",
+        "avg_gross_profit": "0.00",
+        "net_gross_margin": "0.0000",
+        "volume": 0,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "0.00",
+        "net_amount": "0.00",
+        "avg_net_amount": "0.00",
+        "afn_amount": 0.0,
+        "mfn_amount": 0.0,
+        "tax_amount": "0.00",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "0.00",
+        "selling_fee_rate": "0.0000",
+        "fulfillment_fee": "0.00",
+        "fulfillment_fee_rate": "0.0000",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "0.00",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "0.00",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Routeur de Voyage Portable, Routeur Gigabit Wi-Fi 7 Double Bande de Poche, OpenVPN et Wireguard pour Wi-Fi Publique et Hôtelière, Entreprises/Aux Croisières/RV/Aux Avions",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505831",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.be",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.be/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505831"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Routeur de Voyage Portable, Routeur Gigabit Wi-Fi 7 Double Bande de Poche, OpenVPN et Wireguard pour Wi-Fi Publique et Hôtelière, Entreprises/Aux Croisières/RV/Aux Avions",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "比利时",
+            "name": "GL.iNet_EU&UK-BE"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 0,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "-5.23",
+        "gross_margin": "-0.0292",
+        "avg_gross_profit": "-5.23",
+        "net_gross_margin": "-0.0324",
+        "volume": 1,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "178.98",
+        "net_amount": "161.45",
+        "avg_net_amount": "161.45",
+        "afn_amount": 178.98,
+        "mfn_amount": 0.0,
+        "tax_amount": "212.12",
+        "refund_quantity": "1.0",
+        "refund_amount": "-147.08",
+        "refund_amount_rate": "1.0000",
+        "shipping_cost": "2.91",
+        "promotion_discount": "-20.45",
+        "pm_discount": -17.54,
+        "sp_discount": -2.91,
+        "return_quantity": 1,
+        "return_rate": "1.0000",
+        "selling_fee": "-14.85",
+        "selling_fee_rate": "-0.0830",
+        "fulfillment_fee": "-4.75",
+        "fulfillment_fee_rate": "-0.0265",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "0.00",
+        "total_stock_fee_rate": "0.0000",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "0.00",
+        "avg_purchase_costs": "44.58",
+        "logistics_costs": "0.00",
+        "avg_logistics_costs": "3.38",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "0.00",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Draagbare Routers, Zakformaat Dual-band Wi-Fi 7 Reis Gigabit Router, OpenVPN & Wireguard voor Openbaar & Hotel Wi-Fi, Geschikt voor Zakelijk/Cruise/RV/Vliegtuigen",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505827",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.nl",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.nl/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505827"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Draagbare Routers, Zakformaat Dual-band Wi-Fi 7 Reis Gigabit Router, OpenVPN & Wireguard voor Openbaar & Hotel Wi-Fi, Geschikt voor Zakelijk/Cruise/RV/Vliegtuigen",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "荷兰",
+            "name": "GL.iNet_EU&UK-NL"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 1,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "185.03",
+        "gross_margin": "0.5267",
+        "avg_gross_profit": "92.52",
+        "net_gross_margin": "0.5839",
+        "volume": 2,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "0.00",
+        "ad_sales_amount_sp": 0.0,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 0,
+        "ad_volume_sp": 0,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "351.27",
+        "net_amount": "316.91",
+        "avg_net_amount": "158.45",
+        "afn_amount": 351.27,
+        "mfn_amount": 0.0,
+        "tax_amount": "419.32",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "6.85",
+        "promotion_discount": "-35.33",
+        "pm_discount": -34.37,
+        "sp_discount": -0.97,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-29.70",
+        "selling_fee_rate": "-0.0845",
+        "fulfillment_fee": "-11.67",
+        "fulfillment_fee_rate": "-0.0332",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-0.48",
+        "total_stock_fee_rate": "-0.0014",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-89.15",
+        "avg_purchase_costs": "44.58",
+        "logistics_costs": "-6.75",
+        "avg_logistics_costs": "3.38",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-95.90",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Router Da Viaggio Portatile, Router Da Viaggio Gigabit Wi-Fi 7 Dual-band Tascabile, OpenVPN e Wireguard per Wi-Fi Pubblico e in Hotel, adatto per Aziende/Crociere/RV/Aerei",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505823",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.it",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.it/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505823"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Router Da Viaggio Portatile, Router Da Viaggio Gigabit Wi-Fi 7 Dual-band Tascabile, OpenVPN e Wireguard per Wi-Fi Pubblico e in Hotel, adatto per Aziende/Crociere/RV/Aerei",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "意大利",
+            "name": "GL.iNet_EU&UK-IT"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 2,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "133.26",
+        "gross_margin": "0.4587",
+        "avg_gross_profit": "66.63",
+        "net_gross_margin": "0.4854",
+        "volume": 2,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "145.26",
+        "ad_sales_amount_sp": 145.26,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 1,
+        "ad_volume_sp": 1,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "290.53",
+        "net_amount": "274.55",
+        "avg_net_amount": "137.27",
+        "afn_amount": 290.53,
+        "mfn_amount": 0.0,
+        "tax_amount": "319.58",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "1.39",
+        "promotion_discount": "-17.37",
+        "pm_discount": -15.98,
+        "sp_discount": -1.39,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-31.96",
+        "selling_fee_rate": "-0.1100",
+        "fulfillment_fee": "-6.46",
+        "fulfillment_fee_rate": "-0.0222",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-1.23",
+        "total_stock_fee_rate": "-0.0042",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-88.50",
+        "avg_purchase_costs": "44.25",
+        "logistics_costs": "-3.55",
+        "avg_logistics_costs": "1.78",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-92.05",
+        "total_other_granted": -9.587888,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0007",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Wi-Fi 7 トラベルルーター 無線LAN ポケットサイズ タッチスクリーン デュアルバンド ギガビット OpenVPN & Wireguard ポータブル ビジネス クルーズ RV 飛行機 ホテル Wi-Fi使用に最適",
+            "cate_title": "GL-BE3600-JP",
+            "local_name": "GL-BE3600-JP",
+            "sid": "505901",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ROPBgQxkL._SL75_.jpg",
+            "site_url": "https://www.amazon.co.jp",
+            "parent_asin": "B0F53KQSHB",
+            "seller_sku": "GL-BE3600-JP",
+            "asin": "B0F5331N6R",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ROPBgQxkL._SL75_.jpg",
+        "parent_asins": [
+          "B0F53KQSHB"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0007",
+            "local_name": "GL-BE3600-JP"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.co.jp/dp/B0F5331N6R",
+            "asin": "B0F5331N6R"
+          }
+        ],
+        "sids": [
+          "505901"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Wi-Fi 7 トラベルルーター 無線LAN ポケットサイズ タッチスクリーン デュアルバンド ギガビット OpenVPN & Wireguard ポータブル ビジネス クルーズ RV 飛行機 ホテル Wi-Fi使用に最適",
+        "categories": [
+          "GL-BE3600-JP"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "日本",
+            "name": "GL.iNet_JP-JP"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F5331N6R"
+        ],
+        "afn_volume": 2,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "153.78",
+        "gross_margin": "0.3250",
+        "avg_gross_profit": "51.26",
+        "net_gross_margin": "0.3250",
+        "volume": 3,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "172.80",
+        "ad_sales_amount_sp": 172.8,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 2,
+        "ad_volume_sp": 2,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "473.23",
+        "net_amount": "473.23",
+        "avg_net_amount": "157.74",
+        "afn_amount": 473.23,
+        "mfn_amount": 0.0,
+        "tax_amount": "490.43",
+        "refund_quantity": "1.0",
+        "refund_amount": "-118.55",
+        "refund_amount_rate": "0.3333",
+        "shipping_cost": "0.00",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-34.30",
+        "selling_fee_rate": "-0.0725",
+        "fulfillment_fee": "-18.71",
+        "fulfillment_fee_rate": "-0.0395",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-1.81",
+        "total_stock_fee_rate": "-0.0038",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-133.49",
+        "avg_purchase_costs": "44.50",
+        "logistics_costs": "-12.58",
+        "avg_logistics_costs": "4.19",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-146.07",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "10605560",
+            "local_sku": "9053-0003",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel Gigabit Router, OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+            "cate_title": "GL-BE3600-AU",
+            "local_name": "GL-BE3600-AU",
+            "sid": "505881",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.com.au",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0003",
+            "local_name": "GL-BE3600-AU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com.au/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505881"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel Gigabit Router, OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+        "categories": [
+          "GL-BE3600-AU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "澳洲",
+            "name": "GL.iNet_AU-AU"
+          }
+        ],
+        "principal_names": "施柏仰",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 3,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "623.65",
+        "gross_margin": "0.6385",
+        "avg_gross_profit": "124.73",
+        "net_gross_margin": "0.6385",
+        "volume": 5,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "390.72",
+        "ad_sales_amount_sp": 390.72,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 2,
+        "ad_volume_sp": 2,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "976.80",
+        "net_amount": "976.80",
+        "avg_net_amount": "195.36",
+        "afn_amount": 976.8,
+        "mfn_amount": 0.0,
+        "tax_amount": "1073.89",
+        "refund_quantity": "0.0",
+        "refund_amount": "0.00",
+        "refund_amount_rate": "0.0000",
+        "shipping_cost": "10.34",
+        "promotion_discount": "0.00",
+        "pm_discount": 0.0,
+        "sp_discount": 0.0,
+        "return_quantity": 0,
+        "return_rate": "0.0000",
+        "selling_fee": "-78.14",
+        "selling_fee_rate": "-0.0800",
+        "fulfillment_fee": "-38.66",
+        "fulfillment_fee_rate": "-0.0396",
+        "other_order_fee": "-0.62",
+        "total_stock_fee": "-2.01",
+        "total_stock_fee_rate": "-0.0021",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-222.48",
+        "avg_purchase_costs": "44.50",
+        "logistics_costs": "-21.57",
+        "avg_logistics_costs": "4.31",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-244.05",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0001",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel 2.5 Gigabit Router, OpenVPN&Wireguard for Public, Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+            "cate_title": "GL-BE3600-US",
+            "local_name": "GL-BE3600-US",
+            "sid": "505819",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.ca",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0001",
+            "local_name": "GL-BE3600-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.ca/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505819"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel 2.5 Gigabit Router, OpenVPN&Wireguard for Public, Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+        "categories": [
+          "GL-BE3600-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "加拿大",
+            "name": "GL.iNet_NA-CA"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 5,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "456.65",
+        "gross_margin": "0.4219",
+        "avg_gross_profit": "76.11",
+        "net_gross_margin": "0.4597",
+        "volume": 6,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "617.76",
+        "ad_sales_amount_sp": 617.76,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 4,
+        "ad_volume_sp": 4,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "1082.27",
+        "net_amount": "993.32",
+        "avg_net_amount": "165.55",
+        "afn_amount": 1082.27,
+        "mfn_amount": 0.0,
+        "tax_amount": "1234.36",
+        "refund_quantity": "1.0",
+        "refund_amount": "-135.87",
+        "refund_amount_rate": "0.1667",
+        "shipping_cost": "10.82",
+        "promotion_discount": "-93.88",
+        "pm_discount": -88.94,
+        "sp_discount": -4.94,
+        "return_quantity": 1,
+        "return_rate": "0.1667",
+        "selling_fee": "-85.97",
+        "selling_fee_rate": "-0.0794",
+        "fulfillment_fee": "-29.05",
+        "fulfillment_fee_rate": "-0.0268",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-51.89",
+        "total_stock_fee_rate": "-0.0479",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-222.88",
+        "avg_purchase_costs": "44.58",
+        "logistics_costs": "-16.89",
+        "avg_logistics_costs": "3.38",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-239.77",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Tragbarer Router, Dualband-WLAN-7-Gigabit-Router im Taschenformat, OpenVPN und Wireguard für öffentliches WLAN/Hotel-WLAN, Geeignet für Business/Kreuzfahrt/RV/Flugzeug",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505824",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.de",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.de/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505824"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Tragbarer Router, Dualband-WLAN-7-Gigabit-Router im Taschenformat, OpenVPN und Wireguard für öffentliches WLAN/Hotel-WLAN, Geeignet für Business/Kreuzfahrt/RV/Flugzeug",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "德国",
+            "name": "GL.iNet_EU&UK-DE"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 6,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "1177.00",
+        "gross_margin": "0.4755",
+        "avg_gross_profit": "84.07",
+        "net_gross_margin": "0.5216",
+        "volume": 14,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 0,
+        "ad_sales_amount": "2067.49",
+        "ad_sales_amount_sp": 2067.49,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 3,
+        "ad_volume_sp": 3,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "2475.06",
+        "net_amount": "2256.33",
+        "avg_net_amount": "161.17",
+        "afn_amount": 2475.06,
+        "mfn_amount": 0.0,
+        "tax_amount": "2917.54",
+        "refund_quantity": "2.0",
+        "refund_amount": "-260.71",
+        "refund_amount_rate": "0.1429",
+        "shipping_cost": "6.90",
+        "promotion_discount": "-225.18",
+        "pm_discount": -218.73,
+        "sp_discount": -6.45,
+        "return_quantity": 2,
+        "return_rate": "0.1429",
+        "selling_fee": "-213.90",
+        "selling_fee_rate": "-0.0864",
+        "fulfillment_fee": "-58.42",
+        "fulfillment_fee_rate": "-0.0236",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-2.79",
+        "total_stock_fee_rate": "-0.0011",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-624.07",
+        "avg_purchase_costs": "44.58",
+        "logistics_costs": "-51.92",
+        "avg_logistics_costs": "3.71",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-675.99",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0002",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-band Wi-Fi 7 Travel Gigabit Router, OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+            "cate_title": "GL-BE3600-EU",
+            "local_name": "GL-BE3600-EU",
+            "sid": "505822",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/518KpODPoOL._SL75_.jpg",
+            "site_url": "https://www.amazon.co.uk",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/518KpODPoOL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0002",
+            "local_name": "GL-BE3600-EU"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.co.uk/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505822"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-band Wi-Fi 7 Travel Gigabit Router, OpenVPN & Wireguard for Public & Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+        "categories": [
+          "GL-BE3600-EU"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "英国",
+            "name": "GL.iNet_EU&UK-UK"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 14,
+        "mfn_volume": 0
+      },
+      {
+        "currency_code": "USD",
+        "currency_icon": "$",
+        "gross_profit": "3037.62",
+        "gross_margin": "0.4110",
+        "avg_gross_profit": "69.04",
+        "net_gross_margin": "0.4299",
+        "volume": 44,
+        "replacement_quantity": 0,
+        "multi_channel_volume": 4,
+        "ad_sales_amount": "3189.99",
+        "ad_sales_amount_sp": 3189.99,
+        "ad_sales_amount_sd": 0.0,
+        "ad_sales_amount_sb": 0.0,
+        "ad_sales_amount_sbv": 0.0,
+        "ad_volume": 26,
+        "ad_volume_sp": 26,
+        "ad_volume_sd": 0,
+        "ad_volume_sb": 0,
+        "ad_volume_sbv": 0,
+        "amount": "7390.60",
+        "net_amount": "7065.38",
+        "avg_net_amount": "160.58",
+        "afn_amount": 7390.6,
+        "mfn_amount": 0.0,
+        "tax_amount": "7891.64",
+        "refund_quantity": "7.0",
+        "refund_amount": "-982.24",
+        "refund_amount_rate": "0.1591",
+        "shipping_cost": "25.42",
+        "promotion_discount": "-350.64",
+        "pm_discount": -325.22,
+        "sp_discount": -25.42,
+        "return_quantity": 1,
+        "return_rate": "0.0227",
+        "selling_fee": "-576.17",
+        "selling_fee_rate": "-0.0780",
+        "fulfillment_fee": "-236.28",
+        "fulfillment_fee_rate": "-0.0320",
+        "other_order_fee": "0.00",
+        "total_stock_fee": "-21.90",
+        "total_stock_fee_rate": "-0.0030",
+        "spend": "0.00",
+        "ads_sb_cost": "0.00",
+        "ads_sbv_cost": "0.00",
+        "ads_sd_cost": "0.00",
+        "ads_sp_cost": "0.00",
+        "purchase_costs": "-2135.82",
+        "avg_purchase_costs": "44.50",
+        "logistics_costs": "-207.07",
+        "avg_logistics_costs": "4.31",
+        "other_costs": "0.00",
+        "avg_other_costs": "0.00",
+        "total_costs": "-2342.89",
+        "total_other_granted": 0.0,
+        "price_list": [
+          {
+            "principal_uids": "",
+            "local_sku": "9053-0001",
+            "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel 2.5 Gigabit Router, OpenVPN&Wireguard for Public, Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+            "cate_title": "GL-BE3600-US",
+            "local_name": "GL-BE3600-US",
+            "sid": "505818",
+            "is_delete": "0",
+            "brand_title": "GL.iNet",
+            "volume": 0,
+            "small_main_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+            "site_url": "https://www.amazon.com",
+            "parent_asin": "B0F2MR53D6",
+            "seller_sku": "GL-BE3600",
+            "asin": "B0F2MR53D6",
+            "status": "1"
+          }
+        ],
+        "is_parent": false,
+        "small_image_url": "https://m.media-amazon.com/images/I/51ECXid1nLL._SL75_.jpg",
+        "parent_asins": [
+          "B0F2MR53D6"
+        ],
+        "local_infos": [
+          {
+            "local_sku": "9053-0001",
+            "local_name": "GL-BE3600-US"
+          }
+        ],
+        "asins": [
+          {
+            "asin_url": "https://www.amazon.com/dp/B0F2MR53D6",
+            "asin": "B0F2MR53D6"
+          }
+        ],
+        "sids": [
+          "505818"
+        ],
+        "item_name": "GL.iNet GL-BE3600 (Slate 7) Portable Travel Router, Pocket-Sized Dual-Band Wi-Fi 7 Travel 2.5 Gigabit Router, OpenVPN&Wireguard for Public, Hotel Wi-Fi Use, Suitable for Business/Cruise/RV/Plane/Hotel",
+        "categories": [
+          "GL-BE3600-US"
+        ],
+        "seller_store_countries": [
+          {
+            "country": "美国",
+            "name": "GL.iNet_NA-US"
+          }
+        ],
+        "principal_names": "",
+        "brands": [
+          "GL.iNet"
+        ],
+        "asin_list": [
+          "B0F2MR53D6"
+        ],
+        "afn_volume": 44,
+        "mfn_volume": 0
+      }
+    ],
+    "error_details": [],
+    "request_id": "617351afc92348a1a78ede14659bb178.233.17528207827382971",
+    "response_time": "2025-07-18 14:39:43",
+    "total": 13
+  },
+  "timestamp": "2025-07-18T14:39:43.712740"
+}

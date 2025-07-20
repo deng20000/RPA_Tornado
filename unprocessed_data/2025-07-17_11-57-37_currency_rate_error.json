@@ -1,0 +1,12 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "date": "",
+    "app_key": "ak_LmR8frklEqfe2",
+    "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+    "timestamp": "1752724657",
+    "sign": "n+248aOSKTx6dsTJlpPne5HaTblDDz4FX4cobqCkN1qAlH5qWOdswtxEAVOywn2n"
+  },
+  "error": "API Error: code=500, msg=内部错误",
+  "timestamp": "2025-07-17T11:57:37.628186"
+}

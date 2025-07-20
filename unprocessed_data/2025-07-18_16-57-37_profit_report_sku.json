@@ -1,0 +1,60 @@
+{
+  "access_token": "eeef7211-b082-431b-b653-d7cafe86f0ab",
+  "query_data": {
+    "offset": 0,
+    "length": 100,
+    "mids": "US",
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-17",
+    "searchField": "local_sku",
+    "searchValue": "GL-BE3600"
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": {
+      "totalSum": {
+        "currencyCode": "CNY",
+        "currencyIcon": "￥",
+        "salesNum": 0,
+        "replacementNum": 0,
+        "salesAmount": 0.0,
+        "promotionDiscountAmount": 0.0,
+        "buyerFreightAmount": 0.0,
+        "platformOtherIncomeAmount": 0.0,
+        "incomeRefundAmount": 0.0,
+        "feeRefundAmount": 0.0,
+        "refundAmount": 0.0,
+        "refundNum": "0",
+        "refundRate": 0.0,
+        "returnedGoodsNum": 0,
+        "returnedGoodsRate": 0.0,
+        "promotionAmount": 0.0,
+        "platformLogisticsAmount": 0.0,
+        "promotionExtendAmount": 0.0,
+        "advertisementAmount": 0.0,
+        "adjustmentCostAmount": 0.0,
+        "platformStorageAmount": 0.0,
+        "platformFineAmount": 0.0,
+        "platformOtherAmount": 0.0,
+        "taxAmount": 0.0,
+        "marketTaxAmount": 0.0,
+        "customOtherProductAmount": 0.0,
+        "customOtherSellerAmount": 0.0,
+        "customOtherSalesOrderAmount": 0.0,
+        "purchaseAmount": 0.0,
+        "transportationAmount": 0.0,
+        "tailAmount": 0.0,
+        "otherAmount": 0.0,
+        "grossProfit": 0.0,
+        "grossProfitRate": 0.0
+      },
+      "list": []
+    },
+    "error_details": [],
+    "request_id": "96e9c30e7ccc43bd958afa5e10f231c1.266.17528290574372795",
+    "response_time": "2025-07-18 16:57:37",
+    "total": 0
+  },
+  "timestamp": "2025-07-18T16:57:37.596702"
+}

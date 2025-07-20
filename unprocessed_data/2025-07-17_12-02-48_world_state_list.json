@@ -1,0 +1,172 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "country_code": "CN"
+  },
+  "response": {
+    "code": 0,
+    "message": "success",
+    "data": [
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Anhui",
+        "code": "AH"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Beijing",
+        "code": "BJ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Chongqing",
+        "code": "CQ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Fujian",
+        "code": "FJ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Gansu",
+        "code": "GS"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Guangdong",
+        "code": "GD"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Guangxi",
+        "code": "GX"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Guizhou",
+        "code": "GZ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Hainan",
+        "code": "HI"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Hebei",
+        "code": "HE"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Heilongjiang",
+        "code": "HL"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Henan",
+        "code": "HA"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Hubei",
+        "code": "HB"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Hunan",
+        "code": "HN"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Jiangsu",
+        "code": "JS"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Jiangxi",
+        "code": "JX"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Jilin",
+        "code": "JL"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Liaoning",
+        "code": "LN"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Nei Mongol",
+        "code": "NM"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Ningxia",
+        "code": "NX"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Qinghai",
+        "code": "QH"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Shaanxi",
+        "code": "SN"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Shandong",
+        "code": "SD"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Shanghai",
+        "code": "SH"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Shanxi",
+        "code": "SX"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Sichuan",
+        "code": "SC"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Tianjin",
+        "code": "TJ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Xinjiang",
+        "code": "XJ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Xizang",
+        "code": "XZ"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Yunnan",
+        "code": "YN"
+      },
+      {
+        "country_code": "CN",
+        "state_or_province_name": "Zhejiang",
+        "code": "ZJ"
+      }
+    ],
+    "error_details": [],
+    "request_id": "9CEA97FE-411F-B2AC-B816-BDAA74CB70FE",
+    "response_time": "2025-07-17 12:02:48",
+    "total": 31
+  },
+  "timestamp": "2025-07-17T12:02:48.616279"
+}

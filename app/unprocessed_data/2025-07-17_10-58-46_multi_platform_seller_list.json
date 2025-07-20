@@ -1,0 +1,23 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "offset": 0,
+    "length": 10,
+    "platform_code": [
+      10001,
+      1011
+    ],
+    "is_sync": 1,
+    "status": 1
+  },
+  "response": {
+    "code": 102,
+    "message": "length最小值为20",
+    "data": null,
+    "error_details": null,
+    "request_id": "f7f46ef1d20e4d069d05a9f8584ec98a.273.17527211260991009",
+    "response_time": "2025-07-17 10:58:46",
+    "total": null
+  },
+  "timestamp": "2025-07-17T10:58:46.285142"
+}
