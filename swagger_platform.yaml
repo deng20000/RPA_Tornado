@@ -1,0 +1,334 @@
+openapi: 3.0.3
+info:
+  title: 多平台 API
+  version: 1.0.0
+tags:
+  - name: 多平台
+    description: 多平台相关接口
+
+paths:
+  /api/basicOpen/platformStatisticsV2/saleStat/pageList:
+    post:
+      tags: [多平台]
+      summary: 多平台销量统计v2
+      description: 查询多平台销量统计列表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleStatisticsV2Response'
+
+  /api/basicOpen/platformStatisticsV2/saleStat/pageList/seller-list:
+    post:
+      tags: [多平台]
+      summary: 多平台店铺信息查询
+      description: 查询多平台店铺基础信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultiPlatformSellerListResponse'
+
+  /api/basicOpen/finance/mreport/OrderProfit:
+    post:
+      tags: [多平台]
+      summary: 多平台订单利润MSKU
+      description: 查询多平台订单利润MSKU
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderProfitMSKUResponse'
+
+  /api/bd/profit/statistics/open/msku/list:
+    post:
+      tags: [多平台]
+      summary: 多平台订单利润MSKU（兼容老路由）
+      description: 查询多平台订单利润MSKU（兼容老路由）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderProfitMSKUResponse'
+
+  /api/basicOpen/multiplatform/profit/report/msku:
+    post:
+      tags: [多平台]
+      summary: 多平台结算利润-msku
+      description: 多平台结算利润（利润报表）-msku
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfitReportMSKUResponse'
+
+  /api/basicOpen/multiplatform/profit/report/sku:
+    post:
+      tags: [多平台]
+      summary: 多平台结算利润-sku
+      description: 多平台结算利润（利润报表）-sku
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfitReportSKUResponse'
+
+  /api/multi-platform/sale-statistics-v2:
+    post:
+      tags: [多平台]
+      summary: 多平台销量统计v2（兼容路由）
+      description: 多平台销量统计v2（兼容路由）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleStatisticsV2Response'
+
+  /api/multi-platform/sales-report-asin-daily-lists:
+    post:
+      tags: [多平台]
+      summary: 多平台ASIN日销量报表
+      description: 多平台ASIN日销量报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultiPlatformSalesReportAsinDailyListsResponse'
+
+  /api/multi-platform/order-profit-msku:
+    post:
+      tags: [多平台]
+      summary: 多平台订单利润MSKU
+      description: 多平台订单利润MSKU
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderProfitMSKUResponse'
+
+  /api/multi-platform/profit-report-msku:
+    post:
+      tags: [多平台]
+      summary: 多平台结算利润-msku
+      description: 多平台结算利润-msku
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfitReportMSKUResponse'
+
+  /api/multi-platform/profit-report-sku:
+    post:
+      tags: [多平台]
+      summary: 多平台结算利润-sku
+      description: 多平台结算利润-sku
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfitReportSKUResponse'
+
+  /api/multi-platform/seller-list:
+    post:
+      tags: [多平台]
+      summary: 多平台店铺信息查询
+      description: 多平台店铺信息查询
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultiPlatformSellerListResponse'
+
+  /api/multi-platform/profit-report-seller:
+    post:
+      tags: [多平台]
+      summary: 多平台结算利润-店铺
+      description: 多平台结算利润-店铺
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # ...参数定义...
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfitReportSellerResponse'
+
+components:
+  schemas:
+    SaleStatisticsV2Response:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    MultiPlatformSellerListResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    OrderProfitMSKUResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    ProfitReportMSKUResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    ProfitReportSKUResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    ProfitReportSellerResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+    MultiPlatformSalesReportAsinDailyListsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object

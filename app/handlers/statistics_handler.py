@@ -42,18 +42,17 @@ class OrderProfitMSKUHandler(RequestHandler):
             self.set_status(500)
             self.write({'error': str(e)})
 
-class SalesReportAsinDailyListsV2Handler(RequestHandler):
+class SalesReportShopSummaryHandler(RequestHandler):
     async def post(self):
         """
-        查询销量、订单量、销售额（新版，支持按Asin或MSKU查询，原路由/erp/sc/data/sales_report/asinDailyLists）
+        查询店铺汇总销量，支持按店铺维度查询店铺销量、销售额
         参数：
-            sid: 店铺id，必填
-            event_date: 报表时间【站点时间】，格式：Y-m-d，必填
-            asin_type: 查询维度，1-asin, 2-msku，默认1
-            type: 类型，1-销售额, 2-销量, 3-订单量，默认1
+            sid: 店铺id数组，必填
+            start_date: 报表开始时间，格式Y-m-d，必填
+            end_date: 报表结束时间，格式Y-m-d，必填
             offset: 分页偏移量，默认0
             length: 分页长度，默认1000
-        返回：销量报表数据响应
+        返回：店铺销量汇总数据响应
         """
         try:
             body = self.request.body.decode('utf-8').strip()
@@ -62,8 +61,48 @@ class SalesReportAsinDailyListsV2Handler(RequestHandler):
                 self.write({'error': '请求体不能为空'})
                 return
             data = json.loads(body)
-            # 校验必填参数
-            required_params = ['sid', 'event_date']
+            required_params = ['sid', 'start_date', 'end_date']
+            for param in required_params:
+                if param not in data or data[param] is None:
+                    self.set_status(400)
+                    self.write({'error': f'{param} 参数不能为空'})
+                    return
+            offset = data.get('offset', 0)
+            length = data.get('length', 1000)
+            from app.services.statistics_service import StatisticsService
+            service = StatisticsService()
+            result = await service.get_sales_report_shop_summary({
+                'sid': data['sid'],
+                'start_date': data['start_date'],
+                'end_date': data['end_date'],
+                'offset': offset,
+                'length': length
+            })
+            self.set_header('Content-Type', 'application/json')
+            self.write(json.dumps(result, ensure_ascii=False))
+        except json.JSONDecodeError as e:
+            self.set_status(400)
+            self.write({'error': f'JSON 格式错误: {str(e)}'})
+        except Exception as e:
+            self.set_status(500)
+            self.write({'error': str(e)})
+
+class ProductPerformanceHandler(RequestHandler):
+    """
+    查询产品表现
+    分组: 统计
+    路径: /bd/productPerformance/openApi/asinList
+    """
+    async def post(self):
+        try:
+            body = self.request.body.decode('utf-8').strip()
+            if not body:
+                self.set_status(400)
+                self.write({'error': '请求体不能为空'})
+                return
+            data = json.loads(body)
+            # 参数校验（只校验必填，详细校验交给 service）
+            required_params = ['offset', 'length', 'sort_field', 'sort_type', 'sid', 'start_date', 'end_date', 'summary_field', 'avg_volume']
             for param in required_params:
                 if param not in data or data[param] is None:
                     self.set_status(400)
@@ -71,7 +110,71 @@ class SalesReportAsinDailyListsV2Handler(RequestHandler):
                     return
             from app.services.statistics_service import StatisticsService
             service = StatisticsService()
-            result = await service.get_sales_report_asin_daily_lists_v2(data)
+            result = await service.get_product_performance(data)
+            self.set_header('Content-Type', 'application/json')
+            self.write(json.dumps(result, ensure_ascii=False))
+        except json.JSONDecodeError as e:
+            self.set_status(400)
+            self.write({'error': f'JSON 格式错误: {str(e)}'})
+        except Exception as e:
+            self.set_status(500)
+            self.write({'error': str(e)})
+
+class ProductPerformanceTrendByHourHandler(RequestHandler):
+    """
+    查询asin360小时数据
+    分组: 统计
+    路径: /basicOpen/salesAnalysis/productPerformance/performanceTrendByHour
+    """
+    async def post(self):
+        try:
+            body = self.request.body.decode('utf-8').strip()
+            if not body:
+                self.set_status(400)
+                self.write({'error': '请求体不能为空'})
+                return
+            data = json.loads(body)
+            required_params = ['sids', 'date_start', 'date_end', 'summary_field', 'summary_field_value']
+            for param in required_params:
+                if param not in data or data[param] is None:
+                    self.set_status(400)
+                    self.write({'error': f'{param} 参数不能为空'})
+                    return
+            from app.services.statistics_service import StatisticsService
+            service = StatisticsService()
+            result = await service.get_product_performance_trend_by_hour(data)
+            self.set_header('Content-Type', 'application/json')
+            self.write(json.dumps(result, ensure_ascii=False))
+        except json.JSONDecodeError as e:
+            self.set_status(400)
+            self.write({'error': f'JSON 格式错误: {str(e)}'})
+        except Exception as e:
+            self.set_status(500)
+            self.write({'error': str(e)})
+
+class ProfitStatisticsAsinListHandler(RequestHandler):
+    """
+    查询利润统计-ASIN
+    分组: 统计
+    路径: /bd/profit/statistics/open/asin/list
+    """
+    async def post(self):
+        try:
+            body = self.request.body.decode('utf-8').strip()
+            if not body:
+                self.set_status(400)
+                self.write({'error': '请求体不能为空'})
+                return
+            data = json.loads(body)
+            required_params = ['startDate', 'endDate']
+            for param in required_params:
+                if param not in data or data[param] is None:
+                    self.set_status(400)
+                    self.write({'error': f'{param} 参数不能为空'})
+                    return
+            from app.services.statistics_service import StatisticsService
+            service = StatisticsService()
+            result = await service.get_profit_statistics_asin_list(data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
