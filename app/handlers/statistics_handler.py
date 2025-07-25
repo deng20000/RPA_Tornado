@@ -1,8 +1,9 @@
 import json
 from tornado.web import RequestHandler
 from app.services.statistics_service import StatisticsService
+from .base import BaseHandler
 
-class SalesReportAsinDailyListsHandler(RequestHandler):
+class SalesReportAsinDailyListsHandler(BaseHandler):
     async def post(self):
         try:
             body = self.request.body.decode('utf-8').strip()
@@ -12,7 +13,7 @@ class SalesReportAsinDailyListsHandler(RequestHandler):
                 return
             data = json.loads(body)
             service = StatisticsService()
-            result = await service.get_sales_report_asin_daily_lists(data)
+            result = await service.get_sales_report_asin_daily_lists(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -22,7 +23,7 @@ class SalesReportAsinDailyListsHandler(RequestHandler):
             self.set_status(500)
             self.write({'error': str(e)})
 
-class OrderProfitMSKUHandler(RequestHandler):
+class OrderProfitMSKUHandler(BaseHandler):
     async def post(self):
         try:
             body = self.request.body.decode('utf-8').strip()
@@ -32,7 +33,7 @@ class OrderProfitMSKUHandler(RequestHandler):
                 return
             data = json.loads(body)
             service = StatisticsService()
-            result = await service.get_order_profit_msku(data)
+            result = await service.get_order_profit_msku(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -42,7 +43,7 @@ class OrderProfitMSKUHandler(RequestHandler):
             self.set_status(500)
             self.write({'error': str(e)})
 
-class SalesReportShopSummaryHandler(RequestHandler):
+class SalesReportShopSummaryHandler(BaseHandler):
     async def post(self):
         """
         查询店铺汇总销量，支持按店铺维度查询店铺销量、销售额
@@ -71,7 +72,7 @@ class SalesReportShopSummaryHandler(RequestHandler):
             length = data.get('length', 1000)
             from app.services.statistics_service import StatisticsService
             service = StatisticsService()
-            result = await service.get_sales_report_shop_summary({
+            result = await service.get_sales_report_shop_summary(self.access_token, {
                 'sid': data['sid'],
                 'start_date': data['start_date'],
                 'end_date': data['end_date'],
@@ -87,7 +88,7 @@ class SalesReportShopSummaryHandler(RequestHandler):
             self.set_status(500)
             self.write({'error': str(e)})
 
-class ProductPerformanceHandler(RequestHandler):
+class ProductPerformanceHandler(BaseHandler):
     """
     查询产品表现
     分组: 统计
@@ -102,7 +103,7 @@ class ProductPerformanceHandler(RequestHandler):
                 return
             data = json.loads(body)
             # 参数校验（只校验必填，详细校验交给 service）
-            required_params = ['offset', 'length', 'sort_field', 'sort_type', 'sid', 'start_date', 'end_date', 'summary_field', 'avg_volume']
+            required_params = ['offset', 'length', 'sort_field', 'sort_type', 'sid', 'start_date', 'end_date', 'summary_field']
             for param in required_params:
                 if param not in data or data[param] is None:
                     self.set_status(400)
@@ -110,7 +111,7 @@ class ProductPerformanceHandler(RequestHandler):
                     return
             from app.services.statistics_service import StatisticsService
             service = StatisticsService()
-            result = await service.get_product_performance(data)
+            result = await service.get_product_performance(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:

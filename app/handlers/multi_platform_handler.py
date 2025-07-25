@@ -2,9 +2,10 @@ import json
 from tornado.web import RequestHandler
 from app.services.multi_platform_service import MultiPlatformService
 from app.services.statistics_service import StatisticsService
+from .base import BaseHandler
 
 # 多平台店铺信息查询接口
-class MultiPlatformSellerListHandler(RequestHandler):
+class MultiPlatformSellerListHandler(BaseHandler):
     async def post(self):
         """
         查询多平台店铺基础信息，支持分页、平台类型、同步状态、授权状态等参数。
@@ -32,6 +33,7 @@ class MultiPlatformSellerListHandler(RequestHandler):
 
             service = MultiPlatformService()
             result = await service.get_seller_list(
+                self.access_token,
                 offset=int(offset) if offset is not None else 0,
                 length=int(length) if length is not None else 200,
                 platform_code=platform_code,
@@ -45,7 +47,7 @@ class MultiPlatformSellerListHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 销量统计列表v2查询接口
-class SaleStatisticsV2Handler(RequestHandler):
+class SaleStatisticsV2Handler(BaseHandler):
     async def post(self):
         """
         查询销量统计列表v2，支持多平台销量统计查询。
@@ -80,6 +82,7 @@ class SaleStatisticsV2Handler(RequestHandler):
             
             service = MultiPlatformService()
             result = await service.get_sale_statistics_v2(
+                self.access_token,
                 start_date=data['start_date'],
                 end_date=data['end_date'],
                 result_type=data['result_type'],
@@ -99,7 +102,7 @@ class SaleStatisticsV2Handler(RequestHandler):
             self.write({'error': str(e)}) 
 
 # 查询结算利润（利润报表）-店铺接口
-class ProfitReportSellerHandler(RequestHandler):
+class ProfitReportSellerHandler(BaseHandler):
     async def post(self):
         """
         查询结算利润（利润报表）-店铺，支持多平台利润报表查询。
@@ -129,16 +132,7 @@ class ProfitReportSellerHandler(RequestHandler):
                     self.write({'error': f'{param} 参数不能为空'})
                     return
             service = MultiPlatformService()
-            result = await service.get_profit_report_seller(
-                offset=data['offset'],
-                length=data['length'],
-                startDate=data['startDate'],
-                endDate=data['endDate'],
-                platformCodeS=data.get('platformCodeS'),
-                mids=data.get('mids'),
-                sids=data.get('sids'),
-                currencyCode=data.get('currencyCode')
-            )
+            result = await service.get_profit_report_seller(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -149,7 +143,7 @@ class ProfitReportSellerHandler(RequestHandler):
             self.write({'error': str(e)}) 
 
 # 销量报表ASIN日列表查询接口
-class SalesReportAsinDailyListsHandler(RequestHandler):
+class SalesReportAsinDailyListsHandler(BaseHandler):
     async def post(self):
         """
         查询销量、订单量、销售额
@@ -183,7 +177,7 @@ class SalesReportAsinDailyListsHandler(RequestHandler):
                     return
             
             service = StatisticsService()
-            result = await service.get_sales_report_asin_daily_lists(data)
+            result = await service.get_sales_report_asin_daily_lists(self.access_token, data)
             
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
@@ -196,7 +190,7 @@ class SalesReportAsinDailyListsHandler(RequestHandler):
             self.write({'error': str(e)}) 
 
 # 订单利润-MSKU 查询接口
-class OrderProfitMSKUHandler(RequestHandler):
+class OrderProfitMSKUHandler(BaseHandler):
     async def post(self):
         """
         查询订单利润-MSKU
@@ -210,7 +204,7 @@ class OrderProfitMSKUHandler(RequestHandler):
                 return
             data = json.loads(body)
             service = StatisticsService()
-            result = await service.get_order_profit_msku(data)
+            result = await service.get_order_profit_msku(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -221,7 +215,7 @@ class OrderProfitMSKUHandler(RequestHandler):
             self.write({'error': str(e)}) 
 
 # 多平台结算利润（利润报表）-msku 查询接口
-class ProfitReportMSKUHandler(RequestHandler):
+class ProfitReportMSKUHandler(BaseHandler):
     async def post(self):
         """
         查询多平台结算利润（利润报表）-msku
@@ -255,21 +249,7 @@ class ProfitReportMSKUHandler(RequestHandler):
                     self.write({'error': f'{param} 参数不能为空'})
                     return
             service = MultiPlatformService()
-            result = await service.get_profit_report_msku(
-                offset=data['offset'],
-                length=data['length'],
-                platformCodeS=data.get('platformCodeS'),
-                mids=data.get('mids'),
-                sids=data.get('sids'),
-                currencyCode=data.get('currencyCode'),
-                startDate=data['startDate'],
-                endDate=data['endDate'],
-                searchField=data.get('searchField'),
-                searchValue=data.get('searchValue'),
-                developers=data.get('developers'),
-                cids=data.get('cids'),
-                bids=data.get('bids')
-            )
+            result = await service.get_profit_report_msku(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -280,7 +260,7 @@ class ProfitReportMSKUHandler(RequestHandler):
             self.write({'error': str(e)}) 
 
 # 多平台结算利润（利润报表）-sku 查询接口
-class ProfitReportSKUHandler(RequestHandler):
+class ProfitReportSKUHandler(BaseHandler):
     async def post(self):
         """
         查询多平台结算利润（利润报表）-sku
@@ -314,21 +294,7 @@ class ProfitReportSKUHandler(RequestHandler):
                     self.write({'error': f'{param} 参数不能为空'})
                     return
             service = MultiPlatformService()
-            result = await service.get_profit_report_sku(
-                offset=data['offset'],
-                length=data['length'],
-                platformCodeS=data.get('platformCodeS'),
-                mids=data['mids'],
-                sids=data.get('sids'),
-                currencyCode=data.get('currencyCode'),
-                startDate=data['startDate'],
-                endDate=data['endDate'],
-                searchField=data.get('searchField'),
-                searchValue=data.get('searchValue'),
-                developers=data.get('developers'),
-                cids=data.get('cids'),
-                bids=data.get('bids')
-            )
+            result = await service.get_profit_report_sku(self.access_token, data)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:

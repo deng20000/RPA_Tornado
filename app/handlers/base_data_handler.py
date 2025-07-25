@@ -1,9 +1,10 @@
 import json
 from tornado.web import RequestHandler
 from app.services.base_data_service import BaseDataService
+from .base import BaseHandler
 
 # 汇率查询接口
-class CurrencyExchangeRateHandler(RequestHandler):
+class CurrencyExchangeRateHandler(BaseHandler):
     async def get(self):
         """
         查询汇率，支持传递 date 参数（格式 YYYY-MM），不传则默认昨天所在月份。
@@ -11,7 +12,7 @@ class CurrencyExchangeRateHandler(RequestHandler):
         try:
             date = self.get_argument('date', None)
             service = BaseDataService()
-            result = await service.get_currency_exchange_rate(date=date)
+            result = await service.get_currency_exchange_rate(self.access_token, date=date)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
@@ -32,7 +33,7 @@ class CurrencyExchangeRateHandler(RequestHandler):
                 date = None
             
             service = BaseDataService()
-            result = await service.get_currency_exchange_rate(date=date)
+            result = await service.get_currency_exchange_rate(self.access_token, date=date)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
@@ -40,7 +41,7 @@ class CurrencyExchangeRateHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 查询亚马逊店铺列表
-class AmazonSellerListHandler(RequestHandler):
+class AmazonSellerListHandler(BaseHandler):
     async def get(self):
         """
         查询企业已授权到领星ERP的全部亚马逊店铺信息。
@@ -49,7 +50,7 @@ class AmazonSellerListHandler(RequestHandler):
             print("[DEBUG] AmazonSellerListHandler: 开始调用 service")
             service = BaseDataService()
             print("[DEBUG] AmazonSellerListHandler: 创建 service 实例成功")
-            result = await service.get_amazon_seller_list()
+            result = await service.get_amazon_seller_list(self.access_token)
             print("[DEBUG] AmazonSellerListHandler: service 调用完成")
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
@@ -59,14 +60,14 @@ class AmazonSellerListHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 查询亚马逊市场列表
-class AmazonMarketplaceListHandler(RequestHandler):
+class AmazonMarketplaceListHandler(BaseHandler):
     async def get(self):
         """
         查询亚马逊所有市场列表数据。
         """
         try:
             service = BaseDataService()
-            result = await service.get_amazon_marketplace_list()
+            result = await service.get_amazon_marketplace_list(self.access_token)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
@@ -74,7 +75,7 @@ class AmazonMarketplaceListHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 查询世界州/省列表
-class WorldStateListHandler(RequestHandler):
+class WorldStateListHandler(BaseHandler):
     async def post(self):
         """
         根据国家 code 查询对应的州/省列表，参数 country_code 必填。
@@ -96,7 +97,7 @@ class WorldStateListHandler(RequestHandler):
                 return
             
             service = BaseDataService()
-            result = await service.get_world_state_list(country_code=country_code)
+            result = await service.get_world_state_list(self.access_token, country_code=country_code)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except json.JSONDecodeError as e:
@@ -107,7 +108,7 @@ class WorldStateListHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 下载产品附件
-class FileAttachmentDownloadHandler(RequestHandler):
+class FileAttachmentDownloadHandler(BaseHandler):
     async def post(self):
         """
         下载产品附件，参数 file_id 必填。
@@ -116,7 +117,7 @@ class FileAttachmentDownloadHandler(RequestHandler):
             data = json.loads(self.request.body.decode('utf-8'))
             file_id = data.get('file_id')
             service = BaseDataService()
-            result = await service.download_file_attachment(file_id=file_id)
+            result = await service.download_file_attachment(self.access_token, file_id=file_id)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
@@ -124,7 +125,7 @@ class FileAttachmentDownloadHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 定制化附件下载
-class CustomizedFileDownloadHandler(RequestHandler):
+class CustomizedFileDownloadHandler(BaseHandler):
     async def post(self):
         """
         定制化附件下载，参数 file_id 必填。
@@ -133,7 +134,7 @@ class CustomizedFileDownloadHandler(RequestHandler):
             data = json.loads(self.request.body.decode('utf-8'))
             file_id = data.get('file_id')
             service = BaseDataService()
-            result = await service.download_customized_file(file_id=file_id)
+            result = await service.download_customized_file(self.access_token, file_id=file_id)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
@@ -141,7 +142,7 @@ class CustomizedFileDownloadHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 查询ERP用户信息列表
-class ErpUserListHandler(RequestHandler):
+class ErpUserListHandler(BaseHandler):
     async def get(self):
         """
         查询企业开启的全部ERP账号数据。
@@ -156,7 +157,7 @@ class ErpUserListHandler(RequestHandler):
             self.write({'error': str(e)})
 
 # 批量修改店铺名称
-class BatchEditSellerNameHandler(RequestHandler):
+class BatchEditSellerNameHandler(BaseHandler):
     async def post(self):
         """
         批量修改店铺名称，参数 sid_name_list 必填，为包含 sid 和 name 的字典数组。
@@ -165,7 +166,7 @@ class BatchEditSellerNameHandler(RequestHandler):
             data = json.loads(self.request.body.decode('utf-8'))
             sid_name_list = data.get('sid_name_list')
             service = BaseDataService()
-            result = await service.batch_edit_seller_name(sid_name_list=sid_name_list)
+            result = await service.batch_edit_seller_name(self.access_token, sid_name_list=sid_name_list)
             self.set_header('Content-Type', 'application/json')
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:

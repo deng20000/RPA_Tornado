@@ -7,36 +7,13 @@ from datetime import datetime
 import json as _json
 import os
 
-# 获取项目根目录
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-UNPROCESSED_DATA_DIR = os.path.join(PROJECT_ROOT, 'unprocessed_data')
-os.makedirs(UNPROCESSED_DATA_DIR, exist_ok=True)
-
-
-# 多平台服务类
-# 描述功能：
-# 1. 查询多平台店铺信息 -> get_seller_list
-# 参数：offset: 分页偏移量，默认值为0
-# 参数：length: 分页长度，上限200，默认值为200
-# 参数：platform_code: 平台code数组，默认值为None
-# 参数：is_sync: 店铺同步状态 1-启用 0-停用，默认值为None
-# 参数：status: 店铺授权状态 1-正常授权 0-授权失败，默认值为None
-# 返回：多平台店铺信息数据响应
-
-
 class MultiPlatformService:
     def __init__(self):
-        self.host = settings.LLX_API_HOST
-        self.app_id = settings.LLX_APP_ID
-        self.app_secret = settings.LLX_APP_SECRET
-        self.api = OpenApiBase(self.host, self.app_id, self.app_secret)
-
-    async def get_access_token(self) -> str:
-        token = await self.api.generate_access_token()
-        return token.access_token
+        self.api = OpenApiBase(settings.LLX_API_HOST, settings.LLX_APP_ID, settings.LLX_APP_SECRET)
 
     async def get_seller_list(
         self,
+        access_token: str,
         offset: Optional[int] = None,
         length: Optional[int] = None,
         platform_code: Optional[List[int]] = None,
@@ -54,7 +31,6 @@ class MultiPlatformService:
         Returns:
             dict: 多平台店铺信息数据响应
         """
-        access_token = await self.get_access_token()
         # 构建请求参数
         query_data = {}
         if offset is not None:
@@ -82,20 +58,11 @@ class MultiPlatformService:
                 raise Exception(f"API Error: code={resp_data.get('code')}, msg={resp_data.get('message')}")
             return resp_data
         except Exception as e:
-            import json as _json, os
-            from datetime import datetime
-            now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(UNPROCESSED_DATA_DIR, f"{now_str}_multi_platform_seller_list_error.json")
-            with open(file_path, "w", encoding='utf-8') as f:
-                _json.dump({
-                    "query_data": query_data,
-                    "error": str(e),
-                    "timestamp": datetime.now().isoformat()
-                }, f, ensure_ascii=False, indent=2)
             raise e
 
     async def get_sale_statistics_v2(
         self,
+        access_token: str,
         start_date: str,
         end_date: str,
         result_type: str,
@@ -119,8 +86,6 @@ class MultiPlatformService:
         Returns:
             dict: 销量统计数据响应
         """
-        access_token = await self.get_access_token()
-        
         # 构建请求参数
         query_data = {
             "start_date": start_date,
@@ -151,59 +116,22 @@ class MultiPlatformService:
                 raise Exception(f"API Error: code={resp_data.get('code')}, msg={resp_data.get('message')}")
             return resp_data
         except Exception as e:
-            import json as _json, os
-            from datetime import datetime
-            now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(UNPROCESSED_DATA_DIR, f"{now_str}_sale_statistics_v2_error.json")
-            with open(file_path, "w", encoding='utf-8') as f:
-                _json.dump({
-                    "query_data": query_data,
-                    "error": str(e),
-                    "timestamp": datetime.now().isoformat()
-                }, f, ensure_ascii=False, indent=2)
             raise e
 
-    async def get_profit_report_seller(
-        self,
-        offset: int,
-        length: int,
-        startDate: str,
-        endDate: str,
-        platformCodeS: Optional[List[str]] = None,
-        mids: Optional[str] = None,
-        sids: Optional[str] = None,
-        currencyCode: Optional[str] = None
-    ) -> Dict[str, Any]:
-        """
-        查询结算利润（利润报表）-店铺
-        Args:
-            offset: 分页偏移量，默认0
-            length: 分页长度，默认1000
-            startDate: 开始时间【结算日期】，闭区间，格式：Y-m-d
-            endDate: 结束时间【结算日期】，闭区间，格式：Y-m-d
-            platformCodeS: 平台id数组
-            mids: 国家id，多个使用英文逗号分隔
-            sids: 店铺id，多个使用英文逗号分隔
-            currencyCode: 币种code
-        Returns:
-            dict: 利润报表数据响应
-        """
-        access_token = await self.get_access_token()
+    async def get_profit_report_seller(self, access_token: str, params: Dict[str, Any]) -> Dict[str, Any]:
+        required_fields = ["offset", "length", "startDate", "endDate"]
+        for field in required_fields:
+            if field not in params or not params[field]:
+                return {'code': 400, 'message': f'缺少必填参数: {field}', 'data': None}
         query_data = {
-            "offset": offset,
-            "length": length,
-            "startDate": startDate,
-            "endDate": endDate
+            "offset": params["offset"],
+            "length": params["length"],
+            "startDate": params["startDate"],
+            "endDate": params["endDate"]
         }
-        if platformCodeS is not None:
-            query_data["platformCodeS"] = platformCodeS
-        if mids is not None:
-            query_data["mids"] = mids
-        if sids is not None:
-            query_data["sids"] = sids
-        if currencyCode is not None:
-            query_data["currencyCode"] = currencyCode
-
+        for k in ["platformCodeS", "mids", "sids", "currencyCode"]:
+            if k in params:
+                query_data[k] = params[k]
         print(f"[RPA_Tornado] 查询结算利润报表 - 请求参数: {query_data}")
         try:
             resp = await self.api.request(
@@ -217,63 +145,22 @@ class MultiPlatformService:
                 raise Exception(f"API Error: code={resp_data.get('code')}, msg={resp_data.get('message')}")
             return resp_data
         except Exception as e:
-            import json as _json, os
-            from datetime import datetime
-            now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(UNPROCESSED_DATA_DIR, f"{now_str}_profit_report_seller_error.json")
-            with open(file_path, "w", encoding='utf-8') as f:
-                _json.dump({
-                    "query_data": query_data,
-                    "error": str(e),
-                    "timestamp": datetime.now().isoformat()
-                }, f, ensure_ascii=False, indent=2)
             raise e
 
-    async def get_profit_report_msku(
-        self,
-        offset: int,
-        length: int,
-        platformCodeS=None,
-        mids=None,
-        sids=None,
-        currencyCode=None,
-        startDate=None,
-        endDate=None,
-        searchField=None,
-        searchValue=None,
-        developers=None,
-        cids=None,
-        bids=None
-    ) -> Dict[str, Any]:
-        """
-        查询多平台结算利润（利润报表）-msku
-        """
-        access_token = await self.get_access_token()
+    async def get_profit_report_msku(self, access_token: str, params: Dict[str, Any]) -> Dict[str, Any]:
+        required_fields = ["offset", "length", "startDate", "endDate"]
+        # for field in required_fields:
+        #     if field not in params or not params[field]:
+        #         return {'code': 400, 'message': f'缺少必填参数: {field}', 'data': None}
         query_data = {
-            "offset": offset,
-            "length": length,
-            "startDate": startDate,
-            "endDate": endDate
+            "offset": params["offset"],
+            "length": params["length"],
+            "startDate": params["startDate"],
+            "endDate": params["endDate"]
         }
-        if platformCodeS is not None:
-            query_data["platformCodeS"] = platformCodeS
-        if mids is not None:
-            query_data["mids"] = mids
-        if sids is not None:
-            query_data["sids"] = sids
-        if currencyCode is not None:
-            query_data["currencyCode"] = currencyCode
-        if searchField is not None:
-            query_data["searchField"] = searchField
-        if searchValue is not None:
-            query_data["searchValue"] = searchValue
-        if developers is not None:
-            query_data["developers"] = developers
-        if cids is not None:
-            query_data["cids"] = cids
-        if bids is not None:
-            query_data["bids"] = bids
-
+        for k in ["platformCodeS", "mids", "sids", "currencyCode", "searchField", "searchValue", "developers", "cids", "bids"]:
+            if k in params:
+                query_data[k] = params[k]
         print(f"[RPA_Tornado] 查询多平台利润报表-msku - 请求参数: {query_data}")
         try:
             resp = await self.api.request(
@@ -287,62 +174,52 @@ class MultiPlatformService:
                 raise Exception(f"API Error: code={resp_data.get('code')}, msg={resp_data.get('message')}")
             return resp_data
         except Exception as e:
-            import json as _json, os
-            from datetime import datetime
-            now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(UNPROCESSED_DATA_DIR, f"{now_str}_profit_report_msku_error.json")
-            with open(file_path, "w", encoding='utf-8') as f:
-                _json.dump({
-                    "query_data": query_data,
-                    "error": str(e),
-                    "timestamp": datetime.now().isoformat()
-                }, f, ensure_ascii=False, indent=2)
             raise e
 
-    async def get_profit_report_sku(
-        self,
-        offset: int,
-        length: int,
-        platformCodeS=None,
-        mids=None,
-        sids=None,
-        currencyCode=None,
-        startDate=None,
-        endDate=None,
-        searchField=None,
-        searchValue=None,
-        developers=None,
-        cids=None,
-        bids=None
-    ) -> Dict[str, Any]:
-        """
-        查询多平台结算利润（利润报表）-sku
-        """
-        access_token = await self.get_access_token()
+    async def get_profit_report_sku(self, access_token: str, params: Dict[str, Any]) -> Dict[str, Any]:
+        # 必填参数及类型
+        required_fields = [
+            ("offset", int),
+            ("length", int),
+            ("mids", str),
+            ("startDate", str),
+            ("endDate", str)
+        ]
+        for field, typ in required_fields:
+            if field not in params:
+                return {'code': 400, 'message': f'缺少必填参数: {field}', 'data': None}
+            # 类型校验，允许空字符串（str）
+            if typ is int and not isinstance(params[field], int):
+                return {'code': 400, 'message': f'{field} 必须为整数', 'data': None}
+            if typ is str and not isinstance(params[field], str):
+                return {'code': 400, 'message': f'{field} 必须为字符串', 'data': None}
+        # 组装必填参数
         query_data = {
-            "offset": offset,
-            "length": length,
-            "mids": mids,
-            "startDate": startDate,
-            "endDate": endDate
+            "offset": params["offset"],
+            "length": params["length"],
+            "mids": params["mids"],
+            "startDate": params["startDate"],
+            "endDate": params["endDate"]
         }
-        if platformCodeS is not None:
-            query_data["platformCodeS"] = platformCodeS
-        if sids is not None:
-            query_data["sids"] = sids
-        if currencyCode is not None:
-            query_data["currencyCode"] = currencyCode
-        if searchField is not None:
-            query_data["searchField"] = searchField
-        if searchValue is not None:
-            query_data["searchValue"] = searchValue
-        if developers is not None:
-            query_data["developers"] = developers
-        if cids is not None:
-            query_data["cids"] = cids
-        if bids is not None:
-            query_data["bids"] = bids
-
+        # 选填参数及类型
+        optional_fields = [
+            ("platformCodeS", list),
+            ("sids", str),
+            ("currencyCode", str),
+            ("searchField", str),
+            ("searchValue", str),
+            ("developers", list),
+            ("cids", list),
+            ("bids", list)
+        ]
+        for field, typ in optional_fields:
+            if field in params:
+                # 类型校验
+                if typ is list and not isinstance(params[field], list):
+                    return {'code': 400, 'message': f'{field} 必须为数组', 'data': None}
+                if typ is str and not isinstance(params[field], str):
+                    return {'code': 400, 'message': f'{field} 必须为字符串', 'data': None}
+                query_data[field] = params[field]
         print(f"[RPA_Tornado] 查询多平台利润报表-sku - 请求参数: {query_data}")
         try:
             resp = await self.api.request(
@@ -356,14 +233,4 @@ class MultiPlatformService:
                 raise Exception(f"API Error: code={resp_data.get('code')}, msg={resp_data.get('message')}")
             return resp_data
         except Exception as e:
-            import json as _json, os
-            from datetime import datetime
-            now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(UNPROCESSED_DATA_DIR, f"{now_str}_profit_report_sku_error.json")
-            with open(file_path, "w", encoding='utf-8') as f:
-                _json.dump({
-                    "query_data": query_data,
-                    "error": str(e),
-                    "timestamp": datetime.now().isoformat()
-                }, f, ensure_ascii=False, indent=2)
             raise e 

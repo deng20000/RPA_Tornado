@@ -1,29 +1,28 @@
-import json
 import pytest
-from tornado.httpclient import HTTPRequest
-from tornado.testing import AsyncHTTPTestCase, gen_test
-from main import make_app
+from app.services.multi_platform_service import MultiPlatformService
+from app.middleware.auth import AccessTokenManager
 
-class TestMultiPlatformHandler(AsyncHTTPTestCase):
-    def get_app(self):
-        return make_app()
-
-    @gen_test
-    async def test_multi_platform_seller_list(self):
-        # 测试多平台店铺信息查询接口（POST）
-        body = json.dumps({
-            'offset': 0,
-            'length': 200,
-            'is_sync': 1,
-            'status': 1
-        })
-        request = HTTPRequest(
-            self.get_url('/api/multi-platform/seller-list'),
-            method='POST',
-            body=body,
-            headers={'Content-Type': 'application/json'}
-        )
-        response = await self.http_client.fetch(request)
-        assert response.code == 200
-        data = json.loads(response.body.decode())
-        assert 'code' in data 
+@pytest.mark.asyncio
+async def test_order_profit_msku_sign():
+    access_token = await AccessTokenManager.get_token()
+    service = MultiPlatformService()
+    # 用你实际有权限的店铺ID
+    params = {
+        "offset": 0,
+        "length": 1000,
+        "sids": [113, 115],  # 这里必须用真实可用的sid
+        "startDate": "2025-07-17",
+        "endDate": "2025-07-17"
+    }
+    if not sids or not isinstance(sids, list) or not sids:
+        raise ValueError("sids 必须为非空的店铺ID数组")
+    result = await service.get_profit_report_msku(
+        access_token=access_token,
+        offset=params["offset"],
+        length=params["length"],
+        sids=params["sids"],
+        startDate=params["startDate"],
+        endDate=params["endDate"]
+    )
+    print(result)
+    assert result["code"] in (0, 200), f"签名错误: {result}" 

@@ -5,34 +5,11 @@ from typing import Dict, Any, Optional
 from app.config import settings
 from app.auth.openapi import OpenApiBase
 class StatisticsService:
+
     def __init__(self):
-        self.host = settings.LLX_API_HOST
-        self.app_id = settings.LLX_APP_ID
-        self.app_secret = settings.LLX_APP_SECRET
-        self.api = OpenApiBase(self.host, self.app_id, self.app_secret)
+        self.api = OpenApiBase(settings.LLX_API_HOST, settings.LLX_APP_ID, settings.LLX_APP_SECRET)
 
-    async def get_access_token(self) -> str:
-        token = await self.api.generate_access_token()
-        return token.access_token
-
-    async def openapi_post(self, route_name, query_data):
-        access_token = await self.get_access_token()
-        resp = await self.api.request(
-            access_token=access_token,
-            route_name=route_name,
-            method="POST",
-            req_body=query_data
-        )
-        resp_data = resp.model_dump()
-        if resp_data.get("code") not in (0, 200):
-            return {
-                'code': resp_data.get("code", 500),
-                'message': resp_data.get("message", "外部API错误"),
-                'data': resp_data.get("data")
-            }
-        return resp_data
-
-    async def get_sales_report_asin_daily_lists(self, params: Dict[str, Any]) -> Dict[str, Any]:
+    async def get_sales_report_asin_daily_lists(self, access_token: str, params: Dict[str, Any]) -> Dict[str, Any]:
         """
         查询销量、订单量、销售额
         支持按Asin或MSKU查询销量、订单量、销售额
@@ -87,7 +64,6 @@ class StatisticsService:
                 'offset': offset,
                 'length': length
             }
-            access_token = await self.get_access_token()
             resp = await self.api.request(
                 access_token=access_token,
                 route_name="/erp/sc/data/sales_report/asinDailyLists",
@@ -98,156 +74,63 @@ class StatisticsService:
         except Exception as e:
             return {'code': 500, 'message': f'查询失败: {str(e)}', 'data': None}
 
-    async def get_order_profit_msku(self, params: Dict[str, Any]) -> Dict[str, Any]:
+    async def get_order_profit_msku(
+        self, access_token: str, params: dict
+    ) -> Dict[str, Any]:
         """
         查询订单利润-MSKU
         唯一键：sid+msku
-        Args:
-            params: 请求参数
-                - offset: 分页偏移量，默认0
-                - length: 分页长度，默认20，上限5000
-                - sids: 店铺id数组
-                - startDate: 查询开始时间，必填
-                - endDate: 查询结束时间，必填
-                - searchField: 搜索值类型，可选
-                - searchValue: 搜索的值，数组
-                - currencyCode: 币种code
-        Returns:
-            Dict包含查询结果
         """
         try:
             # 校验必填参数
-            required_fields = ['startDate', 'endDate']
-            for field in required_fields:
-                if field not in params or not params[field]:
-                    return {
-                        'code': 400,
-                        'message': f'缺少必填参数: {field}',
-                        'data': None
-                    }
-            # 获取参数
-            offset = params.get('offset', 0)
-            length = params.get('length', 20)
-            sids = params.get('sids', None)
-            startDate = params['startDate']
-            endDate = params['endDate']
-            searchField = params.get('searchField', None)
-            searchValue = params.get('searchValue', None)
-            currencyCode = params.get('currencyCode', None)
+            startDate = params.get("startDate")
+            endDate = params.get("endDate")
+            if not startDate or not endDate:
+                return {'code': 400, 'message': 'startDate 和 endDate 为必填', 'data': None}
+            # 校验日期格式（可选）
+            try:
+                datetime.strptime(startDate, '%Y-%m-%d')
+                datetime.strptime(endDate, '%Y-%m-%d')
+            except ValueError:
+                return {'code': 400, 'message': 'startDate 或 endDate 格式错误，应为Y-m-d格式', 'data': None}
 
-            # 校验分页参数
-            if not isinstance(offset, int) or offset < 0:
-                return {
-                    'code': 400,
-                    'message': 'offset必须是非负整数',
-                    'data': None
-                }
-            if not isinstance(length, int) or length <= 0 or length > 5000:
-                return {
-                    'code': 400,
-                    'message': 'length必须为1~5000的整数',
-                    'data': None
-                }
-            # 校验sids
-            if sids is not None and not (isinstance(sids, list) and all(isinstance(x, int) for x in sids)):
-                return {
-                    'code': 400,
-                    'message': 'sids必须为整数数组',
-                    'data': None
-                }
-            # 校验searchField
-            valid_fields = ['seller_sku', 'asin', 'local_name', 'local_sku']
-            if searchField is not None and searchField not in valid_fields:
-                return {
-                    'code': 400,
-                    'message': f'searchField可选值: {valid_fields}',
-                    'data': None
-                }
-            # 校验searchValue
-            if searchValue is not None and not isinstance(searchValue, list):
-                return {
-                    'code': 400,
-                    'message': 'searchValue必须为数组',
-                    'data': None
-                }
-            # 校验currencyCode
-            valid_currencies = ['原币种','CNY','USD','EUR','JPY','AUD','CAD','MXN','GBP','INR','AED','SGD','SAR','BRL','SEK','PLN','TRY','HKD']
-            if currencyCode is not None and currencyCode not in valid_currencies:
-                return {
-                    'code': 400,
-                    'message': f'currencyCode可选值: {valid_currencies}',
-                    'data': None
-                }
-            # 校验日期格式
-            def check_date(date_str):
-                for fmt in ('%Y-%m-%d', '%Y-%m-%d %H:%M:%S'):
-                    try:
-                        datetime.strptime(date_str, fmt)
-                        return True
-                    except ValueError:
-                        continue
-                return False
-            if not check_date(startDate):
-                return {
-                    'code': 400,
-                    'message': 'startDate格式错误，应为Y-m-d或Y-m-d H:i:s',
-                    'data': None
-                }
-            if not check_date(endDate):
-                return {
-                    'code': 400,
-                    'message': 'endDate格式错误，应为Y-m-d或Y-m-d H:i:s',
-                    'data': None
-                }
-            # 构建请求参数
-            request_data = {
-                'offset': offset,
-                'length': length,
-                'sids': sids,
-                'startDate': startDate,
-                'endDate': endDate,
-                'searchField': searchField,
-                'searchValue': searchValue,
-                'currencyCode': currencyCode
+            query_data = {
+                "startDate": startDate,
+                "endDate": endDate,
+                "offset": params.get("offset", 0),
+                "length": params.get("length", 20)
             }
-            
+            if "sids" in params:
+                sids = params["sids"]
+                if not isinstance(sids, list) or not all(isinstance(x, int) for x in sids):
+                    return {'code': 400, 'message': 'sids 必须为整数数组', 'data': None}
+                if sids:
+                    query_data["sids"] = sids
+            if "searchField" in params:
+                query_data["searchField"] = params["searchField"]
+            if "searchValue" in params:
+                searchValue = params["searchValue"]
+                if not isinstance(searchValue, list):
+                    return {'code': 400, 'message': 'searchValue 必须为数组', 'data': None}
+                if searchValue:
+                    query_data["searchValue"] = searchValue
+            if "currencyCode" in params:
+                query_data["currencyCode"] = params["currencyCode"]
+
             # 调用领星API获取订单利润-MSKU数据
             import json as _json
-            
-            print(f"[RPA_Tornado] 查询订单利润-MSKU - 请求参数: {request_data}")
-            
+
+            print(f"[RPA_Tornado] 查询订单利润-MSKU - 请求参数: {query_data}")
+
             try:
-                access_token = await self.get_access_token()
                 resp = await self.api.request(
                     access_token=access_token,
                     route_name="/basicOpen/finance/mreport/OrderProfit",
                     method="POST",
-                    req_body=request_data
+                    req_body=query_data
                 )
-                
-                # 保存调试信息
-                now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-                file_path = os.path.join("unprocessed_data", f"{now_str}_order_profit_msku.json")
-                with open(file_path, "w", encoding='utf-8') as f:
-                    _json.dump({
-                        "request_data": request_data,
-                        "response": resp.model_dump(),
-                        "timestamp": datetime.now().isoformat()
-                    }, f, ensure_ascii=False, indent=2)
-                print(f"[DEBUG] 调试信息已保存到: {file_path}")
-                
                 return resp.model_dump()
             except Exception as e:
-                # 保存错误信息
-                now_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-                file_path = os.path.join("unprocessed_data", f"{now_str}_order_profit_msku_error.json")
-                with open(file_path, "w", encoding='utf-8') as f:
-                    _json.dump({
-                        "request_data": request_data,
-                        "error": str(e),
-                        "timestamp": datetime.now().isoformat()
-                    }, f, ensure_ascii=False, indent=2)
-                print(f"[DEBUG] 错误信息已保存到: {file_path}")
                 raise e
         except Exception as e:
             return {
@@ -256,7 +139,7 @@ class StatisticsService:
                 'data': None
             } 
 
-    async def get_sales_report_shop_summary(self, params: Dict[str, Any]) -> Dict[str, Any]:
+    async def get_sales_report_shop_summary(self, access_token: str, params: Dict[str, Any]) -> Dict[str, Any]:
         """
         查询店铺汇总销量，支持按店铺维度查询店铺销量、销售额
         Args:
@@ -285,7 +168,6 @@ class StatisticsService:
                 'offset': params.get('offset', 0),
                 'length': params.get('length', 1000)
             }
-            access_token = await self.get_access_token()
             resp = await self.api.request(
                 access_token=access_token,
                 route_name="/erp/sc/data/sales_report/sales",
@@ -296,18 +178,33 @@ class StatisticsService:
         except Exception as e:
             return {'code': 500, 'message': f'查询失败: {str(e)}', 'data': None} 
 
-    async def get_product_performance(self, params):
+    async def get_product_performance(self, access_token, params):
         """
         查询产品表现，调用外部OpenAPI
         Args:
+            access_token: str, 认证token
             params: 请求参数，详见接口文档
+                offset: int, 分页偏移量，必填，>=0
+                length: int, 分页长度，必填，1~10000
+                sort_field: str, 排序字段，必填，见文档
+                sort_type: str, 排序方式，必填，desc/asc
+                sid: str/list, 店铺id，必填，单店铺字符串，多店铺数组
+                start_date: str, 开始日期，必填，Y-m-d
+                end_date: str, 结束日期，必填，Y-m-d
+                summary_field: str, 汇总行维度，必填，asin/parent_asin/msku/sku
+                search_field: str, 搜索字段，选填
+                search_value: list, 搜索值，选填
+                mid: int, 站点id，选填
+                extend_search: list, 表头筛选，选填
+                currency_code: str, 货币类型，选填
+                is_recently_enum: bool, 是否仅活跃商品，选填
         Returns:
             dict: 标准响应
         """
         from datetime import datetime
         try:
             # 1. 必填参数校验
-            required_fields = ['offset', 'length', 'sort_field', 'sort_type', 'sid', 'start_date', 'end_date', 'summary_field', 'avg_volume']
+            required_fields = ['offset', 'length', 'sort_field', 'sort_type', 'sid', 'start_date', 'end_date', 'summary_field']
             for field in required_fields:
                 if field not in params or params[field] is None:
                     return {
@@ -341,6 +238,9 @@ class StatisticsService:
             valid_summary_fields = ['asin', 'parent_asin', 'msku', 'sku']
             if params['summary_field'] not in valid_summary_fields:
                 return {'code': 400, 'message': f'summary_field可选值: {valid_summary_fields}', 'data': None}
+            valid_search_fields = ['asin', 'parent_asin', 'msku', 'local_sku', 'item_name']
+            if 'search_field' in params and params['search_field'] not in valid_search_fields:
+                return {'code': 400, 'message': f'search_field可选值: {valid_search_fields}', 'data': None}
             # 3. 组装 query_data
             query_data = {
                 'offset': params['offset'],
@@ -350,8 +250,7 @@ class StatisticsService:
                 'sid': params['sid'],
                 'start_date': params['start_date'],
                 'end_date': params['end_date'],
-                'summary_field': params['summary_field'],
-                'avg_volume': params['avg_volume']
+                'summary_field': params['summary_field']
             }
             # 可选参数
             if 'search_field' in params:
@@ -361,13 +260,22 @@ class StatisticsService:
             if 'mid' in params:
                 query_data['mid'] = params['mid']
             if 'extend_search' in params:
+                # extend_search为对象数组，需校验结构
+                if not isinstance(params['extend_search'], list):
+                    return {'code': 400, 'message': 'extend_search必须为数组', 'data': None}
+                for item in params['extend_search']:
+                    if not isinstance(item, dict):
+                        return {'code': 400, 'message': 'extend_search每项必须为对象', 'data': None}
+                    if 'field' not in item or item['field'] not in valid_sort_fields:
+                        return {'code': 400, 'message': f'extend_search.field可选值: {valid_sort_fields}', 'data': None}
+                    if 'exp' in item and item['exp'] not in ['range', 'gt', 'lt', 'ge', 'le', 'eq']:
+                        return {'code': 400, 'message': 'extend_search.exp可选值: range,gt,lt,ge,le,eq', 'data': None}
                 query_data['extend_search'] = params['extend_search']
             if 'currency_code' in params:
                 query_data['currency_code'] = params['currency_code']
             if 'is_recently_enum' in params:
                 query_data['is_recently_enum'] = params['is_recently_enum']
             # 4. 调用外部API
-            access_token = await self.get_access_token()
             resp = await self.api.request(
                 access_token=access_token,
                 route_name="/bd/productPerformance/openApi/asinList",
