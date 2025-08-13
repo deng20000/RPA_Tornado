@@ -400,4 +400,4 @@ class StatisticsService:
                 'code': 500,
                 'message': f'查询失败: {str(e)}',
                 'data': None
-            } 
+            }

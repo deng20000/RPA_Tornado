@@ -1,5 +1,7 @@
 import asyncio
+import jwt
 from datetime import datetime, timedelta
+from tornado.web import RequestHandler
 from app.auth.openapi import OpenApiBase
 from app.config import settings
 
@@ -27,4 +29,70 @@ class AccessTokenManager:
             cls._access_token = token_obj.access_token
             # 提前1分钟过期，防止边界问题
             cls._expire_time = now + timedelta(seconds=token_obj.expires_in - 60)
-            return cls._access_token 
+            return cls._access_token
+
+
+class AuthMiddleware:
+    """
+    认证中间件
+    处理JWT token验证和用户认证
+    """
+    
+    def __init__(self):
+        self.secret_key = settings.SECRET_KEY
+        self.jwt_secret = settings.JWT_SECRET_KEY
+        self.algorithm = settings.JWT_ALGORITHM
+        
+    def process_request(self, handler: RequestHandler):
+        """
+        处理请求前的认证检查
+        """
+        # 跳过不需要认证的路径
+        skip_paths = ['/health', '/api/docs', '/swagger', '/static']
+        if any(handler.request.path.startswith(path) for path in skip_paths):
+            return
+            
+        # 获取Authorization头
+        auth_header = handler.request.headers.get('Authorization')
+        if not auth_header:
+            handler.set_status(401)
+            handler.write({'error': 'Missing Authorization header'})
+            handler.finish()
+            return
+            
+        # 验证Bearer token格式
+        try:
+            scheme, token = auth_header.split(' ', 1)
+            if scheme.lower() != 'bearer':
+                raise ValueError('Invalid scheme')
+        except ValueError:
+            handler.set_status(401)
+            handler.write({'error': 'Invalid Authorization header format'})
+            handler.finish()
+            return
+            
+        # 验证JWT token
+        try:
+            payload = jwt.decode(token, self.jwt_secret, algorithms=[self.algorithm])
+            handler.current_user = payload
+        except jwt.ExpiredSignatureError:
+            handler.set_status(401)
+            handler.write({'error': 'Token has expired'})
+            handler.finish()
+            return
+        except jwt.InvalidTokenError:
+            handler.set_status(401)
+            handler.write({'error': 'Invalid token'})
+            handler.finish()
+            return
+            
+    def generate_token(self, user_data: dict) -> str:
+        """
+        生成JWT token
+        """
+        payload = {
+            **user_data,
+            'exp': datetime.utcnow() + timedelta(minutes=settings.JWT_EXPIRE_MINUTES),
+            'iat': datetime.utcnow()
+        }
+        return jwt.encode(payload, self.jwt_secret, algorithm=self.algorithm)

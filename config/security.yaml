@@ -1,0 +1,445 @@
+# 安全配置文件
+# 定义应用的安全策略和防护措施
+
+# 全局安全配置
+global:
+  enabled: true
+  security_level: "standard"  # basic, standard, strict
+  audit_logging: true
+  security_headers: true
+
+# 认证和授权配置
+authentication:
+  # JWT配置
+  jwt:
+    enabled: true
+    secret_key: "${JWT_SECRET_KEY}"
+    algorithm: "HS256"
+    issuer: "RPA_Tornado"
+    audience: "api.rpa-tornado.com"
+    access_token:
+      expire_minutes: 30
+      refresh_threshold_minutes: 5  # 剩余5分钟时可刷新
+    refresh_token:
+      expire_days: 7
+      rotation: true  # 刷新时轮换refresh token
+    
+    # JWT声明配置
+    claims:
+      include_user_id: true
+      include_roles: true
+      include_permissions: true
+      include_session_id: true
+  
+  # 会话管理
+  session:
+    enabled: true
+    provider: "memory"  # memory, redis, database
+    cookie:
+      name: "session_id"
+      max_age: 86400  # 24小时
+      secure: false  # 生产环境应设为true
+      httponly: true
+      samesite: "lax"
+      domain: null
+      path: "/"
+    
+    # 会话安全
+    regenerate_on_login: true
+    invalidate_on_logout: true
+    concurrent_sessions: 3  # 允许的并发会话数
+    idle_timeout: 1800  # 30分钟无活动超时
+  
+  # 密码策略
+  password:
+    min_length: 8
+    max_length: 128
+    require_uppercase: true
+    require_lowercase: true
+    require_numbers: true
+    require_special_chars: true
+    special_chars: "!@#$%^&*()_+-=[]{}|;:,.<>?"
+    history_count: 5  # 不能重复使用最近5个密码
+    expiry_days: 90  # 密码90天过期
+  
+  # 账户锁定策略
+  account_lockout:
+    enabled: true
+    max_attempts: 5
+    lockout_duration: 900  # 15分钟
+    reset_attempts_after: 3600  # 1小时后重置尝试次数
+    progressive_delay: true  # 渐进式延迟
+
+# HTTPS和TLS配置
+tls:
+  # HTTPS重定向
+  force_https: false  # 生产环境应设为true
+  redirect_status_code: 301
+  
+  # HSTS配置
+  hsts:
+    enabled: true
+    max_age: 31536000  # 1年
+    include_subdomains: true
+    preload: false
+  
+  # TLS版本
+  min_version: "1.2"
+  preferred_ciphers:
+    - "ECDHE-RSA-AES256-GCM-SHA384"
+    - "ECDHE-RSA-AES128-GCM-SHA256"
+    - "ECDHE-RSA-AES256-SHA384"
+    - "ECDHE-RSA-AES128-SHA256"
+
+# 内容安全策略 (CSP)
+content_security_policy:
+  enabled: true
+  report_only: false  # 开发环境可设为true
+  
+  # CSP指令
+  directives:
+    default-src: ["'self'"]
+    script-src: 
+      - "'self'"
+      - "'unsafe-inline'"  # 生产环境应移除
+      - "https://cdn.jsdelivr.net"
+    style-src:
+      - "'self'"
+      - "'unsafe-inline'"
+      - "https://fonts.googleapis.com"
+    img-src:
+      - "'self'"
+      - "data:"
+      - "https:"
+    font-src:
+      - "'self'"
+      - "https://fonts.gstatic.com"
+    connect-src:
+      - "'self'"
+      - "https://api.lingxing.com"
+    frame-src: ["'none'"]
+    frame-ancestors: ["'none'"]
+    object-src: ["'none'"]
+    base-uri: ["'self'"]
+    form-action: ["'self'"]
+  
+  # 违规报告
+  report_uri: "/api/security/csp-report"
+  report_to: "csp-endpoint"
+
+# 跨域资源共享 (CORS)
+cors:
+  enabled: true
+  
+  # 允许的源
+  allowed_origins:
+    development:
+      - "http://localhost:3000"
+      - "http://localhost:8080"
+      - "http://127.0.0.1:3000"
+      - "http://127.0.0.1:8080"
+    production:
+      - "https://yourdomain.com"
+      - "https://www.yourdomain.com"
+      - "https://admin.yourdomain.com"
+  
+  # 允许的方法
+  allowed_methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+    - "PATCH"
+  
+  # 允许的头
+  allowed_headers:
+    - "Content-Type"
+    - "Authorization"
+    - "X-Requested-With"
+    - "X-CSRFToken"
+    - "Accept"
+    - "Origin"
+    - "Cache-Control"
+    - "X-File-Name"
+  
+  # 暴露的头
+  exposed_headers:
+    - "X-RateLimit-Remaining"
+    - "X-RateLimit-Limit"
+    - "X-RateLimit-Reset"
+    - "X-Total-Count"
+  
+  allow_credentials: true
+  max_age: 86400  # 24小时
+
+# CSRF防护
+csrf:
+  enabled: true
+  
+  # CSRF令牌配置
+  token:
+    length: 32
+    expire_minutes: 60
+    cookie_name: "csrf_token"
+    header_name: "X-CSRFToken"
+    form_field_name: "csrf_token"
+  
+  # 豁免配置
+  exempt_methods:
+    - "GET"
+    - "HEAD"
+    - "OPTIONS"
+    - "TRACE"
+  
+  exempt_paths:
+    - "/api/auth/login"
+    - "/api/webhook/*"
+    - "/health"
+  
+  # 安全配置
+  secure_cookie: false  # 生产环境应设为true
+  httponly_cookie: true
+  samesite_cookie: "lax"
+
+# 输入验证和清理
+input_validation:
+  enabled: true
+  
+  # 请求大小限制
+  max_request_size: 10485760  # 10MB
+  max_file_size: 5242880  # 5MB
+  max_files_per_request: 10
+  
+  # 字符串验证
+  string_validation:
+    max_length: 10000
+    allowed_chars: "alphanumeric_extended"  # alphanumeric, alphanumeric_extended, all
+    strip_whitespace: true
+    normalize_unicode: true
+  
+  # SQL注入防护
+  sql_injection:
+    enabled: true
+    patterns:
+      - "(?i)(union|select|insert|update|delete|drop|create|alter|exec|execute)"
+      - "(?i)(script|javascript|vbscript|onload|onerror|onclick)"
+      - "(?i)(<|>|&lt;|&gt;|%3c|%3e)"
+  
+  # XSS防护
+  xss_protection:
+    enabled: true
+    strip_tags: true
+    encode_entities: true
+    allowed_tags: []
+    allowed_attributes: []
+
+# API安全
+api_security:
+  # API密钥管理
+  api_keys:
+    enabled: false
+    header_name: "X-API-Key"
+    query_param_name: "api_key"
+    length: 32
+    expire_days: 365
+  
+  # API版本控制
+  versioning:
+    enabled: true
+    header_name: "API-Version"
+    default_version: "v1"
+    supported_versions: ["v1"]
+  
+  # 请求签名
+  request_signing:
+    enabled: false
+    algorithm: "HMAC-SHA256"
+    header_name: "X-Signature"
+    timestamp_tolerance: 300  # 5分钟
+
+# 安全头配置
+security_headers:
+  # 基础安全头
+  x_content_type_options: "nosniff"
+  x_frame_options: "DENY"
+  x_xss_protection: "1; mode=block"
+  
+  # 引用策略
+  referrer_policy: "strict-origin-when-cross-origin"
+  
+  # 权限策略
+  permissions_policy:
+    camera: []
+    microphone: []
+    geolocation: []
+    payment: []
+    usb: []
+    magnetometer: []
+    gyroscope: []
+    accelerometer: []
+  
+  # 自定义头
+  custom_headers:
+    X-Powered-By: ""  # 移除服务器信息
+    Server: ""  # 移除服务器信息
+    X-Application: "RPA_Tornado"
+
+# 日志和监控
+security_logging:
+  enabled: true
+  
+  # 安全事件日志
+  events:
+    authentication_failure: true
+    authorization_failure: true
+    suspicious_activity: true
+    rate_limit_exceeded: true
+    csrf_violation: true
+    xss_attempt: true
+    sql_injection_attempt: true
+  
+  # 日志级别
+  log_level: "WARNING"
+  
+  # 日志格式
+  log_format: "json"  # json, text
+  
+  # 敏感数据过滤
+  sensitive_fields:
+    - "password"
+    - "token"
+    - "secret"
+    - "key"
+    - "authorization"
+    - "cookie"
+
+# 威胁检测
+threat_detection:
+  enabled: true
+  
+  # 异常检测
+  anomaly_detection:
+    enabled: true
+    threshold_multiplier: 3.0  # 超过平均值3倍视为异常
+    time_window: 300  # 5分钟时间窗口
+  
+  # IP黑名单
+  ip_blacklist:
+    enabled: true
+    auto_block: true
+    block_duration: 3600  # 1小时
+    sources:
+      - "file://config/blacklist.txt"
+      - "https://example.com/threat-intel/ips.txt"
+  
+  # 用户代理过滤
+  user_agent_filtering:
+    enabled: true
+    block_empty: true
+    block_suspicious: true
+    suspicious_patterns:
+      - "(?i)(bot|crawler|spider|scraper)"
+      - "(?i)(curl|wget|python|java)"
+
+# 数据保护
+data_protection:
+  # 数据加密
+  encryption:
+    algorithm: "AES-256-GCM"
+    key_rotation_days: 90
+    encrypt_sensitive_fields: true
+  
+  # 数据脱敏
+  data_masking:
+    enabled: true
+    mask_email: true
+    mask_phone: true
+    mask_credit_card: true
+    mask_ssn: true
+  
+  # 数据保留
+  data_retention:
+    log_retention_days: 90
+    session_retention_days: 30
+    audit_retention_days: 365
+
+# 环境特定配置
+environments:
+  development:
+    global:
+      security_level: "basic"
+    tls:
+      force_https: false
+    csrf:
+      enabled: false
+    content_security_policy:
+      report_only: true
+    threat_detection:
+      enabled: false
+  
+  production:
+    global:
+      security_level: "strict"
+    tls:
+      force_https: true
+      hsts:
+        preload: true
+    csrf:
+      enabled: true
+    content_security_policy:
+      report_only: false
+    threat_detection:
+      enabled: true
+      ip_blacklist:
+        auto_block: true
+  
+  testing:
+    global:
+      security_level: "basic"
+    authentication:
+      jwt:
+        access_token:
+          expire_minutes: 5  # 短期测试
+    csrf:
+      enabled: false
+    threat_detection:
+      enabled: false
+
+# 合规性配置
+compliance:
+  # GDPR合规
+  gdpr:
+    enabled: false
+    data_controller: "Your Company Name"
+    privacy_policy_url: "https://yourdomain.com/privacy"
+    cookie_consent: true
+  
+  # CCPA合规
+  ccpa:
+    enabled: false
+    do_not_sell_url: "https://yourdomain.com/do-not-sell"
+  
+  # SOC2合规
+  soc2:
+    enabled: false
+    audit_logging: true
+    access_controls: true
+    encryption_at_rest: true
+    encryption_in_transit: true
+
+# 安全测试
+security_testing:
+  # 渗透测试
+  penetration_testing:
+    enabled: false
+    test_endpoints:
+      - "/api/test/security"
+    allowed_ips:
+      - "192.168.1.100"
+  
+  # 漏洞扫描
+  vulnerability_scanning:
+    enabled: false
+    scan_frequency: "weekly"
+    report_email: "security@yourdomain.com"

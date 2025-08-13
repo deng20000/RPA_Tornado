@@ -28,7 +28,7 @@
 | target_service.py                   | TargetService               | 目标管理              | 获取目标数据、目标进度等           |
 | multi_platform_service.py           | MultiPlatformService        | 多平台                | 获取多平台数据、平台对接等         |
 | vc_service.py                       | VCService                   | VC                    | VC相关业务，如VC账号管理等         |
-| amazon_table_service.py             | AmazonTableService          | 亚马逊源表数据         | 获取亚马逊原始表、数据同步等       |
+| amazon_table_service.py             | AmazonTableService          | 亚马逊源表数据         | 获取亚马逊原始表、移除货件报表、移除订单报表、所有订单报表、FBA订单报表、FBA换货订单报表、FBA退货订单报表、FBM退货订单报表、FBA库存报表、每日库存报表、FBA可售库存报表、预留库存报表、库龄表、Amazon Fulfilled Shipments报表、盘存记录、报告导出任务等 |
 
 ---
 
@@ -89,4 +89,4 @@ requests.exceptions.SSLError: HTTPSConnectionPool(host='api.fastforex.io', port=
 - 或在 `get_exchange_rate` 函数中增加 `time.sleep(0.1~0.5)`，人为延迟每次请求。
 - 如需更高频率支持，请联系 fastforex 升级套餐。
 
-相关参数可在 `stat_handler.py` 中调整。 
+相关参数可在 `stat_handler.py` 中调整。

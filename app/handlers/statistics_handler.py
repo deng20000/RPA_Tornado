@@ -183,4 +183,4 @@ class ProfitStatisticsAsinListHandler(RequestHandler):
             self.write({'error': f'JSON 格式错误: {str(e)}'})
         except Exception as e:
             self.set_status(500)
-            self.write({'error': str(e)}) 
+            self.write({'error': str(e)})

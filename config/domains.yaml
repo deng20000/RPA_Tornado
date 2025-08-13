@@ -1,0 +1,172 @@
+# 领域架构配置文件
+# 定义各个领域模块的配置信息
+
+# 全局配置
+global:
+  api_version: "v1"
+  base_path: "/api/v1"
+  enable_cors: true
+  enable_rate_limiting: true
+  default_timeout: 30
+
+# 领域模块配置
+domains:
+  # 统计领域
+  statistics:
+    name: "统计模块"
+    description: "处理销量报表、订单利润、产品表现等统计相关功能"
+    prefix: "/statistics"
+    enabled: true
+    rate_limit:
+      requests_per_minute: 100
+      burst_size: 20
+    endpoints:
+      - name: "销量报表"
+        path: "/sales-report"
+        methods: ["GET", "POST"]
+        description: "获取销量报表数据"
+      - name: "订单利润"
+        path: "/order-profit"
+        methods: ["GET", "POST"]
+        description: "获取订单利润分析"
+      - name: "产品表现"
+        path: "/product-performance"
+        methods: ["GET", "POST"]
+        description: "获取产品表现数据"
+      - name: "利润统计"
+        path: "/profit-statistics"
+        methods: ["GET", "POST"]
+        description: "获取利润统计数据"
+      - name: "移除货件"
+        path: "/removal-shipment"
+        methods: ["GET", "POST"]
+        description: "获取移除货件数据"
+
+  # 基础数据领域
+  base_data:
+    name: "基础数据模块"
+    description: "处理店铺信息、市场列表、分类列表等基础数据功能"
+    prefix: "/base-data"
+    enabled: true
+    rate_limit:
+      requests_per_minute: 200
+      burst_size: 50
+    endpoints:
+      - name: "店铺信息"
+        path: "/seller-info"
+        methods: ["GET"]
+        description: "获取店铺基本信息"
+      - name: "市场列表"
+        path: "/marketplace-list"
+        methods: ["GET"]
+        description: "获取支持的市场列表"
+      - name: "分类列表"
+        path: "/category-list"
+        methods: ["GET"]
+        description: "获取产品分类列表"
+      - name: "汇率信息"
+        path: "/currency-rate"
+        methods: ["GET"]
+        description: "获取当前汇率信息"
+      - name: "系统设置"
+        path: "/settings"
+        methods: ["GET", "PUT"]
+        description: "获取和更新系统设置"
+
+  # 多平台领域
+  multi_platform:
+    name: "多平台模块"
+    description: "处理多平台数据同步、跨平台分析等功能"
+    prefix: "/multi-platform"
+    enabled: true
+    rate_limit:
+      requests_per_minute: 50
+      burst_size: 10
+    endpoints:
+      - name: "平台同步"
+        path: "/sync"
+        methods: ["POST"]
+        description: "启动平台数据同步"
+      - name: "同步状态"
+        path: "/sync-status"
+        methods: ["GET"]
+        description: "获取同步状态"
+      - name: "平台数据"
+        path: "/platform-data"
+        methods: ["GET"]
+        description: "获取平台数据"
+      - name: "跨平台分析"
+        path: "/cross-platform-analysis"
+        methods: ["GET"]
+        description: "获取跨平台分析数据"
+      - name: "平台配置"
+        path: "/platform-config"
+        methods: ["GET", "PUT"]
+        description: "获取和更新平台配置"
+
+  # 产品领域
+  product:
+    name: "产品模块"
+    description: "处理产品管理、库存管理等功能"
+    prefix: "/product"
+    enabled: true
+    rate_limit:
+      requests_per_minute: 150
+      burst_size: 30
+    endpoints:
+      - name: "产品列表"
+        path: "/list"
+        methods: ["GET", "POST"]
+        description: "获取产品列表"
+      - name: "产品详情"
+        path: "/detail/{product_id}"
+        methods: ["GET"]
+        description: "获取产品详细信息"
+      - name: "创建产品"
+        path: "/create"
+        methods: ["POST"]
+        description: "创建新产品"
+      - name: "更新产品"
+        path: "/update/{product_id}"
+        methods: ["PUT"]
+        description: "更新产品信息"
+      - name: "删除产品"
+        path: "/delete/{product_id}"
+        methods: ["DELETE"]
+        description: "删除产品"
+      - name: "产品库存"
+        path: "/inventory/{product_id}"
+        methods: ["GET"]
+        description: "获取产品库存信息"
+      - name: "批量操作"
+        path: "/batch"
+        methods: ["POST"]
+        description: "批量产品操作"
+
+# 数据库配置
+database:
+  connection_pool_size: 10
+  max_overflow: 20
+  pool_timeout: 30
+  pool_recycle: 3600
+
+# 缓存配置
+cache:
+  enabled: true
+  backend: "redis"
+  default_timeout: 300
+  key_prefix: "rpa_tornado:"
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation: "daily"
+  max_files: 30
+
+# 监控配置
+monitoring:
+  enabled: true
+  metrics_endpoint: "/metrics"
+  health_check_endpoint: "/health"
+  performance_tracking: true

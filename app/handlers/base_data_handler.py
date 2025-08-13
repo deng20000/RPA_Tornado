@@ -171,4 +171,4 @@ class BatchEditSellerNameHandler(BaseHandler):
             self.write(json.dumps(result, ensure_ascii=False))
         except Exception as e:
             self.set_status(500)
-            self.write({'error': str(e)}) 
+            self.write({'error': str(e)})
