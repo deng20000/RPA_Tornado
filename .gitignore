@@ -7,8 +7,6 @@
 # 忽略根目录下的所有文件夹
 */
 
-
-
 # Python 通用文件
 __pycache__/
 *.py[cod]
@@ -116,6 +114,18 @@ yarn.lock
 # SSH 相关临时文件
 ssh_test_*
 *.ssh_backup
+
+# 文档和报告文件（不需要版本控制）
+Git_管理指南.md
+SSH_问题解决报告.md
+PostgreSQL_Container_Setup_Summary.md
+DBeaver_PostgreSQL_Connection_Guide.md
+*.报告.md
+*.指南.md
+*.说明.md
+*_报告.md
+*_指南.md
+*_说明.md
 
 # 注意：子项目有自己的 .gitignore 文件
 # RPA_Tornado/ 和 rpa/ 目录有各自的特定忽略规则
