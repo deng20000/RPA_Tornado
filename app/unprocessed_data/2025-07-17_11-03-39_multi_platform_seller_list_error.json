@@ -1,0 +1,15 @@
+{
+  "access_token": "b58b02b0-d454-42eb-acf7-9f11da3ef97f",
+  "query_data": {
+    "offset": 0,
+    "length": 10,
+    "platform_code": [
+      10001,
+      1011
+    ],
+    "is_sync": 1,
+    "status": 1
+  },
+  "error": "API Error: code=102, msg=length最小值为20",
+  "timestamp": "2025-07-17T11:03:39.029157"
+}

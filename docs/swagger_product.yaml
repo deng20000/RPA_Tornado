@@ -1,0 +1,1020 @@
+openapi: 3.0.0
+info:
+  title: 产品模块 API
+  description: 领星ERP产品模块相关接口文档
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://localhost:8888
+    description: 本地开发服务器
+
+paths:
+  # 本地产品相关接口
+  /api/erp/sc/routing/data/local_inventory/productList:
+    post:
+      tags:
+        - 本地产品管理
+      summary: 查询本地产品列表
+      description: 支持查询本地产品列表，对应系统【产品】>【本地产品】数据
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/data/local_inventory/productInfo:
+    post:
+      tags:
+        - 本地产品管理
+      summary: 查询本地产品详情
+      description: 根据SKU查询本地产品详细信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+              properties:
+                sku:
+                  type: string
+                  description: 产品SKU
+                  example: "TEST-SKU-001"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/data/local_inventory/batchGetProductInfo:
+    post:
+      tags:
+        - 本地产品管理
+      summary: 批量查询本地产品详情
+      description: 根据SKU列表批量查询本地产品详细信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku_list
+              properties:
+                sku_list:
+                  type: array
+                  items:
+                    type: string
+                  description: SKU列表
+                  example: ["TEST-SKU-001", "TEST-SKU-002"]
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # UPC编码相关接口
+  /api/listing/publish/api/upc/addCommodityCode:
+    post:
+      tags:
+        - UPC编码管理
+      summary: 创建UPC编码
+      description: 为产品创建UPC编码
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+                - product_name
+              properties:
+                sku:
+                  type: string
+                  description: 产品SKU
+                  example: "TEST-SKU-001"
+                product_name:
+                  type: string
+                  description: 产品名称
+                  example: "测试产品"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/listing/publish/api/upc/upcList:
+    post:
+      tags:
+        - UPC编码管理
+      summary: 获取UPC编码列表
+      description: 查询UPC编码列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品管理接口
+  /api/basicOpen/product/productManager/product/operate/batch:
+    post:
+      tags:
+        - 产品管理
+      summary: 产品启用、禁用
+      description: 批量启用或禁用产品
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku_list
+                - operate_type
+              properties:
+                sku_list:
+                  type: array
+                  items:
+                    type: string
+                  description: SKU列表
+                  example: ["TEST-SKU-001", "TEST-SKU-002"]
+                operate_type:
+                  type: string
+                  description: 操作类型：enable启用，disable禁用
+                  example: "enable"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/product/set:
+    post:
+      tags:
+        - 产品管理
+      summary: 添加/编辑本地产品
+      description: 添加或编辑本地产品信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+                - product_name
+              properties:
+                sku:
+                  type: string
+                  description: 产品SKU
+                  example: "TEST-SKU-001"
+                product_name:
+                  type: string
+                  description: 产品名称
+                  example: "测试产品"
+                description:
+                  type: string
+                  description: 产品描述
+                  example: "这是一个测试产品"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品属性管理接口
+  /api/erp/sc/routing/storage/attribute/attributeList:
+    post:
+      tags:
+        - 产品属性管理
+      summary: 查询产品属性列表
+      description: 查询产品属性列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/attribute/set:
+    post:
+      tags:
+        - 产品属性管理
+      summary: 添加/编辑产品属性
+      description: 添加或编辑产品属性
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - attribute_name
+              properties:
+                attribute_name:
+                  type: string
+                  description: 属性名称
+                  example: "颜色"
+                attribute_values:
+                  type: array
+                  items:
+                    type: string
+                  description: 属性值列表
+                  example: ["红色", "蓝色", "绿色"]
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 多属性产品管理接口
+  /api/erp/sc/routing/storage/spu/spuList:
+    post:
+      tags:
+        - 多属性产品管理
+      summary: 查询多属性产品列表
+      description: 查询多属性产品列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/spu/info:
+    post:
+      tags:
+        - 多属性产品管理
+      summary: 查询多属性产品详情
+      description: 根据SPU查询多属性产品详情
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - spu
+              properties:
+                spu:
+                  type: string
+                  description: SPU编码
+                  example: "TEST-SPU-001"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 捆绑产品相关接口
+  /api/erp/sc/routing/data/local_inventory/bundledProductList:
+    post:
+      tags:
+        - 捆绑产品管理
+      summary: 查询捆绑产品关系列表
+      description: 查询捆绑产品关系列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/product/setBundled:
+    post:
+      tags:
+        - 捆绑产品管理
+      summary: 添加/编辑捆绑产品
+      description: 添加或编辑捆绑产品
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+                - product_name
+              properties:
+                sku:
+                  type: string
+                  description: SKU（添加时必填）
+                  example: "skuAdd"
+                product_name:
+                  type: string
+                  description: 品名（添加时必填）
+                  example: "skuAddProductName"
+                picture_list:
+                  type: array
+                  description: 产品图片信息
+                  items:
+                    type: object
+                    properties:
+                      pic_url:
+                        type: string
+                        description: 产品图片链接
+                        example: "http://www.news.cn/xxx/1129400title0h.jpg"
+                      is_primary:
+                        type: integer
+                        description: 是否产品主图：0 否，1 是
+                        example: 1
+                model:
+                  type: string
+                  description: 型号
+                  example: "model s"
+                unit:
+                  type: string
+                  description: 单位（商品单位：套、个、台）
+                  example: "个"
+                status:
+                  type: integer
+                  description: 状态【默认1】：0 停售，1 在售，2 开发中，3 清仓
+                  example: 1
+                group_list:
+                  type: array
+                  description: 组合商品列表，捆绑产品子产品的总数量要大于1
+                  items:
+                    type: object
+                    properties:
+                      sku:
+                        type: string
+                        description: 子商品
+                        example: "skuAdd1-1"
+                      quantity:
+                        type: integer
+                        description: 商品比例数
+                        example: 2
+                      cost_ratio:
+                        type: integer
+                        description: 费用比例，默认为空，若填写则每项必填，且总和为1
+                        example: 2
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品辅料相关接口
+  /api/erp/sc/routing/data/local_inventory/productAuxList:
+    post:
+      tags:
+        - 产品辅料管理
+      summary: 查询产品辅料列表
+      description: 查询产品辅料列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 20
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/product/setAux:
+    post:
+      tags:
+        - 产品辅料管理
+      summary: 添加/编辑辅料
+      description: 添加或编辑辅料
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+                - product_name
+                - remark
+              properties:
+                sku:
+                  type: string
+                  description: SKU
+                  example: "AUX-SKU-001"
+                product_name:
+                  type: string
+                  description: 品名
+                  example: "辅料产品"
+                cg_price:
+                  type: number
+                  description: 采购：采购成本（人民币）
+                  example: 10.50
+                cg_product_length:
+                  type: number
+                  description: 采购：单品规格-长（CM）
+                  example: 10.0
+                cg_product_width:
+                  type: number
+                  description: 采购：单品规格-宽（CM）
+                  example: 5.0
+                cg_product_height:
+                  type: number
+                  description: 采购：单品规格-高（CM）
+                  example: 2.0
+                cg_product_net_weight:
+                  type: number
+                  description: 采购：单品净重（G）
+                  example: 100.0
+                remark:
+                  type: string
+                  description: 辅料描述
+                  example: "这是一个辅料产品"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品品牌相关接口
+  /api/erp/sc/data/local_inventory/brand:
+    post:
+      tags:
+        - 产品品牌管理
+      summary: 查询产品品牌列表
+      description: 支持查询本地产品品牌列表，对应系统【产品】>【品牌管理】数据
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 100
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/storage/brand/set:
+    post:
+      tags:
+        - 产品品牌管理
+      summary: 添加/编辑产品品牌
+      description: 支持添加/编辑本地产品品牌信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - data
+              properties:
+                data:
+                  type: array
+                  description: 请求数据
+                  items:
+                    type: object
+                    required:
+                      - title
+                    properties:
+                      id:
+                        type: integer
+                        description: 为空时表新增，不为空时表编辑，查询本地产品品牌列表对应bid字段
+                        example: 12
+                      title:
+                        type: string
+                        description: 品牌名称
+                        example: "华为2"
+                      brand_code:
+                        type: string
+                        description: 品牌简码
+                        example: "HW2"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品分类相关接口
+  /api/erp/sc/routing/data/local_inventory/category:
+    post:
+      tags:
+        - 产品分类管理
+      summary: 查询产品分类列表
+      description: 支持查询本地产品的分类列表，对应【产品】>【产品分类】数据
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，上限1000
+                  example: 1000
+                data:
+                  type: object
+                  properties:
+                    ids:
+                      type: array
+                      items:
+                        type: integer
+                      description: 分类ID
+                      example: [1, 2, 3]
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/erp/sc/routing/storage/category/set:
+    post:
+      tags:
+        - 产品分类管理
+      summary: 添加/编辑产品分类
+      description: 支持添加/编辑本地产品分类
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - data
+              properties:
+                data:
+                  type: array
+                  description: 请求数据
+                  items:
+                    type: object
+                    required:
+                      - title
+                      - category_code
+                    properties:
+                      id:
+                        type: integer
+                        description: 为空时新增，不为空时编辑，查询本地产品分类列表对应cid字段
+                        example: 1
+                      parent_cid:
+                        type: integer
+                        description: 父级分类id
+                        example: 0
+                      title:
+                        type: string
+                        description: 分类名称
+                        example: "衣服"
+                      category_code:
+                        type: string
+                        description: 分类简码
+                        example: "Bo135152"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品图片相关接口
+  /api/erp/sc/routing/storage/product/uploadPictures:
+    post:
+      tags:
+        - 产品图片管理
+      summary: 上传本地产品图片
+      description: 支持本地产品图片上传到领星ERP系统内
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sku
+                - picture_list
+              properties:
+                sku:
+                  type: string
+                  description: 本地产品SKU
+                  example: "skuAdd"
+                picture_list:
+                  type: array
+                  description: 产品图片信息
+                  items:
+                    type: object
+                    required:
+                      - pic_url
+                      - is_primary
+                    properties:
+                      pic_url:
+                        type: string
+                        description: 产品图片链接
+                        example: "http://www.news.cn/xx/1129400412e0h.jpg"
+                      is_primary:
+                        type: integer
+                        description: 是否产品主图：0 否，1 是
+                        example: 1
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  # 产品标签相关接口
+  /api/label/operation/v1/label/product/list:
+    get:
+      tags:
+        - 产品标签管理
+      summary: 查询产品标签
+      description: 查询产品标签列表
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 状态码，0 成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 返回信息
+                    example: "success"
+                  request_id:
+                    type: string
+                    description: 请求链路id
+                    example: "550d352c-7a05-11ed-b0c7-0242ac1c0003"
+                  response_time:
+                    type: string
+                    description: 响应时间
+                    example: "2022-12-15 20:16:38"
+                  data:
+                    type: object
+                    description: 响应数据
+                    properties:
+                      list:
+                        type: array
+                        description: 列表数据
+                        items:
+                          type: object
+                          properties:
+                            label_id:
+                              type: string
+                              description: 标签id
+                              example: "907203021760103279"
+                            label_name:
+                              type: string
+                              description: 标签名称
+                              example: "1"
+                            gmt_created:
+                              type: integer
+                              description: 创建时间
+                              example: 1657507264000
+                      total:
+                        type: integer
+                        description: 总数
+                        example: 1
+
+  /api/label/operation/v1/label/product/create:
+    post:
+      tags:
+        - 产品标签管理
+      summary: 创建产品标签
+      description: 创建新的产品标签
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - label
+              properties:
+                label:
+                  type: string
+                  description: 标签名称，最长15个字符，中间不能有空格
+                  example: "精品"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 状态码，0 成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 消息提示
+                    example: "success"
+                  request_id:
+                    type: string
+                    description: 请求链路id
+                    example: "550d352c-7a05-11ed-b0c7-0242ac1c0004"
+                  response_time:
+                    type: string
+                    description: 响应时间
+                    example: "2022-12-15 20:16:38"
+                  data:
+                    type: object
+                    description: 响应数据
+                    properties:
+                      label_name:
+                        type: string
+                        description: 标签名称
+                        example: "精品"
+                      label_id:
+                        type: string
+                        description: 标签id
+                        example: "4864548789455617"
+
+  /api/label/operation/v1/label/product/mark:
+    post:
+      tags:
+        - 产品标签管理
+      summary: 标记产品标签
+      description: 为产品标记标签
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - type
+                - detail_list
+              properties:
+                type:
+                  type: integer
+                  description: 操作类型：1 追加，2 覆盖
+                  example: 1
+                detail_list:
+                  type: array
+                  description: 标签信息，上限200
+                  items:
+                    type: object
+                    required:
+                      - sku
+                      - label_list
+                    properties:
+                      sku:
+                        type: string
+                        description: 产品SKU
+                        example: "SKUXG"
+                      label_list:
+                        type: array
+                        description: 标签名称，上限10
+                        items:
+                          type: string
+                        example: ["标签-1", "标签-2"]
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /api/label/operation/v1/label/product/unmarkLabel:
+    post:
+      tags:
+        - 产品标签管理
+      summary: 删除产品标签
+      description: 删除产品的标签
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - type
+                - detail_list
+              properties:
+                type:
+                  type: integer
+                  description: |
+                    操作类型：
+                    1 删除SKU指定的标签
+                    2 删除SKU全部的标签【此类型下对应sku的label_list为空数组即可】
+                  example: 1
+                detail_list:
+                  type: array
+                  description: 标签信息，上限200
+                  items:
+                    type: object
+                    required:
+                      - sku
+                      - label_list
+                    properties:
+                      sku:
+                        type: string
+                        description: 本地产品sku
+                        example: "test-sku-time"
+                      label_list:
+                        type: array
+                        description: 标签名称，上限10
+                        items:
+                          type: string
+                        example: ["标签-1", "标签-2"]
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: 状态码，0表示成功
+          example: 0
+        message:
+          type: string
+          description: 响应消息
+          example: "success"
+        data:
+          type: object
+          description: 响应数据
+        request_id:
+          type: string
+          description: 请求ID
+          example: "550d352c-7a05-11ed-b0c7-0242ac1c0003"
+        response_time:
+          type: string
+          description: 响应时间
+          example: "2022-12-15 20:16:38"
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: 本地产品管理
+    description: 本地产品相关接口
+  - name: UPC编码管理
+    description: UPC编码相关接口
+  - name: 产品管理
+    description: 产品管理相关接口
+  - name: 产品属性管理
+    description: 产品属性管理相关接口
+  - name: 多属性产品管理
+    description: 多属性产品管理相关接口
+  - name: 捆绑产品管理
+    description: 捆绑产品管理相关接口
+  - name: 产品辅料管理
+    description: 产品辅料管理相关接口
+  - name: 产品品牌管理
+    description: 产品品牌管理相关接口
+  - name: 产品分类管理
+    description: 产品分类管理相关接口
+  - name: 产品图片管理
+    description: 产品图片管理相关接口
+  - name: 产品标签管理
+    description: 产品标签管理相关接口

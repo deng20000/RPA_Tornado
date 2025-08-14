@@ -1,0 +1,58 @@
+{
+  "api_test_data": {
+    "multi_platform": {
+      "seller_list": {
+        "offset": 0,
+        "length": 20
+      },
+      "sales_statistics": {
+        "offset": 0,
+        "length": 10,
+        "start_date": "2024-07-01",
+        "end_date": "2024-07-31",
+        "result_type": 1,
+        "date_unit": "day"
+      }
+    },
+    "statistics": {
+      "order_profit": {
+        "startDate": "2024-07-17",
+        "endDate": "2024-07-17",
+        "offset": 0,
+        "length": 100,
+        "sids": [511633],
+        "searchField": "seller_sku",
+        "searchValue": ["GL-BE3600"]
+      },
+      "sales_report": {
+        "sid": 109,
+        "event_date": "2024-08-05",
+        "asin_type": 1,
+        "type": 1
+      }
+    },
+    "base_data": {
+      "seller_info": {
+        "marketplace_id": "ATVPDKIKX0DER"
+      },
+      "file_download": {
+        "file_id": "123121211"
+      }
+    }
+  },
+  "expected_responses": {
+    "success": {
+      "code": 200,
+      "message": "success",
+      "data": {}
+    },
+    "validation_error": {
+      "code": 400,
+      "message": "参数验证失败"
+    },
+    "not_found": {
+      "code": 404,
+      "message": "接口不存在"
+    }
+  }
+}

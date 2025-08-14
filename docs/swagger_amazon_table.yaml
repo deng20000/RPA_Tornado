@@ -1,0 +1,1110 @@
+openapi: 3.0.0
+info:
+  title: 亚马逊源表数据 API
+  description: 亚马逊源表数据相关接口，包括移除货件报表、移除订单报表等
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://127.0.0.1:8888
+    description: 本地开发服务器
+
+paths:
+  /api/erp/sc/statistic/removalShipment/list:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-移除货件
+      description: 查询 Reports-Fulfillment-Removal Shipment Detail 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                seller_id:
+                  type: integer
+                  description: 卖家id，sid和seller_id至少传递一个
+                  example: 123
+                start_date:
+                  type: string
+                  format: date
+                  description: 查询时间【更新时间】，左闭区间,格式：Y-m-d
+                  example: "2020-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  description: 查询时间【更新时间】，右开区间,格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，最大10000
+                  default: 1000
+                  maximum: 10000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: 移除货件报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400
+                  message:
+                    type: string
+                    example: "缺少必填参数: start_date"
+                  data:
+                    type: null
+
+  /api/erp/sc/routing/data/order/removalOrderListNew:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-移除订单（新）
+      description: 查询 Reports-Fulfillment-Removal Order Detail 报表。报表为seller_id维度，按sid请求会返回对应seller_id下所有移除订单数据
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+                - search_field_time
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                start_date:
+                  type: string
+                  format: date
+                  description: 查询时间【更新时间】，左闭区间,格式：Y-m-d
+                  example: "2020-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  description: 查询时间【更新时间】，右开区间,格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000，最大10000
+                  default: 1000
+                  maximum: 10000
+                  example: 1000
+                search_field_time:
+                  type: string
+                  description: 搜索时间类型
+                  enum:
+                    - last_updated_date
+                    - request_date
+                  default: last_updated_date
+                  example: "last_updated_date"
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: 移除订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400
+                  message:
+                    type: string
+                    example: "缺少必填参数: sid"
+                  data:
+                    type: null
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: "查询移除订单报表失败: 网络连接超时"
+                  data:
+                    type: null
+
+  /api/erp/sc/data/mws_report/allOrders:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-所有订单
+      description: 查询 All Orders Report By last update 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                date_type:
+                  type: integer
+                  description: 时间查询类型：【默认1】1 下单日期 2 亚马逊订单更新时间
+                  default: 1
+                  example: 1
+                start_date:
+                  type: string
+                  description: 亚马逊当地下单时间，左闭区间，格式：Y-m-d
+                  example: "2020-04-01"
+                end_date:
+                  type: string
+                  description: 亚马逊当地下单时间，右开区间，格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: 所有订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report/manageInventory:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询FBA库存报表
+      description: 查询 FBA Manage Inventory 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report/dailyInventory:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询每日库存报表
+      description: 查询 FBA Daily Inventory History Report 报表（注意：由于亚马逊对应报表下线，2023年12月1日后不再更新此接口数据）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - event_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id【欧洲传UK下的店铺，美国传US下的店铺】，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                event_date:
+                  type: string
+                  description: 报表日期，格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report/getAfnFulfillableQuantity:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询FBA可售库存报表
+      description: 查询 FBA Multi-Country Inventory Report 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report/reservedInventory:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询预留库存报表
+      description: 查询 FBA Reserved Inventory Report 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/routing/fba/fbaStock/getFbaAgeList:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询库龄表
+      description: 查询 Manage Inventory Health 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+              properties:
+                sid:
+                  type: string
+                  description: 店铺id，多个使用英文逗号分隔，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: "109"
+                offset:
+                  type: integer
+                  description: 分页偏移量
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认20
+                  default: 20
+                  example: 20
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report/getAmazonFulfilledShipmentsList:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询Amazon Fulfilled Shipments报表
+      description: 查询 Amazon Fulfilled Shipments 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/erp/sc/data/mws_report_v1/getAmazonFulfilledShipmentsList:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询Amazon Fulfilled Shipments v1报表
+      description: 查询 Amazon Fulfilled Shipments 报表 v1版本
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/basicOpen/openapi/mwsReport/adjustmentList:
+    post:
+      tags:
+        - 亚马逊源报表
+      summary: 查询盘存记录
+      description: 查询亚马逊源报表-盘存记录
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/basicOpen/report/create/reportExportTask:
+    post:
+      tags:
+        - 报告导出
+      summary: 创建导出任务
+      description: 报告导出-创建导出任务
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - seller_id
+                - report_type
+                - marketplace_ids
+                - region
+              properties:
+                seller_id:
+                  type: string
+                  description: 亚马逊店铺id，查询亚马逊店铺列表接口对应字段【seller_id】
+                  example: "A1MQMW3JWPNCBX"
+                report_type:
+                  type: string
+                  description: 亚马逊报表类型
+                  example: "Amazon VAT Transactions Report"
+                data_start_time:
+                  type: string
+                  description: 亚马逊报表请求开始时间，时间格式：YYYY-MM-DDTHH:MM:SSZ
+                  example: "2022-06-21T18:17:13+00:00"
+                data_end_time:
+                  type: string
+                  description: 亚马逊报表请求结束时间，时间格式：YYYY-MM-DDTHH:MM:SSZ
+                  example: "2022-06-25T18:17:16+00:00"
+                marketplace_ids:
+                  type: array
+                  items:
+                    type: string
+                  description: 亚马逊市场id
+                  example: ["ATVPDHSKDCJER"]
+                region:
+                  type: string
+                  description: 店铺所在的地区（na 北美、eu 欧洲、fe 远东）
+                  enum: [na, eu, fe]
+                  example: "na"
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/basicOpen/report/query/reportExportTask:
+    post:
+      tags:
+        - 报告导出
+      summary: 查询导出任务结果
+      description: 报告导出-查询导出任务结果
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - seller_id
+                - task_id
+                - region
+              properties:
+                seller_id:
+                  type: string
+                  description: 亚马逊店铺id，查询亚马逊店铺列表接口对应字段【seller_id】
+                  example: "A1MQMWxxxJWPNCBX"
+                task_id:
+                  type: string
+                  description: 任务id
+                  example: "f5345297-07e2-4b08-becf-a4c29335246b"
+                region:
+                  type: string
+                  description: 店铺所在的地区（na 北美、eu 欧洲、fe 远东）
+                  enum: [na, eu, fe]
+                  example: "na"
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /api/basicOpen/report/amazonReportExportTask:
+    post:
+      tags:
+        - 报告导出
+      summary: 报告下载链接续期
+      description: 报告导出-报告下载链接续期
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - region
+                - seller_id
+                - report_document_id
+              properties:
+                region:
+                  type: string
+                  description: 店铺所在的地区（na 北美、eu 欧洲、fe 远东）
+                  enum: [na, eu, fe]
+                  example: "na"
+                seller_id:
+                  type: string
+                  description: 亚马逊店铺id，查询亚马逊店铺列表接口对应字段【seller_id】
+                  example: "A1xxxxxxx"
+                report_document_id:
+                  type: string
+                  description: 报告文档Id，报告导出-查询导出任务结果接口对应字段【data>>report_document_id】
+                  example: "amzn1.xxxxxxxx"
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/erp/sc/data/mws_report/fbaOrders:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-FBA订单
+      description: 查询 Amazon-Fulfilled Shipments Report 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                date_type:
+                  type: integer
+                  description: 日期搜索维度：【默认1】1 下单日期 2 配送日期
+                  default: 1
+                  example: 1
+                start_date:
+                  type: string
+                  description: 开始日期，左闭区间，Y-m-d格式
+                  example: "2020-04-01"
+                end_date:
+                  type: string
+                  description: 结束日期，右开区间，Y-m-d格式
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: FBA订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/erp/sc/routing/data/order/fbaExchangeOrderList:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-FBA换货订单
+      description: 查询 Replacements Report 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 43
+                start_date:
+                  type: string
+                  description: 开始时间，左闭区间，格式：Y-m-d
+                  example: "2020-01-01"
+                end_date:
+                  type: string
+                  description: 结束时间，右开区间，格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: FBA换货订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/erp/sc/data/mws_report/refundOrders:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-FBA退货订单
+      description: 查询 FBA customer returns 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                date_type:
+                  type: integer
+                  description: 时间查询类型【默认1】：1 退货时间【站点时间】2 更新时间【北京时间】
+                  default: 1
+                  example: 1
+                start_date:
+                  type: string
+                  description: 开始时间，左闭右开，格式：Y-m-d
+                  example: "2020-01-01"
+                end_date:
+                  type: string
+                  description: 结束时间，左闭右开，格式：Y-m-d
+                  example: "2024-08-05"
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: FBA退货订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/erp/sc/routing/data/order/fbmReturnOrderList:
+    post:
+      tags:
+        - 亚马逊源表数据
+      summary: 查询亚马逊源报表-FBM退货订单
+      description: 查询 Returns Reports 报表
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sid
+                - start_date
+                - end_date
+              properties:
+                sid:
+                  type: integer
+                  description: 店铺id，对应查询亚马逊店铺列表接口对应字段【sid】
+                  example: 109
+                start_date:
+                  type: string
+                  description: 开始时间，左闭区间，格式：Y-m-d
+                  example: "2020-01-01"
+                end_date:
+                  type: string
+                  description: 结束时间，右开区间，格式：Y-m-d
+                  example: "2024-08-05"
+                date_type:
+                  type: integer
+                  description: 时间查询类型：【默认1】1 退货日期 2 下单日期
+                  default: 1
+                  example: 1
+                offset:
+                  type: integer
+                  description: 分页偏移量，默认0
+                  default: 0
+                  example: 0
+                length:
+                  type: integer
+                  description: 分页长度，默认1000
+                  default: 1000
+                  example: 1000
+      responses:
+        '200':
+          description: 成功响应
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: 响应码，0表示成功
+                    example: 0
+                  message:
+                    type: string
+                    description: 响应消息
+                    example: "success"
+                  data:
+                    type: object
+                    description: FBM退货订单报表数据
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: 响应码，0表示成功
+          example: 0
+        message:
+          type: string
+          description: 响应消息
+          example: "success"
+        data:
+          type: object
+          description: 响应数据
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: 错误码
+        message:
+          type: string
+          description: 错误消息
+        data:
+          type: null
+          description: 错误时数据为null
+
+tags:
+  - name: 亚马逊源表数据
+    description: 亚马逊源表数据相关接口，包括各种报表查询功能

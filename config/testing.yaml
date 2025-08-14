@@ -1,0 +1,149 @@
+# 测试配置文件
+# 用于配置测试环境的各种参数
+
+testing:
+  # 测试服务器配置
+  server:
+    host: "127.0.0.1"
+    port: 8888
+    base_url: "http://127.0.0.1:8888"
+    timeout: 30
+  
+  # 测试数据库配置
+  database:
+    use_test_db: true
+    test_db_name: "rpa_tornado_test"
+    reset_before_test: true
+    cleanup_after_test: true
+  
+  # 测试用例配置
+  test_cases:
+    # API测试配置
+    api:
+      retry_count: 3
+      retry_delay: 1
+      verify_ssl: false
+      headers:
+        Content-Type: "application/json"
+        Accept: "application/json"
+    
+    # 性能测试配置
+    performance:
+      max_response_time: 5000  # 毫秒
+      concurrent_users: 10
+      test_duration: 60  # 秒
+    
+    # 数据验证配置
+    validation:
+      strict_mode: true
+      check_response_format: true
+      validate_data_types: true
+  
+  # 测试环境配置
+  environment:
+    # 模拟数据
+    mock_external_apis: true
+    use_test_fixtures: true
+    
+    # 日志配置
+    logging:
+      level: "DEBUG"
+      capture_stdout: true
+      capture_stderr: true
+      log_file: "tests/logs/test.log"
+    
+    # 覆盖率配置
+    coverage:
+      enabled: true
+      min_coverage: 80
+      exclude_patterns:
+        - "*/tests/*"
+        - "*/migrations/*"
+        - "*/venv/*"
+        - "*/__pycache__/*"
+      
+      report_formats:
+        - "html"
+        - "xml"
+        - "term"
+  
+  # 测试数据配置
+  test_data:
+    # 默认测试用户
+    default_seller_id: 109
+    default_marketplace: "ATVPDKIKX0DER"
+    
+    # 日期范围
+    date_ranges:
+      default_start: "2024-07-01"
+      default_end: "2024-07-31"
+      test_date: "2024-08-05"
+    
+    # 分页参数
+    pagination:
+      default_offset: 0
+      default_length: 10
+      max_length: 100
+    
+    # 测试文件
+    fixtures_dir: "tests/fixtures"
+    sample_files:
+      - "sample_data.json"
+      - "mock_responses.json"
+  
+  # 集成测试配置
+  integration:
+    # 外部服务
+    external_services:
+      lingxing_api:
+        enabled: false
+        mock_responses: true
+        timeout: 10
+      
+      database:
+        enabled: true
+        use_transactions: true
+        rollback_after_test: true
+    
+    # 依赖检查
+    dependencies:
+      check_before_test: true
+      required_services:
+        - "tornado_server"
+        - "database"
+      
+      optional_services:
+        - "redis"
+        - "elasticsearch"
+  
+  # 报告配置
+  reporting:
+    # 测试报告
+    generate_html_report: true
+    report_dir: "tests/reports"
+    
+    # 结果通知
+    notifications:
+      enabled: false
+      email:
+        recipients: []
+        smtp_server: ""
+      
+      slack:
+        webhook_url: ""
+        channel: "#testing"
+  
+  # 性能监控
+  monitoring:
+    # 资源使用
+    track_memory_usage: true
+    track_cpu_usage: true
+    
+    # 响应时间
+    track_response_times: true
+    alert_slow_tests: true
+    slow_test_threshold: 5000  # 毫秒
+    
+    # 测试稳定性
+    track_flaky_tests: true
+    max_flaky_retries: 3

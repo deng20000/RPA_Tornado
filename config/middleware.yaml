@@ -1,0 +1,351 @@
+# 中间件配置文件
+# 定义各种中间件的配置参数
+
+# 全局中间件配置
+global:
+  enabled: true
+  order:
+    - security
+    - cors
+    - rate_limit
+    - auth
+    - logging
+    - error_handler
+
+# 安全中间件配置
+security:
+  enabled: true
+  config:
+    # 安全头配置
+    x_content_type_options: true
+    x_frame_options: "DENY"
+    x_xss_protection: true
+    
+    # HSTS配置
+    hsts:
+      enabled: true
+      max_age: 31536000  # 1年
+      include_subdomains: true
+      preload: false
+    
+    # CSP配置
+    csp:
+      enabled: true
+      directives:
+        default-src: ["'self'"]
+        script-src: ["'self'", "'unsafe-inline'"]
+        style-src: ["'self'", "'unsafe-inline'"]
+        img-src: ["'self'", "data:", "https:"]
+        font-src: ["'self'"]
+        connect-src: ["'self'"]
+        frame-ancestors: ["'none'"]
+    
+    # 其他安全配置
+    referrer_policy: "strict-origin-when-cross-origin"
+    permissions_policy:
+      camera: []
+      microphone: []
+      geolocation: []
+      payment: []
+    
+    hide_server_header: true
+    max_request_size: 10485760  # 10MB
+    require_https: false  # 生产环境应设为true
+    csrf_protection: true
+
+# CORS中间件配置
+cors:
+  enabled: true
+  config:
+    # 允许的源
+    allowed_origins:
+      - "http://localhost:3000"
+      - "http://localhost:8080"
+      - "http://127.0.0.1:3000"
+      - "http://127.0.0.1:8080"
+    
+    # 允许的方法
+    allowed_methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+      - "OPTIONS"
+      - "PATCH"
+    
+    # 允许的头
+    allowed_headers:
+      - "Content-Type"
+      - "Authorization"
+      - "X-Requested-With"
+      - "X-CSRFToken"
+      - "Accept"
+      - "Origin"
+    
+    # 暴露的头
+    exposed_headers:
+      - "X-RateLimit-Remaining"
+      - "X-RateLimit-Limit"
+      - "X-RateLimit-Reset"
+    
+    # 是否允许凭证
+    allow_credentials: true
+    
+    # 预检请求缓存时间（秒）
+    max_age: 86400  # 24小时
+
+# 限流中间件配置
+rate_limit:
+  enabled: true
+  config:
+    # 默认限流配置
+    default:
+      capacity: 10  # 令牌桶容量
+      refill_rate: 1.0  # 令牌补充速率（每秒）
+      tokens: 1  # 每次请求消耗的令牌数
+    
+    # 按路径的特殊限流配置
+    paths:
+      "/api/auth/login":
+        capacity: 5
+        refill_rate: 0.1  # 10秒补充1个令牌
+        tokens: 1
+      "/api/auth/register":
+        capacity: 3
+        refill_rate: 0.05  # 20秒补充1个令牌
+        tokens: 1
+      "/api/upload/*":
+        capacity: 2
+        refill_rate: 0.2  # 5秒补充1个令牌
+        tokens: 1
+    
+    # 按用户类型的限流配置
+    user_types:
+      anonymous:
+        capacity: 5
+        refill_rate: 0.5
+      authenticated:
+        capacity: 20
+        refill_rate: 2.0
+      premium:
+        capacity: 100
+        refill_rate: 10.0
+    
+    # 限流键生成策略
+    key_strategy: "ip_and_endpoint"  # ip, user, endpoint, ip_and_endpoint
+    
+    # 响应头设置
+    headers:
+      remaining: "X-RateLimit-Remaining"
+      limit: "X-RateLimit-Limit"
+      reset: "X-RateLimit-Reset"
+      retry_after: "Retry-After"
+
+# 认证中间件配置
+auth:
+  enabled: true
+  config:
+    # JWT配置
+    jwt:
+      secret_key: "${JWT_SECRET_KEY}"
+      algorithm: "HS256"
+      access_token_expire_minutes: 30
+      refresh_token_expire_days: 7
+    
+    # 会话配置
+    session:
+      cookie_name: "session_id"
+      secret_key: "${SESSION_SECRET_KEY}"
+      max_age: 86400  # 24小时
+      secure: false  # 生产环境应设为true
+      httponly: true
+      samesite: "lax"
+    
+    # 认证豁免路径
+    exempt_paths:
+      - "/health"
+      - "/api/auth/login"
+      - "/api/auth/register"
+      - "/api/auth/refresh"
+      - "/docs"
+      - "/static/*"
+    
+    # 认证头配置
+    auth_header: "Authorization"
+    auth_scheme: "Bearer"
+    
+    # 用户信息缓存
+    cache_user_info: true
+    cache_ttl: 300  # 5分钟
+
+# 日志中间件配置
+logging:
+  enabled: true
+  config:
+    # 日志级别
+    level: "INFO"
+    
+    # 日志格式
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    
+    # 请求日志配置
+    request:
+      enabled: true
+      include_headers: true
+      include_body: false  # 生产环境建议设为false
+      max_body_size: 1024  # 最大记录的请求体大小
+      sensitive_headers:
+        - "authorization"
+        - "cookie"
+        - "x-api-key"
+    
+    # 响应日志配置
+    response:
+      enabled: true
+      include_headers: false
+      include_body: false
+      max_body_size: 1024
+    
+    # 性能日志配置
+    performance:
+      enabled: true
+      slow_request_threshold: 1.0  # 慢请求阈值（秒）
+      log_slow_requests: true
+    
+    # 错误日志配置
+    error:
+      enabled: true
+      include_traceback: true
+      log_level: "ERROR"
+    
+    # 日志过滤
+    filters:
+      # 忽略的路径
+      ignore_paths:
+        - "/health"
+        - "/favicon.ico"
+      
+      # 忽略的状态码
+      ignore_status_codes:
+        - 404
+      
+      # 敏感数据过滤
+      sensitive_fields:
+        - "password"
+        - "token"
+        - "secret"
+        - "key"
+
+# 错误处理中间件配置
+error_handler:
+  enabled: true
+  config:
+    # 调试模式
+    debug: "${APP_DEBUG:false}"
+    
+    # 错误响应格式
+    response_format: "json"  # json, html
+    
+    # 错误页面配置
+    error_pages:
+      404: "errors/404.html"
+      500: "errors/500.html"
+    
+    # 错误日志配置
+    logging:
+      enabled: true
+      level: "ERROR"
+      include_traceback: true
+    
+    # 错误通知配置
+    notifications:
+      enabled: false
+      webhook_url: "${ERROR_WEBHOOK_URL}"
+      email:
+        enabled: false
+        smtp_host: "${SMTP_HOST}"
+        smtp_port: 587
+        username: "${SMTP_USERNAME}"
+        password: "${SMTP_PASSWORD}"
+        to_addresses:
+          - "admin@example.com"
+    
+    # 错误统计
+    metrics:
+      enabled: true
+      track_error_rates: true
+      track_response_times: true
+
+# 中间件开发配置
+development:
+  # 开发环境特殊配置
+  security:
+    require_https: false
+    csrf_protection: false
+  
+  cors:
+    allowed_origins:
+      - "*"  # 开发环境允许所有源
+  
+  rate_limit:
+    enabled: false  # 开发环境可以禁用限流
+  
+  logging:
+    level: "DEBUG"
+    request:
+      include_body: true
+    response:
+      include_body: true
+
+# 生产环境配置
+production:
+  # 生产环境特殊配置
+  security:
+    require_https: true
+    csrf_protection: true
+    hsts:
+      enabled: true
+      preload: true
+  
+  cors:
+    allowed_origins:
+      - "https://yourdomain.com"
+      - "https://www.yourdomain.com"
+  
+  rate_limit:
+    enabled: true
+    default:
+      capacity: 5
+      refill_rate: 0.5
+  
+  logging:
+    level: "WARNING"
+    request:
+      include_body: false
+    response:
+      include_body: false
+  
+  error_handler:
+    debug: false
+    notifications:
+      enabled: true
+
+# 测试环境配置
+testing:
+  # 测试环境特殊配置
+  security:
+    require_https: false
+    csrf_protection: false
+  
+  cors:
+    allowed_origins:
+      - "*"
+  
+  rate_limit:
+    enabled: false
+  
+  logging:
+    level: "DEBUG"
+  
+  error_handler:
+    debug: true
