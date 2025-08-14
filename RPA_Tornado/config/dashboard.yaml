@@ -1,0 +1,328 @@
+# 电商数据看板配置文件
+# Dashboard Configuration for E-commerce Data Management System
+
+# 数据库配置
+database:
+  # 数据库连接URL
+  url: "postgresql://dbadmin:dbadmin123@127.0.0.1:5432/rpa_tornado"
+  # 连接池配置
+  pool:
+    size: 10
+    max_overflow: 20
+    timeout: 30
+    recycle: 3600
+  # 数据库引擎配置
+  engine:
+    echo: false
+    echo_pool: false
+    pool_pre_ping: true
+    pool_recycle: 3600
+  # 数据库测试配置
+  testing:
+    # 自动初始化表结构
+    auto_create_tables: true
+    # 测试数据库连接超时（秒）
+    connection_timeout: 10
+    # 表结构验证
+    validate_schema: true
+    # 期望的数据表
+    expected_tables:
+      - "shops"
+      - "sales" 
+      - "exchange_rate"
+
+# API配置
+api:
+  # 基础URL配置
+  base_url: "https://api.example.com"
+  # 超时配置（秒）
+  timeout: 30
+  # 重试配置
+  retry:
+    max_attempts: 3
+    backoff_factor: 1.0
+    status_forcelist: [500, 502, 503, 504]
+  # 请求头配置
+  headers:
+    User-Agent: "EcommerceDashboard/1.0"
+    Accept: "application/json"
+    Content-Type: "application/json"
+
+# 汇率配置
+exchange_rate:
+  # 默认基准货币
+  base_currency: "CNY"
+  # 支持的货币列表
+  supported_currencies:
+    - "CNY"
+    - "USD"
+    - "EUR"
+    - "GBP"
+    - "JPY"
+    - "KRW"
+    - "HKD"
+    - "SGD"
+    - "AUD"
+    - "CAD"
+  # 汇率API配置
+  api:
+    provider: "exchangerate-api"
+    url: "https://api.exchangerate-api.com/v4/latest"
+    timeout: 10
+    cache_duration: 3600  # 缓存时长（秒）
+  # 汇率更新配置
+  update:
+    auto_update: true
+    update_interval: 3600  # 自动更新间隔（秒）
+    update_time: "08:00"   # 每日更新时间
+    retry_on_failure: true
+    max_retry_attempts: 3
+
+# 数据同步配置
+sync:
+  # 批量处理配置
+  batch:
+    size: 100
+    timeout: 300
+  # 并发配置
+  concurrency:
+    max_workers: 5
+    semaphore_limit: 10
+  # 数据验证配置
+  validation:
+    strict_mode: true
+    skip_invalid_records: false
+    log_validation_errors: true
+  # 重复数据处理
+  deduplication:
+    enabled: true
+    strategy: "update"  # update, skip, error
+    key_fields: ["shop_id", "sale_date", "order_id"]
+
+# 缓存配置
+cache:
+  # 缓存类型：memory, redis
+  type: "memory"
+  # 内存缓存配置
+  memory:
+    max_size: 1000
+    ttl: 3600  # 生存时间（秒）
+  # Redis缓存配置（如果使用Redis）
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: null
+    socket_timeout: 5
+    connection_pool_max_connections: 10
+
+# 日志配置
+logging:
+  # 日志级别
+  level: "INFO"
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  # 日志文件配置
+  file:
+    enabled: true
+    path: "logs/dashboard.log"
+    max_size: "10MB"
+    backup_count: 5
+    rotation: "daily"
+  # 控制台日志
+  console:
+    enabled: true
+    level: "INFO"
+  # 特定模块日志级别
+  loggers:
+    "app.services.dashboard_service": "DEBUG"
+    "app.handlers.dashboard_handler": "INFO"
+    "sqlalchemy.engine": "WARNING"
+
+# 性能配置
+performance:
+  # 查询优化
+  query:
+    default_page_size: 20
+    max_page_size: 100
+    enable_query_cache: true
+    cache_timeout: 300
+  # 数据库索引
+  indexes:
+    auto_create: true
+    analyze_frequency: "daily"
+  # 连接池监控
+  monitoring:
+    enabled: true
+    log_slow_queries: true
+    slow_query_threshold: 1.0  # 秒
+
+# 安全配置
+security:
+  # API密钥配置
+  api_key:
+    required: false
+    header_name: "X-API-Key"
+    validation_url: null
+  # 访问控制
+  access_control:
+    enable_cors: true
+    allowed_origins: ["*"]
+    allowed_methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allowed_headers: ["Content-Type", "Authorization", "X-API-Key"]
+  # 速率限制
+  rate_limit:
+    enabled: false
+    requests_per_minute: 60
+    burst_size: 10
+
+# 监控配置
+monitoring:
+  # 健康检查
+  health_check:
+    enabled: true
+    interval: 60  # 检查间隔（秒）
+    timeout: 10
+    endpoints:
+      - "/api/dashboard/health"
+  # 指标收集
+  metrics:
+    enabled: true
+    collection_interval: 30
+    retention_period: "7d"
+  # 告警配置
+  alerts:
+    enabled: false
+    email_notifications: false
+    webhook_url: null
+
+# 数据导出配置
+export:
+  # 支持的格式
+  formats: ["csv", "excel", "json"]
+  # 导出限制
+  limits:
+    max_records: 10000
+    timeout: 300
+  # 文件存储
+  storage:
+    path: "exports/"
+    cleanup_after: "7d"
+    compression: true
+
+# 数据同步配置
+data_sync:
+  # API服务器配置
+  api_server:
+    base_url: "http://127.0.0.1:8888"
+    timeout: 30
+    retry_attempts: 3
+    retry_delay: 5
+  # 同步策略
+  strategy:
+    # 批量大小
+    batch_size: 100
+    # 并发数
+    max_concurrent: 5
+    # 增量同步
+    incremental: true
+    # 数据去重
+    deduplication: true
+  # 同步任务配置
+  tasks:
+    # 店铺数据同步
+    shops:
+      enabled: true
+      endpoint: "/erp/sc/data/seller/lists"
+      sync_interval: "daily"
+    # 汇率数据同步
+    exchange_rates:
+      enabled: true
+      endpoint: "/erp/sc/routing/finance/currency/currencyMonth"
+      sync_interval: "daily"
+    # 销售数据同步
+    sales:
+      enabled: true
+      endpoint: "/basicOpen/platformStatisticsV2/saleStat/pageList"
+      sync_interval: "hourly"
+      date_range_days: 30
+  # 同步日志配置
+  logging:
+    enabled: true
+    log_file: "sync_data.log"
+    log_level: "INFO"
+    max_file_size: "10MB"
+    backup_count: 5
+
+# 定时任务配置
+scheduler:
+  # 启用定时任务
+  enabled: true
+  # 时区设置
+  timezone: "Asia/Shanghai"
+  # 任务配置
+  jobs:
+    # 汇率数据同步
+    sync_exchange_rates:
+      enabled: true
+      cron: "0 8 * * *"  # 每天8点执行
+      max_instances: 1
+      coalesce: true
+    # 数据清理
+    cleanup_old_data:
+      enabled: true
+      cron: "0 2 * * 0"  # 每周日2点执行
+      retention_days: 90
+    # 数据备份
+    backup_data:
+      enabled: false
+      cron: "0 3 * * *"  # 每天3点执行
+      backup_path: "backups/"
+
+# 功能开关
+features:
+  # 启用数据同步
+  enable_data_sync: true
+  # 启用汇率转换
+  enable_currency_conversion: true
+  # 启用数据导出
+  enable_data_export: true
+  # 启用批量操作
+  enable_batch_operations: true
+  # 启用数据验证
+  enable_data_validation: true
+  # 启用缓存
+  enable_caching: true
+
+# 开发配置
+development:
+  # 调试模式
+  debug: false
+  # 自动重载
+  auto_reload: false
+  # 测试数据
+  use_test_data: false
+  # 模拟API响应
+  mock_api_responses: false
+
+# 生产配置
+production:
+  # 优化设置
+  optimize_queries: true
+  # 压缩响应
+  compress_responses: true
+  # 启用SSL
+  enable_ssl: false
+  # 错误报告
+  error_reporting:
+    enabled: false
+    service: null
+    api_key: null
+
+# 版本信息
+version:
+  app_version: "1.0.0"
+  config_version: "1.0.0"
+  last_updated: "2024-01-15"
+  author: "RPA_Tornado Team"
+  description: "电商数据看板系统配置文件"

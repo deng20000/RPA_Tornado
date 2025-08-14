@@ -1,0 +1,782 @@
+# 缓存配置文件
+# 定义各种缓存策略和配置
+
+# 全局缓存配置
+global:
+  enabled: true
+  default_ttl: 3600  # 默认过期时间（秒）
+  key_prefix: "rpa_tornado:"
+  serialization: "json"  # json, pickle, msgpack
+  compression: false
+  
+  # 缓存统计
+  stats:
+    enabled: true
+    collection_interval: 60  # 秒
+    retention_days: 7
+
+# Redis缓存配置
+redis:
+  enabled: true
+  
+  # 连接配置
+  connection:
+    host: "${REDIS_HOST:localhost}"
+    port: "${REDIS_PORT:6379}"
+    database: "${REDIS_DB:0}"
+    password: "${REDIS_PASSWORD:}"
+    
+    # 连接选项
+    socket_timeout: 5
+    socket_connect_timeout: 5
+    socket_keepalive: true
+    socket_keepalive_options: {}
+    health_check_interval: 30
+    retry_on_timeout: true
+    retry_on_error: ["ConnectionError", "TimeoutError"]
+  
+  # 连接池配置
+  pool:
+    max_connections: 50
+    connection_pool_class: "redis.ConnectionPool"
+    
+    # 连接池选项
+    max_connections_per_pool: 50
+    retry_on_timeout: true
+    socket_keepalive: true
+    socket_keepalive_options: {}
+  
+  # 集群配置
+  cluster:
+    enabled: false
+    nodes:
+      - host: "redis-node-1"
+        port: 6379
+      - host: "redis-node-2"
+        port: 6379
+      - host: "redis-node-3"
+        port: 6379
+    
+    # 集群选项
+    startup_nodes: []
+    decode_responses: true
+    skip_full_coverage_check: false
+    max_connections_per_node: 50
+  
+  # 哨兵配置
+  sentinel:
+    enabled: false
+    service_name: "mymaster"
+    sentinels:
+      - host: "sentinel-1"
+        port: 26379
+      - host: "sentinel-2"
+        port: 26379
+      - host: "sentinel-3"
+        port: 26379
+    
+    # 哨兵选项
+    socket_timeout: 5
+    socket_connect_timeout: 5
+    password: "${REDIS_SENTINEL_PASSWORD:}"
+
+# 内存缓存配置
+memory:
+  enabled: true
+  
+  # 缓存大小限制
+  size_limit:
+    max_size: "500MB"
+    max_items: 10000
+    
+    # 清理策略
+    eviction_policy: "lru"  # lru, lfu, fifo, random
+    cleanup_interval: 300  # 秒
+  
+  # 缓存分区
+  partitions:
+    enabled: true
+    count: 16
+    hash_function: "fnv1a"
+  
+  # 内存监控
+  monitoring:
+    enabled: true
+    memory_threshold: 80  # 百分比
+    gc_threshold: 90  # 百分比
+
+# 分布式缓存配置
+distributed:
+  enabled: false
+  
+  # 一致性哈希
+  consistent_hashing:
+    enabled: true
+    virtual_nodes: 150
+    hash_function: "md5"
+  
+  # 复制配置
+  replication:
+    enabled: true
+    factor: 2  # 复制因子
+    strategy: "async"  # sync, async
+  
+  # 分片配置
+  sharding:
+    enabled: true
+    strategy: "hash"  # hash, range, directory
+    shards: 4
+
+# 缓存层级配置
+tiered_cache:
+  enabled: true
+  
+  # L1缓存（内存）
+  l1_cache:
+    enabled: true
+    type: "memory"
+    max_size: "100MB"
+    ttl: 300  # 秒
+  
+  # L2缓存（Redis）
+  l2_cache:
+    enabled: true
+    type: "redis"
+    ttl: 3600  # 秒
+  
+  # L3缓存（磁盘）
+  l3_cache:
+    enabled: false
+    type: "disk"
+    path: "cache/disk"
+    max_size: "1GB"
+    ttl: 86400  # 秒
+
+# 缓存策略配置
+strategies:
+  # 写入策略
+  write:
+    # 写穿（Write-Through）
+    write_through:
+      enabled: true
+      async_write: false
+    
+    # 写回（Write-Back）
+    write_back:
+      enabled: false
+      flush_interval: 60  # 秒
+      batch_size: 100
+    
+    # 写绕过（Write-Around）
+    write_around:
+      enabled: false
+  
+  # 读取策略
+  read:
+    # 缓存优先
+    cache_first:
+      enabled: true
+      fallback_to_source: true
+    
+    # 源优先
+    source_first:
+      enabled: false
+      update_cache: true
+    
+    # 刷新提前
+    refresh_ahead:
+      enabled: true
+      refresh_threshold: 0.8  # 80%过期时刷新
+      async_refresh: true
+  
+  # 失效策略
+  invalidation:
+    # 基于时间
+    time_based:
+      enabled: true
+      default_ttl: 3600
+      max_ttl: 86400
+    
+    # 基于事件
+    event_based:
+      enabled: true
+      events:
+        - "data_update"
+        - "schema_change"
+        - "config_change"
+    
+    # 基于版本
+    version_based:
+      enabled: false
+      version_header: "X-Cache-Version"
+    
+    # 手动失效
+    manual:
+      enabled: true
+      api_endpoint: "/api/cache/invalidate"
+      auth_required: true
+
+# 缓存键管理
+key_management:
+  # 键命名规范
+  naming:
+    pattern: "{prefix}:{namespace}:{key}:{version}"
+    separator: ":"
+    case_style: "snake_case"  # snake_case, camel_case, kebab_case
+  
+  # 键空间管理
+  namespaces:
+    api_responses: "api:responses"
+    database_queries: "db:queries"
+    user_sessions: "user:sessions"
+    static_data: "static:data"
+    computed_results: "computed:results"
+  
+  # 键过期管理
+  expiration:
+    # 滑动过期
+    sliding_expiration:
+      enabled: true
+      extend_on_access: true
+      max_extension: 7200  # 秒
+    
+    # 绝对过期
+    absolute_expiration:
+      enabled: true
+      max_lifetime: 86400  # 秒
+  
+  # 键清理
+  cleanup:
+    enabled: true
+    schedule: "0 2 * * *"  # 每天凌晨2点
+    batch_size: 1000
+    expired_key_threshold: 10000
+
+# 缓存预热配置
+warmup:
+  enabled: true
+  
+  # 启动时预热
+  on_startup:
+    enabled: true
+    timeout: 300  # 秒
+    parallel_workers: 4
+  
+  # 定时预热
+  scheduled:
+    enabled: true
+    schedule: "0 1 * * *"  # 每天凌晨1点
+    
+    # 预热任务
+    tasks:
+      - name: "static_data"
+        source: "database"
+        query: "SELECT * FROM static_config"
+        key_pattern: "static:config:{id}"
+        ttl: 86400
+      
+      - name: "popular_products"
+        source: "api"
+        endpoint: "/api/products/popular"
+        key_pattern: "products:popular"
+        ttl: 3600
+  
+  # 智能预热
+  intelligent:
+    enabled: true
+    
+    # 基于访问模式
+    access_pattern:
+      enabled: true
+      min_access_count: 10
+      time_window: 3600  # 秒
+    
+    # 基于预测
+    predictive:
+      enabled: false
+      model: "linear_regression"
+      features: ["time_of_day", "day_of_week", "user_type"]
+
+# 缓存监控配置
+monitoring:
+  enabled: true
+  
+  # 性能指标
+  metrics:
+    # 命中率
+    hit_rate:
+      enabled: true
+      window_size: 300  # 秒
+      alert_threshold: 0.8  # 80%
+    
+    # 响应时间
+    response_time:
+      enabled: true
+      percentiles: [50, 90, 95, 99]
+      slow_threshold: 100  # 毫秒
+    
+    # 内存使用
+    memory_usage:
+      enabled: true
+      warning_threshold: 80  # 百分比
+      critical_threshold: 95  # 百分比
+    
+    # 连接数
+    connections:
+      enabled: true
+      max_threshold: 80  # 百分比
+    
+    # 错误率
+    error_rate:
+      enabled: true
+      window_size: 300  # 秒
+      alert_threshold: 5  # 百分比
+  
+  # 健康检查
+  health_check:
+    enabled: true
+    interval: 30  # 秒
+    timeout: 5  # 秒
+    
+    # 检查项目
+    checks:
+      connectivity: true
+      memory_usage: true
+      response_time: true
+      error_rate: true
+  
+  # 告警配置
+  alerts:
+    enabled: true
+    
+    # 告警规则
+    rules:
+      low_hit_rate:
+        threshold: 0.7
+        duration: 300  # 秒
+        severity: "warning"
+      
+      high_memory_usage:
+        threshold: 90  # 百分比
+        duration: 60  # 秒
+        severity: "critical"
+      
+      high_error_rate:
+        threshold: 10  # 百分比
+        duration: 120  # 秒
+        severity: "warning"
+      
+      connection_limit:
+        threshold: 95  # 百分比
+        duration: 60  # 秒
+        severity: "critical"
+    
+    # 通知渠道
+    notifications:
+      email:
+        enabled: true
+        to: ["admin@example.com"]
+      
+      slack:
+        enabled: false
+        webhook_url: "${CACHE_SLACK_WEBHOOK}"
+      
+      webhook:
+        enabled: false
+        url: "${CACHE_WEBHOOK_URL}"
+
+# 缓存安全配置
+security:
+  enabled: true
+  
+  # 访问控制
+  access_control:
+    # 认证
+    authentication:
+      enabled: true
+      method: "password"  # password, token, certificate
+      password: "${REDIS_PASSWORD}"
+    
+    # 授权
+    authorization:
+      enabled: true
+      
+      # ACL配置
+      acl:
+        enabled: false
+        rules:
+          - user: "app_user"
+            commands: ["GET", "SET", "DEL"]
+            keys: ["app:*"]
+          - user: "readonly_user"
+            commands: ["GET"]
+            keys: ["*"]
+  
+  # 数据加密
+  encryption:
+    # 传输加密
+    in_transit:
+      enabled: false
+      protocol: "TLS"
+      cert_file: ""
+      key_file: ""
+      ca_file: ""
+    
+    # 静态加密
+    at_rest:
+      enabled: false
+      algorithm: "AES-256"
+      key_file: ""
+  
+  # 数据脱敏
+  data_masking:
+    enabled: true
+    
+    # 敏感数据模式
+    patterns:
+      - name: "credit_card"
+        regex: "\\d{4}-\\d{4}-\\d{4}-\\d{4}"
+        replacement: "****-****-****-****"
+      
+      - name: "email"
+        regex: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+        replacement: "***@***.***"
+      
+      - name: "phone"
+        regex: "\\d{3}-\\d{3}-\\d{4}"
+        replacement: "***-***-****"
+
+# 缓存备份配置
+backup:
+  enabled: true
+  
+  # 备份策略
+  strategy:
+    # 快照备份
+    snapshot:
+      enabled: true
+      schedule: "0 3 * * *"  # 每天凌晨3点
+      retention_days: 7
+      compression: true
+    
+    # 增量备份
+    incremental:
+      enabled: false
+      schedule: "0 */6 * * *"  # 每6小时
+      retention_days: 3
+    
+    # AOF备份
+    aof:
+      enabled: false
+      sync_policy: "everysec"  # always, everysec, no
+      auto_rewrite: true
+      rewrite_threshold: 100  # 百分比
+  
+  # 备份存储
+  storage:
+    # 本地存储
+    local:
+      enabled: true
+      path: "backups/cache"
+      max_size: "5GB"
+    
+    # 远程存储
+    remote:
+      enabled: false
+      type: "s3"  # s3, ftp, sftp
+      
+      # S3配置
+      s3:
+        bucket: "${BACKUP_S3_BUCKET}"
+        region: "${BACKUP_S3_REGION}"
+        access_key: "${BACKUP_S3_ACCESS_KEY}"
+        secret_key: "${BACKUP_S3_SECRET_KEY}"
+        prefix: "cache-backups/"
+  
+  # 备份验证
+  validation:
+    enabled: true
+    verify_integrity: true
+    test_restore: false
+  
+  # 备份通知
+  notifications:
+    enabled: true
+    on_success: false
+    on_failure: true
+
+# 缓存优化配置
+optimization:
+  enabled: true
+  
+  # 内存优化
+  memory:
+    # 内存碎片整理
+    defragmentation:
+      enabled: true
+      threshold: 30  # 百分比
+      schedule: "0 4 * * 0"  # 每周日凌晨4点
+    
+    # 内存压缩
+    compression:
+      enabled: true
+      algorithm: "lz4"  # lz4, zstd, gzip
+      min_size: 1024  # 字节
+    
+    # 内存回收
+    garbage_collection:
+      enabled: true
+      threshold: 85  # 百分比
+      aggressive_mode: false
+  
+  # 网络优化
+  network:
+    # 连接复用
+    connection_pooling:
+      enabled: true
+      pool_size: 50
+      idle_timeout: 300  # 秒
+    
+    # 批量操作
+    batching:
+      enabled: true
+      batch_size: 100
+      batch_timeout: 10  # 毫秒
+    
+    # 管道操作
+    pipelining:
+      enabled: true
+      pipeline_size: 50
+  
+  # 查询优化
+  query:
+    # 查询缓存
+    query_cache:
+      enabled: true
+      max_size: 1000
+      ttl: 300  # 秒
+    
+    # 预编译查询
+    prepared_statements:
+      enabled: true
+      max_statements: 500
+    
+    # 查询重写
+    query_rewrite:
+      enabled: false
+      rules: []
+
+# 环境特定配置
+environments:
+  development:
+    global:
+      default_ttl: 300  # 较短的TTL用于开发
+    redis:
+      connection:
+        database: 1
+    memory:
+      size_limit:
+        max_size: "100MB"
+    monitoring:
+      enabled: false
+    backup:
+      enabled: false
+  
+  testing:
+    global:
+      default_ttl: 60  # 很短的TTL用于测试
+    redis:
+      connection:
+        database: 2
+    memory:
+      size_limit:
+        max_size: "50MB"
+    monitoring:
+      enabled: false
+    backup:
+      enabled: false
+  
+  production:
+    global:
+      default_ttl: 3600
+    redis:
+      connection:
+        database: 0
+      pool:
+        max_connections: 100
+    memory:
+      size_limit:
+        max_size: "1GB"
+    monitoring:
+      enabled: true
+      alerts:
+        enabled: true
+    backup:
+      enabled: true
+    security:
+      access_control:
+        authentication:
+          enabled: true
+      encryption:
+        in_transit:
+          enabled: true
+
+# 缓存插件配置
+plugins:
+  enabled: true
+  
+  # 可用插件
+  available:
+    # 缓存统计插件
+    - name: "cache_stats"
+      enabled: true
+      config:
+        detailed_stats: true
+        export_metrics: true
+    
+    # 缓存预热插件
+    - name: "cache_warmup"
+      enabled: true
+      config:
+        auto_warmup: true
+        warmup_on_miss: true
+    
+    # 缓存压缩插件
+    - name: "cache_compression"
+      enabled: true
+      config:
+        algorithm: "lz4"
+        min_size: 1024
+    
+    # 缓存加密插件
+    - name: "cache_encryption"
+      enabled: false
+      config:
+        algorithm: "AES-256"
+        key_rotation: true
+    
+    # 缓存同步插件
+    - name: "cache_sync"
+      enabled: false
+      config:
+        sync_interval: 60
+        conflict_resolution: "last_write_wins"
+
+# 缓存测试配置
+testing:
+  enabled: true
+  
+  # 单元测试
+  unit_tests:
+    enabled: true
+    framework: "pytest"
+    
+    # 测试数据
+    test_data:
+      enabled: true
+      fixtures_dir: "tests/fixtures/cache"
+      auto_cleanup: true
+  
+  # 集成测试
+  integration_tests:
+    enabled: true
+    test_redis_connection: true
+    test_memory_cache: true
+    test_distributed_cache: false
+  
+  # 性能测试
+  performance_tests:
+    enabled: true
+    
+    # 负载测试
+    load_test:
+      concurrent_clients: 100
+      test_duration: 300  # 秒
+      operations_per_second: 1000
+    
+    # 压力测试
+    stress_test:
+      max_concurrent_clients: 500
+      ramp_up_time: 60  # 秒
+      test_duration: 600  # 秒
+    
+    # 容量测试
+    capacity_test:
+      max_memory_usage: "2GB"
+      max_items: 1000000
+      test_duration: 1800  # 秒
+
+# 缓存日志配置
+logging:
+  enabled: true
+  
+  # 缓存操作日志
+  operations:
+    enabled: true
+    level: "INFO"
+    
+    # 记录的操作
+    log_operations:
+      get: false  # 可能产生大量日志
+      set: true
+      delete: true
+      expire: true
+      flush: true
+  
+  # 性能日志
+  performance:
+    enabled: true
+    level: "DEBUG"
+    
+    # 慢操作日志
+    slow_operations:
+      enabled: true
+      threshold: 100  # 毫秒
+  
+  # 错误日志
+  errors:
+    enabled: true
+    level: "ERROR"
+    include_traceback: true
+  
+  # 统计日志
+  statistics:
+    enabled: true
+    level: "INFO"
+    interval: 300  # 秒
+
+# 缓存配置验证
+validation:
+  enabled: true
+  
+  # 配置检查
+  config_checks:
+    enabled: true
+    
+    # 检查项目
+    checks:
+      redis_connectivity: true
+      memory_limits: true
+      ttl_values: true
+      key_patterns: true
+  
+  # 运行时验证
+  runtime_validation:
+    enabled: true
+    
+    # 验证规则
+    rules:
+      max_key_size: 1024  # 字节
+      max_value_size: "10MB"
+      valid_key_pattern: "^[a-zA-Z0-9:_-]+$"
+  
+  # 数据完整性检查
+  integrity_checks:
+    enabled: true
+    schedule: "0 5 * * *"  # 每天凌晨5点
+    
+    # 检查类型
+    check_types:
+      key_existence: true
+      value_corruption: true
+      ttl_consistency: true

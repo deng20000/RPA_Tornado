@@ -1,0 +1,65 @@
+import requests
+
+cookies = {
+    'acw_tc': '0a27773b17502144744903089e05f8a6517317f7232b302a8fa70e1ff4429a',
+    'hasIMClient': '0',
+    'sajssdk_2015_cross_new_user': '1',
+    'platform_version': '19.0.0',
+    # 'man-machine-token': '140%23tB1ow3S8zzWi3zo23zVu4pN8s9zGk5IgdngYWvdw%2BrqbXnfXzzerc%2FJfznUZ9u8HcVMKl6hqzzcc1oo98TOzzFIhVY%2FqlQzx2DD3VthqzFdz2XU%2BllfzzPziVWFnlT8I1wba7X53xYYCTdkWsdWE5CTH83TmqZ5i6ePaeMrfG70lz07hpVAzjNQQ6ik%2F3pK7u56cto9z5w0whX3Tc%2BUrRWeB%2FwBIymFaOtm3Ncy8YwGUChpLAYQSd37JCb6U%2FXnMBOGufcrN2CpueX88p0lH38rSFEPs77xNXxvvaF9ydlblCKMRg9JF7KfBdQnDzfcKK12SIjED57008trAPyp2fbVW2BI3KY2gYfoevm7zILwutZ1T8%2FBp40yGlBsMMRay%2BueMlZZC%2F4MGH0wyiO4QQghxvZKamExevypCCgJNqp%2BuaMuoCvu6ze5xfNft75f%2BBoQsfrhWVtzYM9wmk4dvdzW85CNkZEIwC2Gnm5nhSK5%2FDFufs2BOCnwsKEUxmmE7C3ZxzQ63QKZQIk4blEHgx2NxmhfmW1xq0xsd1yt4ccvawHuVns9O5%2F8dKk5A6MOZDFKf8x5j5RYeRXbsb6d2mkCJ94XY6Y%2Fr%2BWystPlHXM%2BsKxBx%2BkcYzz4bJ4VtMC4U8ErvP6RBRyarY8ib1YxxevSKmarJBKKno7teg%2BnkI6wpgUhSMjf%2F8kEG%2FRJVeDqH78WYJrT9zOYckTWxQTeqkyyvYqR0YU%2FhPILaJA4KNjZ8Rp7YjA%2FoL%2B795W%2Fn3YWj%2Fk%2BVmEHthCVlwOBs2M7rjw5VKdt%2B433OWs7BpjOs%2Bf%2BcpTpGU6%2Fe%2Bz%3D%3D',
+    # 'fingerprint_time': '1750214503906',
+    # 'fingerprint_version': '3.3.3',
+    # 'fingerprint': 'T2gAPg11FWwHNUdnwVSajJw0hootM6jQQEr9WzMcRL19rNHeDVBFdNYD5KtQSI4nf2Q%3D',
+    'pskey': '73f4c92104fb116180822e6a3c6a393ad6033015057696a0370f57e971a9a32b',
+    'account': 'daniel.chen%40gl-inet.com',
+    'clientId': '360408',
+    'userId': '56521961',
+    'pskey_exist': '1',
+    'set_id': '13200',
+    'authToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODE3NTA1MzMsImRhdGEiOnsiY2xpZW50SWQiOjM2MDQwOCwidXNlcklkIjo1NjUyMTk2MX19.PpZ1eLe6dG-Q4GfZxv1o4pE6PcGUYx9kdqLT072rysY',
+    'tfstk': 'g3osI_fwO1f_cJEAhPvFAn863pEjlp-PhtwxExINHlE9hjG-1rzA0VrjGXlburdi3X9j9bDaumMcc-HxidV2IekiIoqvaQPX4ADGQU_X0maTvveipiBTBerpzCTk5Q-y4ALyJlAMamzcOZV_HoeTkSQpd827DiExMWULe85TDjhYJye0hiCYHNIpd-VLMoExMvpQ3WFxgMCzhKPsCdov1ZtPQCMgOiIxAJd0jA1N0Ji8CzF8QcsADUe_57HTOCBZ_fzKnricnia-B4c0efC9GSmIpc3-wB7a64wjUqM9XMEZjA38k0dckbZsGznTRtpjQoggAJnJ3aVEA5lxfypPVrrK4zEt8eAaulwSMcc1hih-LYog-mO59S0aEkejmLQbGrIz9gPSWK7fdzjbd7JBdZbD1Hi-vzamGuaTKRZBdp1_vPe3d7JBdZb0WJ2FRp9C1kC..',
+    'sensorsdata2015jssdkcross': '%7B%22distinct_id%22%3A%2256521961%22%2C%22first_id%22%3A%2219780e99bcf1bb0-0fc632b55794af-26011e51-1821369-19780e99bd022e1%22%2C%22props%22%3A%7B%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTk3ODBlOTliY2YxYmIwLTBmYzYzMmI1NTc5NGFmLTI2MDExZTUxLTE4MjEzNjktMTk3ODBlOTliZDAyMmUxIiwiJGlkZW50aXR5X2xvZ2luX2lkIjoiNTY1MjE5NjEifQ%3D%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%2256521961%22%7D%2C%22%24device_id%22%3A%2219780e99bcf1bb0-0fc632b55794af-26011e51-1821369-19780e99bd022e1%22%7D',
+    'Hm_lvt_925e072f764b8f193431ee7c9099e6f5': '1750214536',
+    'HMACCOUNT': 'EF9684A43BDDE7C9',
+    'Hm_lvt_70f5e1eeec2ad1e9ad4430afacfe1d29': '1750214536',
+    'SENTRY_MAJOR_CUSTOMER': 'false',
+    'perf_dv6Tr4n': '1',
+    'Hm_lpvt_70f5e1eeec2ad1e9ad4430afacfe1d29': '1750215333',
+    'Hm_lpvt_925e072f764b8f193431ee7c9099e6f5': '1750215333',
+    'TAB_ONLY_TIMER_FETCH_USER_UUID': '4d9749d7',
+    'socket-uuid': '47773a12',
+    'socket-alive': '{%22status%22:%220%22%2C%22user_id%22:%2256521961%22}',
+    'socket-self-checking-timestamp': '1750215368514',
+}
+
+headers = {
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+    'b3': '2d73f24c161e841f9dbd735b145713c9-732b9d48fa240029-1',
+    'content-type': 'application/x-www-form-urlencoded',
+    'origin': 'https://crm.xiaoman.cn',
+    'priority': 'u=1, i',
+    'referer': 'https://crm.xiaoman.cn/crm/leads/list?curPage=1&pageSize=20&show_all=1&user_num=%5B1%5D&user_id=%5B%5D&filter=%7B%22user_num%22%3A%5B1%5D%2C%22show_all%22%3A1%7D',
+    'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'traceparent': '00-2d73f24c161e841f9dbd735b145713c9-732b9d48fa240029-01',
+    'uber-trace-id': '2d73f24c161e841f9dbd735b145713c9:732b9d48fa240029:0:1',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    'x-b3-spanid': '732b9d48fa240029',
+    'x-b3-traceid': '2d73f24c161e841f9dbd735b145713c9',
+    # 'cookie': 'acw_tc=0a27773b17502144744903089e05f8a6517317f7232b302a8fa70e1ff4429a; hasIMClient=0; sajssdk_2015_cross_new_user=1; platform_version=19.0.0; man-machine-token=140%23tB1ow3S8zzWi3zo23zVu4pN8s9zGk5IgdngYWvdw%2BrqbXnfXzzerc%2FJfznUZ9u8HcVMKl6hqzzcc1oo98TOzzFIhVY%2FqlQzx2DD3VthqzFdz2XU%2BllfzzPziVWFnlT8I1wba7X53xYYCTdkWsdWE5CTH83TmqZ5i6ePaeMrfG70lz07hpVAzjNQQ6ik%2F3pK7u56cto9z5w0whX3Tc%2BUrRWeB%2FwBIymFaOtm3Ncy8YwGUChpLAYQSd37JCb6U%2FXnMBOGufcrN2CpueX88p0lH38rSFEPs77xNXxvvaF9ydlblCKMRg9JF7KfBdQnDzfcKK12SIjED57008trAPyp2fbVW2BI3KY2gYfoevm7zILwutZ1T8%2FBp40yGlBsMMRay%2BueMlZZC%2F4MGH0wyiO4QQghxvZKamExevypCCgJNqp%2BuaMuoCvu6ze5xfNft75f%2BBoQsfrhWVtzYM9wmk4dvdzW85CNkZEIwC2Gnm5nhSK5%2FDFufs2BOCnwsKEUxmmE7C3ZxzQ63QKZQIk4blEHgx2NxmhfmW1xq0xsd1yt4ccvawHuVns9O5%2F8dKk5A6MOZDFKf8x5j5RYeRXbsb6d2mkCJ94XY6Y%2Fr%2BWystPlHXM%2BsKxBx%2BkcYzz4bJ4VtMC4U8ErvP6RBRyarY8ib1YxxevSKmarJBKKno7teg%2BnkI6wpgUhSMjf%2F8kEG%2FRJVeDqH78WYJrT9zOYckTWxQTeqkyyvYqR0YU%2FhPILaJA4KNjZ8Rp7YjA%2FoL%2B795W%2Fn3YWj%2Fk%2BVmEHthCVlwOBs2M7rjw5VKdt%2B433OWs7BpjOs%2Bf%2BcpTpGU6%2Fe%2Bz%3D%3D; fingerprint_time=1750214503906; fingerprint_version=3.3.3; fingerprint=T2gAPg11FWwHNUdnwVSajJw0hootM6jQQEr9WzMcRL19rNHeDVBFdNYD5KtQSI4nf2Q%3D; pskey=73f4c92104fb116180822e6a3c6a393ad6033015057696a0370f57e971a9a32b; account=daniel.chen%40gl-inet.com; clientId=360408; userId=56521961; pskey_exist=1; set_id=13200; authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODE3NTA1MzMsImRhdGEiOnsiY2xpZW50SWQiOjM2MDQwOCwidXNlcklkIjo1NjUyMTk2MX19.PpZ1eLe6dG-Q4GfZxv1o4pE6PcGUYx9kdqLT072rysY; tfstk=g3osI_fwO1f_cJEAhPvFAn863pEjlp-PhtwxExINHlE9hjG-1rzA0VrjGXlburdi3X9j9bDaumMcc-HxidV2IekiIoqvaQPX4ADGQU_X0maTvveipiBTBerpzCTk5Q-y4ALyJlAMamzcOZV_HoeTkSQpd827DiExMWULe85TDjhYJye0hiCYHNIpd-VLMoExMvpQ3WFxgMCzhKPsCdov1ZtPQCMgOiIxAJd0jA1N0Ji8CzF8QcsADUe_57HTOCBZ_fzKnricnia-B4c0efC9GSmIpc3-wB7a64wjUqM9XMEZjA38k0dckbZsGznTRtpjQoggAJnJ3aVEA5lxfypPVrrK4zEt8eAaulwSMcc1hih-LYog-mO59S0aEkejmLQbGrIz9gPSWK7fdzjbd7JBdZbD1Hi-vzamGuaTKRZBdp1_vPe3d7JBdZb0WJ2FRp9C1kC..; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2256521961%22%2C%22first_id%22%3A%2219780e99bcf1bb0-0fc632b55794af-26011e51-1821369-19780e99bd022e1%22%2C%22props%22%3A%7B%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTk3ODBlOTliY2YxYmIwLTBmYzYzMmI1NTc5NGFmLTI2MDExZTUxLTE4MjEzNjktMTk3ODBlOTliZDAyMmUxIiwiJGlkZW50aXR5X2xvZ2luX2lkIjoiNTY1MjE5NjEifQ%3D%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%2256521961%22%7D%2C%22%24device_id%22%3A%2219780e99bcf1bb0-0fc632b55794af-26011e51-1821369-19780e99bd022e1%22%7D; Hm_lvt_925e072f764b8f193431ee7c9099e6f5=1750214536; HMACCOUNT=EF9684A43BDDE7C9; Hm_lvt_70f5e1eeec2ad1e9ad4430afacfe1d29=1750214536; SENTRY_MAJOR_CUSTOMER=false; perf_dv6Tr4n=1; Hm_lpvt_70f5e1eeec2ad1e9ad4430afacfe1d29=1750215333; Hm_lpvt_925e072f764b8f193431ee7c9099e6f5=1750215333; TAB_ONLY_TIMER_FETCH_USER_UUID=4d9749d7; socket-uuid=47773a12; socket-alive={%22status%22:%220%22%2C%22user_id%22:%2256521961%22}; socket-self-checking-timestamp=1750215368514',
+}
+
+data = {
+    'lead_id': '',
+    'archive_flag': '1',
+    'company_hash_id': '',
+    'company_hash_origin': '',
+    'data': '{"lead":{"country":"","homepage":"","name":"123456","origin_list":"","company_name":"","26847097814254":"","biz_type":"","intention_level":"","annual_procurement":"","timezone":"","ad_keyword":"","address":"","image_list":"","remark":"","inquiry_country":"","ai_status":""},"customers":[{"growth_level":0,"main_customer_flag":1,"name":"123456","email":"","contact":"","tel_list":"","gender":"","post":"","remark":"","image_list":"","47310691380844":"","47311072554476":"","47311219468602":"","47312964436243":""}]}',
+    'trail_rebuild': '1',
+}
+
+response = requests.post('https://crm.xiaoman.cn/api/leadV2Write/submitLead', cookies=cookies, headers=headers, data=data)

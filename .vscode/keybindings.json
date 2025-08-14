@@ -1,0 +1,21 @@
+[
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "运行测试",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "python -m pytest -v\n"
+        },
+        "when": "terminalFocus && !terminalTextSelected"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    }
+] 
