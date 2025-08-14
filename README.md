@@ -17,6 +17,8 @@
 
 ```
 new_rpa/
+├── .venv/                 # Python虚拟环境
+├── .vscode/               # VS Code配置
 ├── RPA_Tornado/           # Tornado后端服务项目（Web API服务）
 │   ├── app/               # 应用核心代码
 │   │   ├── handlers/      # API处理器
@@ -30,22 +32,55 @@ new_rpa/
 │   ├── main.py            # 应用入口
 │   └── requirements.txt   # 依赖包
 ├── rpa/                   # 独立RPA脚本项目
-│   ├── scripts/           # 通用脚本工具
+│   ├── scripts/           # 通用脚本工具（包含整理后的Python文件）
 │   ├── projects/          # 按部门分类的项目
 │   ├── ecommerce_platforms/ # 电商平台RPA脚本
 │   ├── KOL_SVFmanagesystem/ # KOL管理系统
 │   ├── Return_tracking/   # 退货跟踪系统
 │   ├── boss_zhipin_rpa/   # Boss直聘RPA
+│   ├── BOSS Zhipin RPA/   # Boss直聘RPA（整理后）
+│   ├── Lingxing Baohong System RPA/ # 领星宝弘系统RPA（整理后）
 │   ├── marketing_social_media_data/ # 社媒数据处理
 │   ├── translation/       # 翻译工具
 │   ├── tests/             # 测试代码
 │   ├── pyproject.toml     # 项目配置
 │   └── requirements.txt   # 依赖包
-├── database_tests/        # 数据库连接测试
-├── DBeaver_PostgreSQL_Connection_Guide.md
-├── PostgreSQL_Container_Setup_Summary.md
+├── DBeaver_PostgreSQL_Connection_Guide.md # 数据库连接指南
+├── PostgreSQL_Container_Setup_Summary.md  # PostgreSQL容器设置
+├── SSH_问题解决报告.md    # SSH配置说明
+├── .gitignore             # 根目录通用忽略规则
 └── README.md              # 本文件
 ```
+
+## 📋 文件忽略规则说明
+
+本项目采用分层的 `.gitignore` 文件管理策略，确保两个独立项目的文件忽略规则既有统一性又有针对性：
+
+### 🌐 根目录 `.gitignore`
+- **作用范围：** 整个 `new_rpa` 项目
+- **包含内容：** Python 通用规则、IDE 配置、操作系统文件、虚拟环境等
+- **适用于：** 两个子项目都需要的通用忽略规则
+
+### 🌪️ RPA_Tornado/.gitignore
+- **作用范围：** 仅 `RPA_Tornado` 项目
+- **包含内容：** Tornado 特定文件、Web 服务配置、数据库迁移、性能分析文件等
+- **特点：** 专注于 Web API 服务的特定需求
+
+### 🤖 rpa/.gitignore
+- **作用范围：** 仅 `rpa` 项目
+- **包含内容：** RPA 特定数据文件、自动化脚本输出、浏览器数据、爬虫文件等
+- **特点：** 专注于 RPA 自动化脚本的特定需求
+
+### 📝 忽略规则优先级
+1. **子项目规则优先：** 子目录的 `.gitignore` 会覆盖根目录的规则
+2. **通用规则共享：** 根目录处理所有 Python 项目的通用文件
+3. **项目特定规则：** 每个子项目只关注自己特有的文件类型
+
+### 🔒 敏感数据保护
+- **配置文件：** `config.ini`, `secrets.json`, `credentials.json`
+- **数据文件：** `*.xlsx`, `*.csv`, `*.json`（业务数据）
+- **认证信息：** API 密钥、登录凭据、数据库连接信息
+- **临时文件：** 自动化脚本生成的临时和输出文件
 
 ## 🚀 RPA_Tornado - 企业级后端服务
 

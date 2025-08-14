@@ -1,0 +1,113 @@
+# 根目录通用 .gitignore 文件
+# 适用于整个 new_rpa 项目的通用忽略规则
+
+# Python 通用文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境（根目录级别）
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+myvenv/
+myvenv_plus/
+
+# IDE 和编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.#*
+#*#
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+temp/
+tmp/
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 测试覆盖率
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.tox/
+.nox/
+
+# 环境配置文件
+.env
+.env.local
+.env.*.local
+
+# 敏感数据
+secrets/
+credentials/
+keys/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# 数据文件（通用）
+*.db
+*.sqlite
+*.sqlite3
+
+# 文档生成
+docs/_build/
+docs/build/
+
+# 包管理器文件
+node_modules/
+package-lock.json
+yarn.lock
+
+# 项目特定忽略
+# SSH 相关临时文件
+ssh_test_*
+*.ssh_backup
+
+# 注意：子项目有自己的 .gitignore 文件
+# RPA_Tornado/ 和 rpa/ 目录有各自的特定忽略规则

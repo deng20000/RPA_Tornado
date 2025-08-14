@@ -1,170 +1,78 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# RPA 项目特定的 .gitignore
+# 通用 Python 规则已在根目录 .gitignore 中定义
 
-# PyInstaller
-*.manifest
-*.spec
+# RPA 特定的 Python 包
+# Selenium 相关
+selenium-manager/
+geckodriver.log
+chromedriver.log
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# 自动化测试截图
+screenshots/
+test_screenshots/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+# 浏览器相关
+*.crx
+*.xpi
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# poetry
-poetry.lock
-
-# pdm
-.pdm.toml
-
-# PEP 582
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-.idea/
-
-# VS Code
-.vscode/
-
-# uv
+# UV 包管理器
 .uv/
 
-# RPA项目特定文件
+# RPA 项目特定数据文件
+# Excel 和数据文件（包含敏感业务数据）
 *.xlsx
 *.xls
 *.csv
-*.json
-*.log
-temp_*
-*.tmp
-*.bak
+!**/example*.csv
+!**/template*.xlsx
+!**/sample*.xls
 
-# 数据文件
+# JSON 数据文件（可能包含敏感信息）
+*.json
+!**/config_template.json
+!**/schema*.json
+
+# RPA 临时和输出文件
+temp_*
+output_*
+result_*
+download_*
+
+# RPA 项目数据目录
 data/
 output/
-logs/
-temp/
+downloads/
+input/
+results/
+reports/
 
-# 配置文件（包含敏感信息）
+# RPA 配置文件（包含敏感信息）
 config.ini
 secrets.json
 credentials.json
+api_keys.json
+login_info.json
 
-# 系统文件
-.DS_Store
-Thumbs.db
+# 浏览器用户数据
+user_data/
+profile/
+cache/
 
-# 虚拟环境
-myvenv/
-myvenv_plus/ 
+# RPA 特定日志
+rpa_*.log
+automation_*.log
+bot_*.log
+selenium_*.log
+
+# 爬虫和数据采集
+cookies.txt
+session_*.pkl
+*.har
+
+# 邮件和通知相关
+email_*.html
+notification_*.txt
+
+# 数据库连接文件
+db_connection.json
+database.ini
