@@ -43,6 +43,7 @@ myvenv_plus/
 
 # IDE 和编辑器文件
 .vscode/
+.cursor/
 .idea/
 *.swp
 *.swo
